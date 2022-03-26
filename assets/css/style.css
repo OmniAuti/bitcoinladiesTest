@@ -164,7 +164,6 @@ h6 {
   max-height: 40px;
 }
 
-
 @media (max-width: 500px) {
   #header .logo {
     font-size: 16px;
@@ -574,6 +573,17 @@ section {
   background: #ffde9e;
   margin: 4px 10px;
 }
+
+
+@media (max-width:450px){
+  .section-title-contact-only h2::after {
+    width: 45px;
+  }
+  .section-title-contact-only h2 {
+    font-size: 10px;
+  }
+}
+
 .section-title p {
   margin: 0;
   margin: 0;
@@ -643,6 +653,17 @@ section {
 }
 .clients .swiper-pagination .swiper-pagination-bullet-active {
   background-color: #facadf;
+}
+@media (max-width:510px) {
+.clients-section-title-only p {
+  font-size: 20px;
+}
+.clients-section-title-only h2 {
+  font-size: 10px;
+}
+.clients-section-title-only h2::after {
+  width: 60px;
+}
 }
 
 /*--------------------------------------------------------------
@@ -1647,7 +1668,7 @@ section {
   }
 
   .hero-p-container {
-    font-size: .75rem;
+    font-size: 0.75rem;
   }
 }
 @media (max-width: 400px) {
@@ -1678,7 +1699,7 @@ section {
   }
 
   .hero-p-container {
-    font-size: .65rem;
+    font-size: 0.65rem;
   }
 }
 
@@ -1764,7 +1785,7 @@ section {
   }
 
   .featured-hero-event-p {
-    font-size: .75rem !important;
+    font-size: 0.75rem !important;
   }
 }
 @media (max-width: 550px) {
@@ -1891,6 +1912,63 @@ section {
   font-size: 24px;
 }
 
+@media (max-width: 775px) {
+  #subscribe h1 {
+    font-size: 50px;
+  }
+  
+  #subscribe h2 {
+    font-size: 16px;
+  }
+}
+@media (max-width: 460px) {
+  #subscribe h1 {
+    font-size: 34px;
+    font-weight: 700;
+  }
+  
+  #subscribe h2 {
+    color: rgba(255, 255, 255, 0.9);
+    margin: 10px 0 0 0;
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1800px) {
+  #subscribe h1 {
+    margin-top: 50px;
+    font-size: 100px;
+    font-weight: 700;
+  }
+  
+  #subscribe h2 {
+    color: rgba(255, 255, 255, 0.9);
+    margin: 50px 0 0 0;
+    font-size: 50px;
+  }
+
+  #subscribe form input[type="email"] {
+    font-size: 32px;
+  }
+  
+  #subscribe form input[type="submit"] {
+    position: absolute;
+    top: 0;
+    right: -2px;
+    bottom: 0;
+    border: 0;
+    background: none;
+    font-size: 32px;
+    padding: 0 30px;
+    background: #facadf;
+    color: #151515;
+    transition: 0.3s;
+    border-radius: 0 4px 4px 0;
+  }
+}
+
+
+
 /*--------------------------------------------------------------
 # EVENTS CAROUSEL
 --------------------------------------------------------------*/
@@ -1941,6 +2019,10 @@ section {
   cursor: pointer;
 }
 
+/*--------------------------------------------------------------
+# FEATURED HERO EVENT CARD
+--------------------------------------------------------------*/
+
 .featured-hero-event {
   height: 60%;
   width: 100%;
@@ -1948,7 +2030,6 @@ section {
   margin-bottom: 20px;
   background-color: #fff;
 }
-
 
 .featured-hero-event-h2 {
   font-weight: 100 !important;
@@ -1961,28 +2042,26 @@ section {
   font-size: 1rem;
 }
 
-
-@media (max-width:900px) {
+@media (max-width: 900px) {
   .featured-hero-event {
     height: 50%;
     width: 100%;
   }
 }
-@media (max-width:590px) {
+@media (max-width: 590px) {
   .featured-hero-event-h2 {
     font-size: 2.5rem !important;
   }
 }
-@media (max-width:450px) {
+@media (max-width: 450px) {
   .featured-hero-event-h2 {
     font-size: 2.5rem !important;
   }
 }
 
-@media (min-width:1800px) {
+@media (min-width: 1800px) {
   .featured-hero-event-h2 {
     font-size: 5rem !important;
-    
   }
   .featured-hero-event-p {
     font-size: 2rem !important;
@@ -1991,3 +2070,43 @@ section {
   }
 }
 
+/*--------------------------------------------------------------
+# PARALLAX DIVIDER
+--------------------------------------------------------------*/
+
+.parallax-bitcoin-container {
+  height: 250px;
+  width: 100%;
+  transform: translateX(-25%);
+}
+
+.parallax-bitcoin {
+  background-image: url("../img/parallax-bitcoin-scroll.png");
+  min-height: 100%;
+  width: 150%;
+  background-size: 50%;
+}
+
+@media (max-width: 1000px) {
+  .parallax-bitcoin-container {
+    height: 200px;
+    width: 100%;
+    transform: translateX(-25%);
+  }
+
+  .parallax-bitcoin {
+    background-image: url("../img/parallax-bitcoin-scroll.png");
+    min-height: 100%;
+    width: 150%;
+    background-size: 75%;
+  }
+}
+
+@media (max-width: 500px) {
+  .parallax-bitcoin {
+    background-image: url("../img/parallax-bitcoin-scroll.png");
+    min-height: 100%;
+    width: 150%;
+    background-size: 120%;
+  }
+}
