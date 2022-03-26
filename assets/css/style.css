@@ -700,6 +700,11 @@ section {
 /*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/
+#events {
+  padding-bottom: 0;
+  padding-top: 0;
+}
+
 .services .icon-box {
   text-align: center;
   border: 1px solid #ebebeb;
@@ -1524,7 +1529,7 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Carousel
+# HERO Carousel
 --------------------------------------------------------------*/
 
 .carousel-container {
@@ -1973,6 +1978,9 @@ section {
 # EVENTS CAROUSEL
 --------------------------------------------------------------*/
 
+.events-section-title-only p {
+}
+
 .event-carousel-container {
   height: 50vh;
   padding: 10px;
@@ -1995,8 +2003,7 @@ section {
 .event-carousel-controls {
   width: 400px;
   height: 25px;
-  margin: 0 auto;
-  margin-top: 15px;
+  margin: 25px auto;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -2018,6 +2025,36 @@ section {
   background-size: cover;
   cursor: pointer;
 }
+
+
+@media (max-width: 1050px) {
+
+  .event-carousel-content {
+    width: 305%;
+  }
+  
+  .event-content-card {
+    width: calc(15%);
+  }
+
+  .event-carousel-controls {
+    width: 250px;
+  }
+}
+
+@media (max-width: 560px) {
+  .event-carousel-content {
+    width: 600%;
+    justify-content: space-evenly;
+  }
+  
+  .event-content-card {
+    width: calc(15%);
+  }
+}
+
+
+
 
 /*--------------------------------------------------------------
 # FEATURED HERO EVENT CARD

@@ -383,32 +383,41 @@ const eventCarouselLeftArrow = document.querySelector('.event-carousel-controls-
 const eventCarouselRightArrow = document.querySelector('.event-carousel-controls-arrow-right')
 
 let eventCardWidth = eventCarouselCard.clientWidth
+
+// WIDTH DIVIDED BY LENGTH
 const eventContainerWidth = (eventCarouselContainer.clientWidth / eventCarouselContainer.childElementCount)
 const eventContainerWidthTotal = eventCarouselContainer.clientWidth
-let eventIndex = 0;
+let eventIndex = 0; 
+let maxInterval = 3;
+if (window.innerWidth <= 1050) {
+  maxInterval = 4
+}
+if (window.innerWidth <= 560) {
+  maxInterval = 5
+}
+
+
+
 // PUT IN FUNCTION --------------------------------------------
 eventCarouselRightArrow.addEventListener('click', () => {
   eventIndex++
-  console.log(eventIndex)
-  if (eventIndex >= 3) {
-    eventIndex = 3
+  
+  if (eventIndex >= maxInterval) {
+    eventIndex = maxInterval
   }
-  const movement = eventIndex * -eventContainerWidth;
-  console.log(movement)
-  eventCarouselContainer.style.transform = `translateX(${movement}px)`
 
+  const movement = eventIndex * -eventContainerWidth;
+  eventCarouselContainer.style.transform = `translateX(${movement}px)`
+  console.log(eventContainerWidth, movement,eventContainerWidthTotal)
 })
-// DETECT HALF OFFSCREEN FOR STOP??????
 eventCarouselLeftArrow.addEventListener('click', () => {
   eventIndex--
-  console.log(eventIndex)
+
   if (eventIndex <= 0) {
     eventIndex = 0
   }
-  console.log(eventIndex)
-  console.log(eventIndex, 'after')
+  
   const movement = eventIndex * -eventContainerWidth;
-  console.log(movement)
   eventCarouselContainer.style.transform = `translateX(${movement}px)`
-
+  console.log(eventContainerWidth, movement,eventContainerWidthTotal)
 })
