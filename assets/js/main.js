@@ -389,7 +389,8 @@ carouselSelectors.forEach((selector) => {
   });
 });
 
-if (window.innerWidth <= 800) { // CHANGE MOBILE SWIPE ------------------------------------------------------------------
+// MOBILE SWIPE ------------------------------------------------------------------
+
 
   let movement = 0;
   let startX;
@@ -440,7 +441,7 @@ if (window.innerWidth <= 800) { // CHANGE MOBILE SWIPE -------------------------
       }, 10);
     }
   });
-}
+
 
 // EVENT CAROUSEL  ------------------------------------------------------------
 
