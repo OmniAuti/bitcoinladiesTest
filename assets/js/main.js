@@ -322,7 +322,7 @@ function addCarouselActiveClass(el) {
 
 // TYPEWRITER FUNCTION
 //const typewriterTextContainer = document.querySelector('.typewriter-writer-written-text')
-let heroIndex = 0;// -------------- THIS INDEX IS FOR THE COINS ON HERO
+let heroIndex = 0; // -------------- THIS INDEX IS FOR THE COINS ON HERO
 const typewriterText =
   "bitcoin is a decentralized digital currency, without a central bank or single administrator, that can be sent from user to user on the peer-to-peer Bitcoin network without the need for intermediaries. ";
 const typewriterTextArray = Array.from(typewriterText);
@@ -378,7 +378,6 @@ const carouselSelectors = document.querySelectorAll(".carousel-selector");
 // CHANGE SLIDE ------------------------------------------------------------------
 const selectorArray = Array.from(carouselSelectors);
 
-
 carouselSelectors.forEach((selector) => {
   selector.addEventListener("click", () => {
     clearInterval(carouselIntervalForward);
@@ -391,11 +390,10 @@ carouselSelectors.forEach((selector) => {
 
 // MOBILE SWIPE ------------------------------------------------------------------
 
-
-  let movement = 0;
-  let startX;
-  let moveX;
-
+let movement = 0;
+let startX;
+let moveX;
+(function heroMobileSwipe() {
   carouselContainer.addEventListener("touchstart", (e) => {
     startX = e.touches[0].clientX;
     clearInterval(carouselIntervalForward);
@@ -407,41 +405,40 @@ carouselSelectors.forEach((selector) => {
   });
 
   carouselContainer.addEventListener("touchend", () => {
-    if ((moveX + 100) < startX) {
+    if (moveX + 100 < startX) {
       movement += 20;
       if (movement >= 60) {
         movement = 60;
-      } 
-      document.body.style.overflowY = 'hidden'
+      }
+      document.body.style.overflowY = "hidden";
       heroIndex++;
       if (heroIndex > 3) {
-        heroIndex = 3
+        heroIndex = 3;
       }
-      addCarouselActiveClass(selectorArray[heroIndex])
+      addCarouselActiveClass(selectorArray[heroIndex]);
       setTimeout(() => {
         carouselContainer.style.transform = `translateX(-${movement}%)`;
-        document.body.style.overflowY = 'scroll';
-
+        document.body.style.overflowY = "scroll";
       }, 10);
     }
-    if ((moveX + 100) > startX) {
+    if (moveX + 100 > startX) {
       movement -= 20;
       if (movement <= 0) {
         movement = 0;
       }
       heroIndex--;
       if (heroIndex < 0) {
-        heroIndex = 0
+        heroIndex = 0;
       }
-      addCarouselActiveClass(selectorArray[heroIndex])
-      document.body.style.overflowY = 'hidden'
+      addCarouselActiveClass(selectorArray[heroIndex]);
+      document.body.style.overflowY = "hidden";
       setTimeout(() => {
         carouselContainer.style.transform = `translateX(-${movement}%)`;
-        document.body.style.overflowY ='scroll';
+        document.body.style.overflowY = "scroll";
       }, 10);
     }
   });
-
+})();
 
 // EVENT CAROUSEL  ------------------------------------------------------------
 
@@ -478,6 +475,7 @@ window.addEventListener("resize", () => {
 });
 
 // EVENT CAROUSEL ENDLESS SCROLL FUNCTION --------------------------------------------
+
 (function handleEventCarousel() {
   eventCarouselRightArrow.addEventListener("click", () => {
     const movement = -eventContainerWidth;
@@ -508,5 +506,49 @@ window.addEventListener("resize", () => {
       eventCarouselContainer.style.transition = "transform ease-in-out 250ms";
       eventCarouselContainer.style.transform = `translateX(0px)`;
     }, 10);
+  });
+})();
+
+// EVENT MOBILE SWIPE FUNCTION --------------------------------------------
+
+(function heroMobileSwipe() {
+  eventCarouselContainer.addEventListener("touchstart", (e) => {
+    startX = e.touches[0].clientX;
+  });
+
+  eventCarouselContainer.addEventListener("touchmove", (e) => {
+    moveX = e.touches[0].clientX;
+  });
+
+  eventCarouselContainer.addEventListener("touchend", () => {
+    if (moveX + 100 < startX) {
+      const movement = -eventContainerWidth;
+      eventCarouselContainer.style.transform = `translateX(${movement}px)`;
+
+      setTimeout(() => {
+        const child = eventCarouselContainer.firstElementChild;
+        eventCarouselContainer.removeChild(child);
+        eventCarouselContainer.append(child);
+        eventCarouselContainer.style.transition = null;
+        eventCarouselContainer.style.transform = `translateX(0px)`;
+        setTimeout(() => {
+          eventCarouselContainer.style.transition =
+            "transform ease-in-out 250ms";
+        }, 10);
+      }, 500);
+    }
+    if (moveX + 100 > startX) {
+      const movement = -eventContainerWidth;
+      eventCarouselContainer.style.transition = null;
+      eventCarouselContainer.style.transform = `translateX(0px)`;
+      eventCarouselContainer.style.transform = `translateX(${movement}px)`;
+      const child = eventCarouselContainer.lastElementChild;
+      eventCarouselContainer.removeChild(child);
+      eventCarouselContainer.prepend(child);
+      setTimeout(() => {
+        eventCarouselContainer.style.transition = "transform ease-in-out 250ms";
+        eventCarouselContainer.style.transform = `translateX(0px)`;
+      }, 10);
+    }
   });
 })();
