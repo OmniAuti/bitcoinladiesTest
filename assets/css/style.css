@@ -1769,6 +1769,13 @@ section {
   justify-content: center;
 }
 
+@media (max-width: 700px) {
+  .carousel-selector {
+    height: 25px;
+    width: 25px;
+  }
+}
+
 .carousel-selector img {
   width: 200%;
   height: 200%;
