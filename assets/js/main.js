@@ -320,7 +320,8 @@ const carouselSelectors = document.querySelectorAll(".carousel-selector");
 const selectorArray = Array.from(carouselSelectors);
 carouselSelectors.forEach((selector) => {
   selector.addEventListener("click", () => {
-    clearInterval(carouselInterval);
+    clearInterval(carouselIntervalForward);
+    clearInterval(carouselIntervalBack);
     addCarouselActiveClass(selector);
     const indexMove = selectorArray.indexOf(selector) * 20;
     carouselContainer.style.transform = `translateX(-${indexMove}%)`;
@@ -356,22 +357,35 @@ window.onload = () => {
 
 // CAROUSEL INTERVAL -----------------------------------------------------------------------------
 
-let carouselInterval; // DECLARED GLOBAL TO BE CLEARED ON CLICK FOR COIN SELECTOR
+let carouselIntervalBack; // DECLARED GLOBAL TO BE CLEARED ON CLICK FOR COIN SELECTOR
+let carouselIntervalForward; // DECLARED GLOBAL TO BE CLEARED ON CLICK FOR COIN SELECTOR
+// INTERVALS NOW RUN BACK AND FORTH THROUGH HERO
 function carouselIntervalFunc() {
   let transformAmount = 0;
   let index = 0;
-  carouselInterval = setInterval(() => {
+  carouselIntervalForward = setInterval(() => {
     carouselContainer.style.transform = `translateX(-${(transformAmount += 20)}%)`;
     selectorArray[index].classList.remove("active-carousel-selector");
     index++;
-    if (index > 3) {
-      carouselContainer.style.transform = `translateX(-${0}%)`;
-      transformAmount = 0;
-      index = 0;
-    }
     selectorArray[index].classList.add("active-carousel-selector");
+    if (index >= 3) {
+      clearInterval(carouselIntervalForward)
+      carouselIntervalBack = setInterval(() => {
+        carouselContainer.style.transform = `translateX(-${(transformAmount -= 20)}%)`;
+        selectorArray[index].classList.remove("active-carousel-selector");
+        index--;
+        selectorArray[index].classList.add("active-carousel-selector");
+        if (index == 0) {
+          clearInterval(carouselIntervalBack)
+          carouselIntervalFunc()
+          return
+        }
+      }, 4000);
+      return
+    }
   }, 4000);
 }
+
 
 // EVENT CAROUSEL  ------------------------------------------------------------
 
