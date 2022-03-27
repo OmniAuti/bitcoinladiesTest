@@ -492,7 +492,7 @@ window.addEventListener("resize", () => {
       setTimeout(() => {
         eventCarouselContainer.style.transition = "transform ease-in-out 250ms";
       }, 10);
-    }, 250);
+    }, 500);
   });
   eventCarouselLeftArrow.addEventListener("click", () => {
     const movement = -eventContainerWidth;
