@@ -408,18 +408,18 @@ if (window.innerWidth <= 800) { // CHANGE MOBILE SWIPE -------------------------
   carouselContainer.addEventListener("touchend", () => {
     if (moveX < startX) {
       movement += 20;
-      if (movement >= 100) {
-        movement = 100;
+      if (movement >= 60) {
+        movement = 60;
       } 
       document.body.style.overflowY = 'hidden'
       heroIndex++;
       if (heroIndex > 3) {
         heroIndex = 3
       }
-      selectorArray[heroIndex].classList.add("active-carousel-selector");
+      addCarouselActiveClass(selectorArray[heroIndex])
       setTimeout(() => {
         carouselContainer.style.transform = `translateX(-${movement}%)`;
-        document.body.style.overflowY = null;
+        document.body.style.overflowY = 'scroll';
 
       }, 10);
     }
@@ -432,11 +432,11 @@ if (window.innerWidth <= 800) { // CHANGE MOBILE SWIPE -------------------------
       if (heroIndex < 0) {
         heroIndex = 0
       }
-      selectorArray[heroIndex].classList.add("active-carousel-selector");
+      addCarouselActiveClass(selectorArray[heroIndex])
       document.body.style.overflowY = 'hidden'
       setTimeout(() => {
         carouselContainer.style.transform = `translateX(-${movement}%)`;
-        document.body.style.overflowY = null;
+        document.body.style.overflowY ='scroll';
       }, 10);
     }
   });
