@@ -343,23 +343,23 @@ window.onload = () => {
 
 let carouselIntervalBack; // DECLARED GLOBAL TO BE CLEARED ON CLICK FOR COIN SELECTOR
 let carouselIntervalForward; // DECLARED GLOBAL TO BE CLEARED ON CLICK FOR COIN SELECTOR
+let heroIndex = 0;
 // INTERVALS NOW RUN BACK AND FORTH THROUGH HERO
-function carouselIntervalFunc() {
+function carouselIntervalFunc(heroIndex) {
   let transformAmount = 0;
-  let index = 0;
   carouselIntervalForward = setInterval(() => {
     carouselContainer.style.transform = `translateX(-${(transformAmount += 20)}%)`;
-    selectorArray[index].classList.remove("active-carousel-selector");
-    index++;
-    selectorArray[index].classList.add("active-carousel-selector");
-    if (index >= 3) {
+    selectorArray[heroIndex].classList.remove("active-carousel-selector");
+    heroIndex++;
+    selectorArray[heroIndex].classList.add("active-carousel-selector");
+    if (heroIndex >= 3) {
       clearInterval(carouselIntervalForward);
       carouselIntervalBack = setInterval(() => {
         carouselContainer.style.transform = `translateX(-${(transformAmount -= 20)}%)`;
-        selectorArray[index].classList.remove("active-carousel-selector");
-        index--;
-        selectorArray[index].classList.add("active-carousel-selector");
-        if (index == 0) {
+        selectorArray[heroIndex].classList.remove("active-carousel-selector");
+        heroIndex--;
+        selectorArray[heroIndex].classList.add("active-carousel-selector");
+        if (heroIndex == 0) {
           clearInterval(carouselIntervalBack);
           carouselIntervalFunc();
           return;
@@ -390,7 +390,6 @@ carouselSelectors.forEach((selector) => {
 
 } else if (window.innerWidth <= 800) { // CHANGE MOBILE SWIPE ------------------------------------------------------------------
 
-
   let movement = 0;
   let startX;
   let moveX;
@@ -411,10 +410,15 @@ carouselSelectors.forEach((selector) => {
       if (movement >= 100) {
         movement = 100;
       } 
-      body.style.overflowY = 'hidden'
+      document.body.style.overflowY = 'hidden'
+      heroIndex++;
+      if (heroIndex > 3) {
+        heroIndex = 3
+      }
+      selectorArray[heroIndex].classList.add("active-carousel-selector");
       setTimeout(() => {
         carouselContainer.style.transform = `translateX(-${movement}%)`;
-        body.style.overflowY = null;
+        document.body.style.overflowY = null;
 
       }, 10);
     }
@@ -423,10 +427,15 @@ carouselSelectors.forEach((selector) => {
       if (movement <= 0) {
         movement = 0;
       }
-      body.style.overflowY = 'hidden'
+      heroIndex--;
+      if (heroIndex < 0) {
+        heroIndex = 0
+      }
+      selectorArray[heroIndex].classList.add("active-carousel-selector");
+      document.body.style.overflowY = 'hidden'
       setTimeout(() => {
         carouselContainer.style.transform = `translateX(-${movement}%)`;
-        body.style.overflowY = null;
+        document.body.style.overflowY = null;
       }, 10);
     }
   });
