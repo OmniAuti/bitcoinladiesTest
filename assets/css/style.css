@@ -44,7 +44,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Raleway", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 /*--------------------------------------------------------------
@@ -574,8 +574,7 @@ section {
   margin: 4px 10px;
 }
 
-
-@media (max-width:450px){
+@media (max-width: 450px) {
   .section-title-contact-only h2::after {
     width: 45px;
   }
@@ -654,16 +653,16 @@ section {
 .clients .swiper-pagination .swiper-pagination-bullet-active {
   background-color: #facadf;
 }
-@media (max-width:510px) {
-.clients-section-title-only p {
-  font-size: 20px;
-}
-.clients-section-title-only h2 {
-  font-size: 10px;
-}
-.clients-section-title-only h2::after {
-  width: 60px;
-}
+@media (max-width: 510px) {
+  .clients-section-title-only p {
+    font-size: 20px;
+  }
+  .clients-section-title-only h2 {
+    font-size: 10px;
+  }
+  .clients-section-title-only h2::after {
+    width: 60px;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -770,7 +769,7 @@ section {
   color: #fff;
 }
 .cta .cta-btn {
-  font-family: "Raleway", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 600;
   font-size: 16px;
   letter-spacing: 1px;
@@ -990,7 +989,7 @@ section {
 .counts .content .count-box p {
   padding: 15px 0 0 0;
   margin: 0 0 0 50px;
-  font-family: "Raleway", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 14px;
   color: #3b3b3b;
 }
@@ -1408,11 +1407,9 @@ section {
 #footer .footer-top {
   background: #151515;
   border-bottom: 1px solid #222222;
-  padding: 60px 0 30px 0;
+  padding: 30px 0 30px 0;
 }
-#footer .footer-top .footer-info {
-  margin-bottom: 30px;
-}
+
 #footer .footer-top .footer-info h3 {
   font-size: 28px;
   margin: 0 0 20px 0;
@@ -1428,23 +1425,25 @@ section {
   font-size: 14px;
   line-height: 24px;
   margin-bottom: 0;
-  font-family: "Raleway", sans-serif;
+  font-family: "Poppins", sans-serif;
   color: #fff;
 }
+
 #footer .footer-top .social-links a {
-  font-size: 18px;
+  font-size: 75px;
   display: inline-block;
   background: #292929;
   color: #fff;
-  line-height: 1;
-  padding: 8px 0;
-  margin-right: 4px;
-  border-radius: 4px;
+  width: 45%;
+  height: 75%;
+  border-radius: 5px;
   text-align: center;
-  width: 36px;
-  height: 36px;
   transition: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 #footer .footer-top .social-links a:hover {
   background: #facadf;
   color: #151515;
@@ -1494,6 +1493,7 @@ section {
   padding: 6px 10px;
   position: relative;
   border-radius: 4px;
+  text-align: start;
 }
 #footer .footer-top .footer-newsletter form input[type="email"] {
   border: 0;
@@ -1526,6 +1526,46 @@ section {
   text-align: center;
   font-size: 13px;
   color: #fff;
+}
+
+@media (max-width: 991px) {
+  .footer-newsletter h4,
+  .footer-newsletter p {
+    text-align: center;
+  }
+
+  #footer .footer-top .footer-newsletter form {
+    margin: 0 auto;
+  }
+
+  #footer .footer-top .social-links a {
+    font-size: 50px;
+    padding: 50px;
+    width: 100%;
+    height: 45%;
+  }
+}
+
+@media (max-width: 625px) {
+  .footer-newsletter h4,
+  .footer-newsletter p {
+    text-align: center;
+  }
+
+  #footer .footer-top .social-links a {
+    font-size: 50px;
+    padding: 50px;
+    width: 100%;
+    height: 45%;
+  }
+}
+@media (max-width: 400px) {
+  #footer .footer-top .social-links a {
+    font-size: 75px;
+    padding: 50px;
+    width: 40%;
+    height: 50%;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -1757,7 +1797,7 @@ section {
   font-size: 1.75rem;
   color: #fff;
   font-weight: 200;
-  font-size: "Raleway", sans-serif;
+  font-size: "Poppins", sans-serif;
 }
 
 .typewrite-writer {
@@ -1921,7 +1961,7 @@ section {
   #subscribe h1 {
     font-size: 50px;
   }
-  
+
   #subscribe h2 {
     font-size: 16px;
   }
@@ -1931,7 +1971,7 @@ section {
     font-size: 34px;
     font-weight: 700;
   }
-  
+
   #subscribe h2 {
     color: rgba(255, 255, 255, 0.9);
     margin: 10px 0 0 0;
@@ -1945,7 +1985,7 @@ section {
     font-size: 100px;
     font-weight: 700;
   }
-  
+
   #subscribe h2 {
     color: rgba(255, 255, 255, 0.9);
     margin: 50px 0 0 0;
@@ -1955,7 +1995,7 @@ section {
   #subscribe form input[type="email"] {
     font-size: 32px;
   }
-  
+
   #subscribe form input[type="submit"] {
     position: absolute;
     top: 0;
@@ -1971,8 +2011,6 @@ section {
     border-radius: 0 4px 4px 0;
   }
 }
-
-
 
 /*--------------------------------------------------------------
 # EVENTS CAROUSEL
@@ -2026,13 +2064,11 @@ section {
   cursor: pointer;
 }
 
-
 @media (max-width: 1050px) {
-
   .event-carousel-content {
     width: 305%;
   }
-  
+
   .event-content-card {
     width: calc(15%);
   }
@@ -2047,14 +2083,11 @@ section {
     width: 600%;
     justify-content: space-evenly;
   }
-  
+
   .event-content-card {
     width: calc(15%);
   }
 }
-
-
-
 
 /*--------------------------------------------------------------
 # FEATURED HERO EVENT CARD
