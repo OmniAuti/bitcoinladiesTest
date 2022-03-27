@@ -302,7 +302,6 @@
   });
 })();
 
-
 // SCRIPT FOR PARALLAX BITCOIN DIVIDER
 
 const parallaxBitcoin = document.querySelectorAll(".parallax-bitcoin");
@@ -321,7 +320,7 @@ const carouselSelectors = document.querySelectorAll(".carousel-selector");
 const selectorArray = Array.from(carouselSelectors);
 carouselSelectors.forEach((selector) => {
   selector.addEventListener("click", () => {
-    clearInterval(carouselInterval)
+    clearInterval(carouselInterval);
     addCarouselActiveClass(selector);
     const indexMove = selectorArray.indexOf(selector) * 20;
     carouselContainer.style.transform = `translateX(-${indexMove}%)`;
@@ -349,75 +348,87 @@ window.onload = () => {
     i++;
     if (i >= typewriterTextArray.length) {
       clearInterval(typeIt);
-      carouselIntervalFunc()
-      document.querySelector('.carousel-controls').style.opacity = 1;
+      carouselIntervalFunc(); // FUNCTION FOR CAROUSEL STARTS WHEN TYPE WRITER IS DONE
+      document.querySelector(".carousel-controls").style.opacity = 1;
     }
   }, 15);
 };
 
-// CAROUSEL INTERVAL
+// CAROUSEL INTERVAL -----------------------------------------------------------------------------
+
 let carouselInterval; // DECLARED GLOBAL TO BE CLEARED ON CLICK FOR COIN SELECTOR
 function carouselIntervalFunc() {
   let transformAmount = 0;
   let index = 0;
   carouselInterval = setInterval(() => {
     carouselContainer.style.transform = `translateX(-${(transformAmount += 20)}%)`;
-    selectorArray[index].classList.remove('active-carousel-selector')
+    selectorArray[index].classList.remove("active-carousel-selector");
     index++;
     if (index > 3) {
-      carouselContainer.style.transform = `translateX(-${(0)}%)`;
+      carouselContainer.style.transform = `translateX(-${0}%)`;
       transformAmount = 0;
       index = 0;
     }
-    selectorArray[index].classList.add('active-carousel-selector')
-
-  }, 5000);
+    selectorArray[index].classList.add("active-carousel-selector");
+  }, 4000);
 }
 
+// EVENT CAROUSEL  ------------------------------------------------------------
 
-// EVENT CAROUSEL NOT CONFIGURED FOR SMALL SCREENS !!!!!!!!!!!!!
+const eventCarouselCard = document.querySelector(".event-content-card");
+const eventCarouselContainer = document.querySelector(
+  ".event-carousel-content"
+);
+const eventCarouselLeftArrow = document.querySelector(
+  ".event-carousel-controls-arrow-left"
+);
+const eventCarouselRightArrow = document.querySelector(
+  ".event-carousel-controls-arrow-right"
+);
 
-const eventCarouselCard = document.querySelector('.event-content-card')
-const eventCarouselContainer = document.querySelector('.event-carousel-content')
-const eventCarouselLeftArrow = document.querySelector('.event-carousel-controls-arrow-left')
-const eventCarouselRightArrow = document.querySelector('.event-carousel-controls-arrow-right')
+let eventCardWidth = eventCarouselCard.clientWidth;
 
-let eventCardWidth = eventCarouselCard.clientWidth
+// WIDTH DIVIDED BY LENGTH OF EVENT CARD TO HANDLE FUTURE LENGTH CHANGE
+let eventContainerWidth = eventCarouselContainer.clientWidth / eventCarouselContainer.childElementCount;
+let eventContainerWidthTotal = eventCarouselContainer.clientWidth;
 
-// WIDTH DIVIDED BY LENGTH
-const eventContainerWidth = (eventCarouselContainer.clientWidth / eventCarouselContainer.childElementCount)
-const eventContainerWidthTotal = eventCarouselContainer.clientWidth
-let eventIndex = 0; 
-let maxInterval = 3;
-if (window.innerWidth <= 1050) {
-  maxInterval = 4
-}
-if (window.innerWidth <= 560) {
-  maxInterval = 5
-}
-
-
+window.addEventListener("resize", () => {
+  eventContainerWidth = eventCarouselContainer.clientWidth / eventCarouselContainer.childElementCount;
+  eventContainerWidthTotal = eventCarouselContainer.clientWidth;
+});
 
 // PUT IN FUNCTION --------------------------------------------
-eventCarouselRightArrow.addEventListener('click', () => {
-  eventIndex++
-  
-  if (eventIndex >= maxInterval) {
-    eventIndex = maxInterval
+(function handleEventCarousel() {
+  let eventIndex = 0;
+  let maxInterval = 3;
+  if (window.innerWidth <= 1050) {
+    maxInterval = 4;
+  }
+  if (window.innerWidth <= 560) {
+    maxInterval = 5;
   }
 
-  const movement = eventIndex * -eventContainerWidth;
-  eventCarouselContainer.style.transform = `translateX(${movement}px)`
-  console.log(eventContainerWidth, movement,eventContainerWidthTotal)
-})
-eventCarouselLeftArrow.addEventListener('click', () => {
-  eventIndex--
-
-  if (eventIndex <= 0) {
-    eventIndex = 0
-  }
+  eventCarouselRightArrow.addEventListener("click", () => {
+    eventIndex++;
   
-  const movement = eventIndex * -eventContainerWidth;
-  eventCarouselContainer.style.transform = `translateX(${movement}px)`
-  console.log(eventContainerWidth, movement,eventContainerWidthTotal)
-})
+    if (eventIndex >= maxInterval) {
+      eventIndex = maxInterval;
+    }
+  
+    const movement = eventIndex * -eventContainerWidth;
+    eventCarouselContainer.style.transform = `translateX(${movement}px)`;
+    console.log(eventContainerWidth, movement, eventContainerWidthTotal);
+  });
+  eventCarouselLeftArrow.addEventListener("click", () => {
+    eventIndex--;
+  
+    if (eventIndex <= 0) {
+      eventIndex = 0;
+    }
+  
+    const movement = eventIndex * -eventContainerWidth;
+    eventCarouselContainer.style.transform = `translateX(${movement}px)`;
+    console.log(eventContainerWidth, movement, eventContainerWidthTotal);
+  });
+  
+})();
