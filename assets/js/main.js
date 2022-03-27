@@ -406,7 +406,7 @@ if (window.innerWidth <= 800) { // CHANGE MOBILE SWIPE -------------------------
   });
 
   carouselContainer.addEventListener("touchend", () => {
-    if (moveX < startX) {
+    if ((moveX + 100) < startX) {
       movement += 20;
       if (movement >= 60) {
         movement = 60;
@@ -423,7 +423,7 @@ if (window.innerWidth <= 800) { // CHANGE MOBILE SWIPE -------------------------
 
       }, 10);
     }
-    if (moveX > startX) {
+    if ((moveX + 100) > startX) {
       movement -= 20;
       if (movement <= 0) {
         movement = 0;
