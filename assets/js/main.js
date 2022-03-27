@@ -341,7 +341,7 @@ window.onload = () => {
 };
 
 // CAROUSEL INTERVAL -----------------------------------------------------------------------------
-if (window.innerWidth > 800) {
+
 let carouselIntervalBack; // DECLARED GLOBAL TO BE CLEARED ON CLICK FOR COIN SELECTOR
 let carouselIntervalForward; // DECLARED GLOBAL TO BE CLEARED ON CLICK FOR COIN SELECTOR
 
@@ -389,7 +389,7 @@ carouselSelectors.forEach((selector) => {
   });
 });
 
-} else if (window.innerWidth <= 800) { // CHANGE MOBILE SWIPE ------------------------------------------------------------------
+if (window.innerWidth <= 800) { // CHANGE MOBILE SWIPE ------------------------------------------------------------------
 
   let movement = 0;
   let startX;
