@@ -377,6 +377,7 @@ const carouselSelectors = document.querySelectorAll(".carousel-selector");
 // CHANGE SLIDE ------------------------------------------------------------------
 const selectorArray = Array.from(carouselSelectors);
 if (window.innerWidth > 800) {
+
 carouselSelectors.forEach((selector) => {
   selector.addEventListener("click", () => {
     clearInterval(carouselIntervalForward);
@@ -405,21 +406,27 @@ carouselSelectors.forEach((selector) => {
   });
 
   carouselContainer.addEventListener("touchend", () => {
-    if (movement >= 100) {
-      movement = 100;
-    } else if (movement <= 0) {
-      movement = 0;
-    }
     if (moveX < startX) {
       movement += 20;
+      if (movement >= 100) {
+        movement = 100;
+      } 
+      body.style.overflowY = 'hidden'
       setTimeout(() => {
         carouselContainer.style.transform = `translateX(-${movement}%)`;
+        body.style.overflowY = null;
+
       }, 10);
     }
     if (moveX > startX) {
       movement -= 20;
+      if (movement <= 0) {
+        movement = 0;
+      }
+      body.style.overflowY = 'hidden'
       setTimeout(() => {
         carouselContainer.style.transform = `translateX(-${movement}%)`;
+        body.style.overflowY = null;
       }, 10);
     }
   });
