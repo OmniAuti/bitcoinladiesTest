@@ -375,7 +375,7 @@ function carouselIntervalFunc() {
 
 // EVENT CAROUSEL  ------------------------------------------------------------
 
-const eventCarouselCard = document.querySelector(".event-content-card");
+const eventCarouselCard = document.querySelectorAll(".event-content-card");
 const eventCarouselContainer = document.querySelector(
   ".event-carousel-content"
 );
@@ -389,46 +389,55 @@ const eventCarouselRightArrow = document.querySelector(
 let eventCardWidth = eventCarouselCard.clientWidth;
 
 // WIDTH DIVIDED BY LENGTH OF EVENT CARD TO HANDLE FUTURE LENGTH CHANGE
-let eventContainerWidth = eventCarouselContainer.clientWidth / eventCarouselContainer.childElementCount;
+let eventContainerWidth =
+  eventCarouselContainer.clientWidth / eventCarouselContainer.childElementCount;
 let eventContainerWidthTotal = eventCarouselContainer.clientWidth;
+let windowWidthEventCarouselCheck;
+
+// FOR CONTINOUS CLICK THROUGH
+const eventsCardArray = Array.from(
+  document.querySelector(".event-carousel-content").children
+);
+console.log(eventsCardArray);
 
 window.addEventListener("resize", () => {
-  eventContainerWidth = eventCarouselContainer.clientWidth / eventCarouselContainer.childElementCount;
+  eventContainerWidth =
+    eventCarouselContainer.clientWidth /
+    eventCarouselContainer.childElementCount;
   eventContainerWidthTotal = eventCarouselContainer.clientWidth;
+  windowWidthEventCarouselCheck = window.innerWidth;
 });
 
-// PUT IN FUNCTION --------------------------------------------
+// EVENT CAROUSEL ENDLESS SCROLL FUNCTION --------------------------------------------
 (function handleEventCarousel() {
-  let eventIndex = 0;
-  let maxInterval = 3;
-  if (window.innerWidth <= 1050) {
-    maxInterval = 4;
-  }
-  if (window.innerWidth <= 560) {
-    maxInterval = 5;
-  }
-
   eventCarouselRightArrow.addEventListener("click", () => {
-    eventIndex++;
-  
-    if (eventIndex >= maxInterval) {
-      eventIndex = maxInterval;
-    }
-  
-    const movement = eventIndex * -eventContainerWidth;
+    const movement = -eventContainerWidth;
     eventCarouselContainer.style.transform = `translateX(${movement}px)`;
-    console.log(eventContainerWidth, movement, eventContainerWidthTotal);
+
+    setTimeout(() => {
+      const child = eventCarouselContainer.firstElementChild;
+      eventCarouselContainer.removeChild(child);
+      eventCarouselContainer.append(child);
+
+      eventCarouselContainer.style.transition = null;
+      eventCarouselContainer.style.transform = `translateX(0px)`;
+      setTimeout(() => {
+        eventCarouselContainer.style.transition = "transform ease-in-out 250ms";
+      }, 10);
+    }, 250);
   });
   eventCarouselLeftArrow.addEventListener("click", () => {
-    eventIndex--;
-  
-    if (eventIndex <= 0) {
-      eventIndex = 0;
-    }
-  
-    const movement = eventIndex * -eventContainerWidth;
+    const movement = -eventContainerWidth;
+
+    eventCarouselContainer.style.transition = null;
+    eventCarouselContainer.style.transform = `translateX(0px)`;
     eventCarouselContainer.style.transform = `translateX(${movement}px)`;
-    console.log(eventContainerWidth, movement, eventContainerWidthTotal);
+    const child = eventCarouselContainer.lastElementChild;
+    eventCarouselContainer.removeChild(child);
+    eventCarouselContainer.prepend(child);
+    setTimeout(() => {
+      eventCarouselContainer.style.transition = "transform ease-in-out 250ms";
+      eventCarouselContainer.style.transform = `translateX(0px)`;
+    }, 10);
   });
-  
 })();

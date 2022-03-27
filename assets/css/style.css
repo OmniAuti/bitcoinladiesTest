@@ -2029,12 +2029,12 @@ section {
   width: 200%;
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  transition: transform ease-in-out 250ms;
+  justify-content: space-evenly;
+  
 }
 
 .event-content-card {
-  width: calc(14.5%);
+  width: calc(16%);
   margin: 0 10px;
 }
 
@@ -2066,11 +2066,12 @@ section {
 
 @media (max-width: 1050px) {
   .event-carousel-content {
-    width: 305%;
+    width: 300%;
   }
 
   .event-content-card {
-    width: calc(15%);
+    width: calc(17%);
+
   }
 
   .event-carousel-controls {
@@ -2085,7 +2086,7 @@ section {
   }
 
   .event-content-card {
-    width: calc(15%);
+    width: calc(16%);
   }
 }
 
