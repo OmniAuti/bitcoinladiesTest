@@ -322,6 +322,7 @@ function addCarouselActiveClass(el) {
 
 // TYPEWRITER FUNCTION
 //const typewriterTextContainer = document.querySelector('.typewriter-writer-written-text')
+let heroIndex = 0;// -------------- THIS INDEX IS FOR THE COINS ON HERO
 const typewriterText =
   "bitcoin is a decentralized digital currency, without a central bank or single administrator, that can be sent from user to user on the peer-to-peer Bitcoin network without the need for intermediaries. ";
 const typewriterTextArray = Array.from(typewriterText);
@@ -333,17 +334,17 @@ window.onload = () => {
     i++;
     if (i >= typewriterTextArray.length) {
       clearInterval(typeIt);
-      carouselIntervalFunc(); // FUNCTION FOR CAROUSEL STARTS WHEN TYPE WRITER IS DONE
+      carouselIntervalFunc(heroIndex); // FUNCTION FOR CAROUSEL STARTS WHEN TYPE WRITER IS DONE
       document.querySelector(".carousel-controls").style.opacity = 1;
     }
   }, 15);
 };
 
 // CAROUSEL INTERVAL -----------------------------------------------------------------------------
-
+if (window.innerWidth > 800) {
 let carouselIntervalBack; // DECLARED GLOBAL TO BE CLEARED ON CLICK FOR COIN SELECTOR
 let carouselIntervalForward; // DECLARED GLOBAL TO BE CLEARED ON CLICK FOR COIN SELECTOR
-let heroIndex = 0;
+
 // INTERVALS NOW RUN BACK AND FORTH THROUGH HERO
 function carouselIntervalFunc(heroIndex) {
   let transformAmount = 0;
@@ -376,7 +377,7 @@ const carouselContainer = document.querySelector(".carousel-content-holder");
 const carouselSelectors = document.querySelectorAll(".carousel-selector");
 // CHANGE SLIDE ------------------------------------------------------------------
 const selectorArray = Array.from(carouselSelectors);
-if (window.innerWidth > 800) {
+
 
 carouselSelectors.forEach((selector) => {
   selector.addEventListener("click", () => {
