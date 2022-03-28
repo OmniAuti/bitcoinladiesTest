@@ -15,7 +15,7 @@ html {
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: #444444;
 }
 
@@ -611,9 +611,8 @@ h6 {
 }
 #hero h2 {
   color: #fff;
-  font-weight: 200;
   font-size: 1.5rem;
-  font-style: italic;
+  font-weight: 500 !important;
   font-family: "Poppins", sans-serif;
 }
 
@@ -1785,10 +1784,10 @@ section {
   background-color: rgba(255, 255, 255, 0.95);
   border-radius: 20px;
   color: #444444;
-  width: 550px;
+  width: 600px;
   position: absolute;
   padding: 20px;
-  right: 20%;
+  right: 10%;
   box-shadow: 0px 0px 20px #444;
 }
 
@@ -1815,7 +1814,7 @@ section {
     left: 5%;
   }
   .hero-text-container-right {
-    width: 550px;
+    width: 600px;
     right: 5%;
   }
 }
@@ -1843,7 +1842,7 @@ section {
 
   .hero-text-container-left h2,
   .hero-text-container-right h2 {
-    color: black !important;
+   font-size: 2rem !important;
   }
 }
 @media screen and (max-width: 575px) {
@@ -1870,7 +1869,7 @@ section {
 
   .hero-text-container-left h2,
   .hero-text-container-right h2 {
-    font-size: 1.75rem !important;
+    font-size: 1.47rem !important;
   }
 
   .hero-p-container {
@@ -1901,7 +1900,7 @@ section {
 
   .hero-text-container-left h2,
   .hero-text-container-right h2 {
-    font-size: 1.25rem !important;
+    font-size: 1rem !important;
   }
 
   .hero-p-container {
@@ -2399,4 +2398,58 @@ section {
     width: 150%;
     background-size: 120%;
   }
+}
+
+/*--------------------------------------------------------------
+# INSTAFEED
+--------------------------------------------------------------*/
+
+#instagram-feed-slider {
+  height: 0;
+  opacity: 1;
+  transition: all 0.5s ease;
+}
+
+#instagram-feed-slider.slick-initialized {
+  height: auto;
+}
+
+#instagram-feed-slider.slick-initialized.slick-reveal {
+  opacity: 1;
+}
+
+#instagram-feed-slider .slick-slide {
+  display: block;
+  height: auto;
+}
+
+#instagram-feed-slider .slick-slide A {
+  width: 100%;
+  display: block;
+  overflow: hidden;
+}
+
+#instagram-feed-slider .slick-slide IMG {
+  width: 100%;
+  display: block;
+}
+
+#instafeed {
+  display: grid;
+  /*grid-template-columns: repeat(4, 1fr);
+grid-template-rows: repeat(3, 1fr);
+grid-column-gap: 0.5rem;
+grid-row-gap: 0.5rem;*/
+  max-width: 64rem;
+  margin: auto;
+  margin-bottom: 45px;
+}
+
+#instafeed a {
+  display: block;
+}
+
+#instafeed img {
+  display: block;
+  width: 95%;
 }
