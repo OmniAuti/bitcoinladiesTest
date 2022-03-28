@@ -392,12 +392,12 @@ carouselSelectors.forEach((selector) => {
 
 let movement = 0;
 let startX;
-let startY;
+//let startY;
 let moveX;
-let moveY;
+//let moveY;
 (function heroMobileSwipe() {
   // Y SCROLL CHECK FOR INTENDED UP DOWN SCROLLING -----------------
-  carouselContainer.addEventListener("touchstart", (e) => {
+ /* carouselContainer.addEventListener("touchstart", (e) => {
     document.querySelector("html").style.overflowY = "hidden";
     startY = e.touches[0].clientY;
   });
@@ -427,7 +427,7 @@ let moveY;
 
       return;
     }
-  });
+  });*/
   // X SCROLL CHECK FOR INTENDED SIDE SCROLLING ---------=============
 
   carouselContainer.addEventListener("touchstart", (e) => {
@@ -559,7 +559,7 @@ window.addEventListener("resize", () => {
 
   eventCarouselContainer.addEventListener("touchend", () => {
     document.querySelector("html").style.overflowY = "scroll";
-    if (moveX - 100 < startX) {
+    if (moveX + 100 < startX) {
       const movement = -eventContainerWidth;
       eventCarouselContainer.style.transform = `translateX(${movement}px)`;
 
@@ -571,11 +571,11 @@ window.addEventListener("resize", () => {
         eventCarouselContainer.style.transform = `translateX(0px)`;
         setTimeout(() => {
           eventCarouselContainer.style.transition =
-            "transform ease-in-out 250ms";
+            "transform ease-in-out 500ms";
         }, 10);
       }, 500);
     }
-    if (moveX + 100 > startX) {
+    if (moveX - 100 > startX) {
       const movement = -eventContainerWidth;
       eventCarouselContainer.style.transition = null;
       eventCarouselContainer.style.transform = `translateX(0px)`;
@@ -584,7 +584,7 @@ window.addEventListener("resize", () => {
       eventCarouselContainer.removeChild(child);
       eventCarouselContainer.prepend(child);
       setTimeout(() => {
-        eventCarouselContainer.style.transition = "transform ease-in-out 250ms";
+        eventCarouselContainer.style.transition = "transform ease-in-out 500ms";
         eventCarouselContainer.style.transform = `translateX(0px)`;
       }, 10);
     }
