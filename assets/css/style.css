@@ -2202,12 +2202,13 @@ section {
 }
 @media (max-width: 590px) {
   .featured-hero-event-h2 {
-    font-size: 2.5rem !important;
+    font-size: 2.25rem !important;
   }
 }
 @media (max-width: 450px) {
   .featured-hero-event-h2 {
-    font-size: 2.5rem !important;
+    font-size: 1.65rem !important;
+
   }
 }
 
