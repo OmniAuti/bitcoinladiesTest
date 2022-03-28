@@ -401,12 +401,10 @@ let moveY;
   carouselContainer.addEventListener("touchstart", (e) => {
     document.querySelector('html').style.overflowY = 'hidden'
     startY = e.touches[0].clientY;
-    console.log(startY)
   });
 
   carouselContainer.addEventListener("touchmove", (e) => {
     moveY = e.touches[0].clientY;
-    console.log(moveY)
   });
 
   carouselContainer.addEventListener("touchend", () => {
