@@ -410,12 +410,15 @@ let moveY;
   carouselContainer.addEventListener("touchend", () => {
     if (moveY - 50 > startY) {
       document.querySelector('html').style.overflowY = 'scroll'
+      return;
     }
     else if (moveY + 50 > startY) {
     document.querySelector('html').style.overflowY = 'scroll'
+    return;
     } 
   });
 // X SCROLL CHECK FOR INTENDED SIDE SCROLLING ---------=============
+
   carouselContainer.addEventListener("touchstart", (e) => {
     startX = e.touches[0].clientX;
     clearInterval(carouselIntervalForward);
@@ -427,7 +430,7 @@ let moveY;
   });
 
   carouselContainer.addEventListener("touchend", () => {
-    document.querySelector('html').style.overflowY = 'scroll'
+    
     if (moveX - 100 < startX) {
       movement += 20;
       if (movement >= 60) {
