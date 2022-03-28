@@ -451,10 +451,10 @@ let moveY;
       if (heroIndex > 3) {
         heroIndex = 3;
       }
-      addCarouselActiveClass(selectorArray[heroIndex]);
       setTimeout(() => {
         carouselContainer.style.transform = `translateX(-${movement}%)`;
         document.body.style.overflowY = "scroll";
+        addCarouselActiveClass(selectorArray[heroIndex]);
       }, 10);
     }
     if (moveX + 100 > startX) {
@@ -466,11 +466,11 @@ let moveY;
       if (heroIndex < 0) {
         heroIndex = 0;
       }
-      addCarouselActiveClass(selectorArray[heroIndex]);
       document.body.style.overflowY = "hidden";
       setTimeout(() => {
         carouselContainer.style.transform = `translateX(-${movement}%)`;
         document.body.style.overflowY = "scroll";
+        addCarouselActiveClass(selectorArray[heroIndex]);
       }, 10);
     }
   });
@@ -559,7 +559,7 @@ window.addEventListener("resize", () => {
 
   eventCarouselContainer.addEventListener("touchend", () => {
     document.querySelector("html").style.overflowY = "scroll";
-    if (moveX - 100 < startX) {
+    if (moveX + 50 < startX) {
       const movement = -eventContainerWidth;
       eventCarouselContainer.style.transform = `translateX(${movement}px)`;
 
