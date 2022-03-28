@@ -895,7 +895,7 @@ section {
 .cta {
   background:
     url("../img/hero-bg.png") top center;
-  background-size:200vw;
+  background-size:130vh;
   padding: 60px 0;
   background-repeat: no-repeat;
 }
