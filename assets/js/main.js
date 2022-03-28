@@ -419,7 +419,7 @@ let moveY;
     } else if (moveY - 25 > startY) {
       const move = moveY - startY;
       window.scrollBy({
-        top: move,
+        top: -move,
         left: 0,
         behavior: "smooth",
       });
