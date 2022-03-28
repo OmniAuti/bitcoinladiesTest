@@ -577,9 +577,8 @@ h6 {
 
 #hero:before {
   content: "";
-  /*background: rgba(0, 0, 0, 0.3);
-  background: rgba(0, 0, 0, 0.3);*/
-  background-image: linear-gradient(to bottom , transparent 70%, #fff );
+  /*background: rgba(0, 0, 0, 0.3);*/
+  background-image: linear-gradient(to bottom , transparent 50%, #fff );
   position: absolute;
   bottom: 0;
   top: 0;
