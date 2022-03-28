@@ -515,6 +515,7 @@ window.addEventListener("resize", () => {
 (function handleEventCarousel() {
   eventCarouselRightArrow.addEventListener("click", () => {
     const movement = -eventContainerWidth;
+    eventCarouselContainer.style.transition = "transform ease-in-out 500ms";
     eventCarouselContainer.style.transform = `translateX(${movement}px)`;
 
     setTimeout(() => {
