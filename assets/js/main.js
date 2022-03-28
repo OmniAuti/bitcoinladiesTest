@@ -401,14 +401,16 @@ let moveY;
   carouselContainer.addEventListener("touchstart", (e) => {
     document.querySelector('html').style.overflowY = 'hidden'
     startY = e.touches[0].clientY;
+    console.log(startY)
   });
 
   carouselContainer.addEventListener("touchmove", (e) => {
     moveY = e.touches[0].clientY;
+    console.log(moveY)
   });
 
   carouselContainer.addEventListener("touchend", () => {
-    if (moveY - 50 > startY) {
+    if (moveY - 50 < startY) {
       document.querySelector('html').style.overflowY = 'scroll'
       return;
     }
