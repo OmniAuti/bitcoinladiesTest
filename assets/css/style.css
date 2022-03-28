@@ -578,7 +578,7 @@ h6 {
 #hero:before {
   content: "";
   /*background: rgba(0, 0, 0, 0.3);*/
-  background-image: linear-gradient(to bottom , transparent 50%, #fff );
+  background-image: linear-gradient(to bottom , transparent 50%, #fff);
   position: absolute;
   bottom: 0;
   top: 0;
@@ -586,6 +586,12 @@ h6 {
   right: 0;
   height: 100%;
   width: 100%;
+}
+
+@media screen and (max-width: 500px) {
+  #hero:before {
+    background-image: linear-gradient(to bottom , transparent 40%, #fff );
+  }
 }
 
 #hero .container {
