@@ -408,11 +408,11 @@ let moveY;
   });
 
   carouselContainer.addEventListener("touchend", () => {
-    if (moveY - 50 < startY) {
+    if ((moveY - 10) < startY) {
       document.querySelector('html').style.overflowY = 'scroll'
       return;
     }
-    else if (moveY + 50 > startY) {
+    else if ((moveY + 10) > startY) {
     document.querySelector('html').style.overflowY = 'scroll'
     return;
     } 
@@ -515,7 +515,7 @@ window.addEventListener("resize", () => {
       eventCarouselContainer.style.transition = null;
       eventCarouselContainer.style.transform = `translateX(0px)`;
       setTimeout(() => {
-        eventCarouselContainer.style.transition = "transform ease-in-out 250ms";
+        eventCarouselContainer.style.transition = "transform ease-in-out 500ms";
       }, 10);
     }, 500);
   });
@@ -529,7 +529,7 @@ window.addEventListener("resize", () => {
     eventCarouselContainer.removeChild(child);
     eventCarouselContainer.prepend(child);
     setTimeout(() => {
-      eventCarouselContainer.style.transition = "transform ease-in-out 250ms";
+      eventCarouselContainer.style.transition = "transform ease-in-out 500ms";
       eventCarouselContainer.style.transform = `translateX(0px)`;
     }, 10);
   });
