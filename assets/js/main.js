@@ -559,7 +559,7 @@ window.addEventListener("resize", () => {
 
   eventCarouselContainer.addEventListener("touchend", () => {
     document.querySelector("html").style.overflowY = "scroll";
-    if (moveX + 50 < startX) {
+    if (moveX - 100 < startX) {
       const movement = -eventContainerWidth;
       eventCarouselContainer.style.transform = `translateX(${movement}px)`;
 
