@@ -396,10 +396,9 @@ let startY;
 let moveX;
 let moveY;
 (function heroMobileSwipe() {
-
   // Y SCROLL CHECK FOR INTENDED UP DOWN SCROLLING -----------------
   carouselContainer.addEventListener("touchstart", (e) => {
-    document.querySelector('html').style.overflowY = 'hidden'
+    document.querySelector("html").style.overflowY = "hidden";
     startY = e.touches[0].clientY;
   });
 
@@ -408,16 +407,28 @@ let moveY;
   });
 
   carouselContainer.addEventListener("touchend", () => {
-    if ((moveY - 10) < startY) {
-      document.querySelector('html').style.overflowY = 'scroll'
+    if (moveY + 25 < startY) {
+      const move = startY - moveY;
+      window.scrollBy({
+        top: move,
+        left: 0,
+        behavior: "smooth",
+      });
+      document.querySelector("html").style.overflowY = "scroll";
+      return;
+    } else if (moveY - 25 > startY) {
+      const move = moveY - startY;
+      window.scrollBy({
+        top: move,
+        left: 0,
+        behavior: "smooth",
+      });
+      document.querySelector("html").style.overflowY = "scroll";
+
       return;
     }
-    else if ((moveY + 10) > startY) {
-    document.querySelector('html').style.overflowY = 'scroll'
-    return;
-    } 
   });
-// X SCROLL CHECK FOR INTENDED SIDE SCROLLING ---------=============
+  // X SCROLL CHECK FOR INTENDED SIDE SCROLLING ---------=============
 
   carouselContainer.addEventListener("touchstart", (e) => {
     startX = e.touches[0].clientX;
@@ -430,7 +441,6 @@ let moveY;
   });
 
   carouselContainer.addEventListener("touchend", () => {
-    
     if (moveX - 100 < startX) {
       movement += 20;
       if (movement >= 60) {
@@ -539,7 +549,7 @@ window.addEventListener("resize", () => {
 
 (function heroMobileSwipe() {
   eventCarouselContainer.addEventListener("touchstart", (e) => {
-    document.querySelector('html').style.overflowY = 'hidden'
+    document.querySelector("html").style.overflowY = "hidden";
     startX = e.touches[0].clientX;
   });
 
@@ -548,7 +558,7 @@ window.addEventListener("resize", () => {
   });
 
   eventCarouselContainer.addEventListener("touchend", () => {
-    document.querySelector('html').style.overflowY = 'scroll'
+    document.querySelector("html").style.overflowY = "scroll";
     if (moveX - 100 < startX) {
       const movement = -eventContainerWidth;
       eventCarouselContainer.style.transform = `translateX(${movement}px)`;
