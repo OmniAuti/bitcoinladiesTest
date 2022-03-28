@@ -568,18 +568,18 @@ h6 {
 #hero {
   width: 100%;
   height: calc(100vh - 50px) !important;
-  background:
-  /*linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1)),*/ url("../img/hero-bg.png"),
-    top center;
+  background-image:
+  /*linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1)),*/ url("../img/hero-bg.png");
   background-size: cover;
+  background-position: center;
   position: relative;
 }
 
 #hero:before {
   content: "";
-  /*background: rgba(0, 0, 0, 0.3);*/
-  background: rgba(0, 0, 0, 0.3);
-  background-image: linear-gradient(to bottom, transparent, white);
+  /*background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.3);*/
+  background-image: linear-gradient(to bottom , transparent 70%, #fff );
   position: absolute;
   bottom: 0;
   top: 0;
@@ -889,8 +889,8 @@ section {
 # Cta
 --------------------------------------------------------------*/
 .cta {
-  background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.3)),
-    url("../img/cna.jpg") fixed center center;
+  background:
+    url("../img/hero-bg.png") fixed top center;
   background-size: cover;
   padding: 60px 0;
 }
