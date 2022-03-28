@@ -894,10 +894,10 @@ section {
 --------------------------------------------------------------*/
 .cta {
   background:
-    url("../img/hero-bg.png");
-  background-size: cover;
-  background-position:center;
+    url("../img/hero-bg.png") top center;
+  background-size:200vw;
   padding: 60px 0;
+  background-repeat: no-repeat;
 }
 .cta h3 {
   color: #fff;
