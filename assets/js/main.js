@@ -360,9 +360,9 @@ function carouselIntervalFunc(heroIndex) {
         selectorArray[heroIndex].classList.remove("active-carousel-selector");
         heroIndex--;
         selectorArray[heroIndex].classList.add("active-carousel-selector");
-        if (heroIndex == 0) {
+        if (heroIndex <= 0) {
           clearInterval(carouselIntervalBack);
-          carouselIntervalFunc();
+          carouselIntervalFunc(heroIndex);
           return;
         }
       }, 4000);
