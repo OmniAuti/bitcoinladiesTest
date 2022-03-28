@@ -179,7 +179,7 @@
 
   /**
    * Clients Slider
-   */
+  */
   new Swiper(".clients-slider", {
     speed: 400,
     loop: true,
@@ -249,10 +249,10 @@
 
   /**
    * Initiate portfolio lightbox
-   */
+  
   const portfolioLightbox = GLightbox({
     selector: ".portfolio-lightbox",
-  });
+  }); */
 
   /**
    * Portfolio details slider
@@ -515,6 +515,7 @@ window.addEventListener("resize", () => {
 (function handleEventCarousel() {
   eventCarouselRightArrow.addEventListener("click", () => {
     const movement = -eventContainerWidth;
+    eventCarouselContainer.style.transition = "transform ease-in-out 500ms";
     eventCarouselContainer.style.transform = `translateX(${movement}px)`;
 
     setTimeout(() => {
