@@ -395,6 +395,7 @@ let startX;
 let moveX;
 (function heroMobileSwipe() {
   carouselContainer.addEventListener("touchstart", (e) => {
+    document.querySelector('html').style.overflowY = 'hidden'
     startX = e.touches[0].clientX;
     clearInterval(carouselIntervalForward);
     clearInterval(carouselIntervalBack);
@@ -405,6 +406,8 @@ let moveX;
   });
 
   carouselContainer.addEventListener("touchend", () => {
+    document.querySelector('html').style.overflowY = 'scroll'
+
     if (moveX + 100 < startX) {
       movement += 20;
       if (movement >= 60) {
@@ -513,6 +516,7 @@ window.addEventListener("resize", () => {
 
 (function heroMobileSwipe() {
   eventCarouselContainer.addEventListener("touchstart", (e) => {
+    document.querySelector('html').style.overflowY = 'hidden'
     startX = e.touches[0].clientX;
   });
 
@@ -521,6 +525,7 @@ window.addEventListener("resize", () => {
   });
 
   eventCarouselContainer.addEventListener("touchend", () => {
+    document.querySelector('html').style.overflowY = 'scroll'
     if (moveX + 100 < startX) {
       const movement = -eventContainerWidth;
       eventCarouselContainer.style.transform = `translateX(${movement}px)`;
