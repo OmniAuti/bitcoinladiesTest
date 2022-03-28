@@ -322,6 +322,7 @@ function addCarouselActiveClass(el) {
 
 // TYPEWRITER FUNCTION
 //const typewriterTextContainer = document.querySelector('.typewriter-writer-written-text')
+let heroIndex = 0; // -------------- THIS INDEX IS FOR THE COINS ON HERO
 const typewriterText =
   "bitcoin is a decentralized digital currency, without a central bank or single administrator, that can be sent from user to user on the peer-to-peer Bitcoin network without the need for intermediaries. ";
 const typewriterTextArray = Array.from(typewriterText);
@@ -333,7 +334,7 @@ window.onload = () => {
     i++;
     if (i >= typewriterTextArray.length) {
       clearInterval(typeIt);
-      carouselIntervalFunc(); // FUNCTION FOR CAROUSEL STARTS WHEN TYPE WRITER IS DONE
+      carouselIntervalFunc(heroIndex); // FUNCTION FOR CAROUSEL STARTS WHEN TYPE WRITER IS DONE
       document.querySelector(".carousel-controls").style.opacity = 1;
     }
   }, 15);
@@ -343,25 +344,25 @@ window.onload = () => {
 
 let carouselIntervalBack; // DECLARED GLOBAL TO BE CLEARED ON CLICK FOR COIN SELECTOR
 let carouselIntervalForward; // DECLARED GLOBAL TO BE CLEARED ON CLICK FOR COIN SELECTOR
+
 // INTERVALS NOW RUN BACK AND FORTH THROUGH HERO
-function carouselIntervalFunc() {
+function carouselIntervalFunc(heroIndex) {
   let transformAmount = 0;
-  let index = 0;
   carouselIntervalForward = setInterval(() => {
     carouselContainer.style.transform = `translateX(-${(transformAmount += 20)}%)`;
-    selectorArray[index].classList.remove("active-carousel-selector");
-    index++;
-    selectorArray[index].classList.add("active-carousel-selector");
-    if (index >= 3) {
+    selectorArray[heroIndex].classList.remove("active-carousel-selector");
+    heroIndex++;
+    selectorArray[heroIndex].classList.add("active-carousel-selector");
+    if (heroIndex >= 3) {
       clearInterval(carouselIntervalForward);
       carouselIntervalBack = setInterval(() => {
         carouselContainer.style.transform = `translateX(-${(transformAmount -= 20)}%)`;
-        selectorArray[index].classList.remove("active-carousel-selector");
-        index--;
-        selectorArray[index].classList.add("active-carousel-selector");
-        if (index == 0) {
+        selectorArray[heroIndex].classList.remove("active-carousel-selector");
+        heroIndex--;
+        selectorArray[heroIndex].classList.add("active-carousel-selector");
+        if (heroIndex <= 0) {
           clearInterval(carouselIntervalBack);
-          carouselIntervalFunc();
+          carouselIntervalFunc(heroIndex);
           return;
         }
       }, 4000);
@@ -376,7 +377,7 @@ const carouselContainer = document.querySelector(".carousel-content-holder");
 const carouselSelectors = document.querySelectorAll(".carousel-selector");
 // CHANGE SLIDE ------------------------------------------------------------------
 const selectorArray = Array.from(carouselSelectors);
-if (window.innerWidth > 800) {
+
 carouselSelectors.forEach((selector) => {
   selector.addEventListener("click", () => {
     clearInterval(carouselIntervalForward);
@@ -387,12 +388,47 @@ carouselSelectors.forEach((selector) => {
   });
 });
 
-} else if (window.innerWidth <= 800) { // CHANGE MOBILE SWIPE ------------------------------------------------------------------
+// MOBILE SWIPE ------------------------------------------------------------------
 
+let movement = 0;
+let startX;
+//let startY;
+let moveX;
+//let moveY;
+(function heroMobileSwipe() {
+  // Y SCROLL CHECK FOR INTENDED UP DOWN SCROLLING -----------------
+ /* carouselContainer.addEventListener("touchstart", (e) => {
+    document.querySelector("html").style.overflowY = "hidden";
+    startY = e.touches[0].clientY;
+  });
 
-  let movement = 0;
-  let startX;
-  let moveX;
+  carouselContainer.addEventListener("touchmove", (e) => {
+    moveY = e.touches[0].clientY;
+  });
+
+  carouselContainer.addEventListener("touchend", () => {
+    if (moveY + 25 < startY) {
+      const move = startY - moveY;
+      window.scrollBy({
+        top: move,
+        left: 0,
+        behavior: "smooth",
+      });
+      document.querySelector("html").style.overflowY = "scroll";
+      return;
+    } else if (moveY - 25 > startY) {
+      const move = moveY - startY;
+      window.scrollBy({
+        top: -move,
+        left: 0,
+        behavior: "smooth",
+      });
+      document.querySelector("html").style.overflowY = "scroll";
+
+      return;
+    }
+  });*/
+  // X SCROLL CHECK FOR INTENDED SIDE SCROLLING ---------=============
 
   carouselContainer.addEventListener("touchstart", (e) => {
     startX = e.touches[0].clientX;
@@ -405,26 +441,40 @@ carouselSelectors.forEach((selector) => {
   });
 
   carouselContainer.addEventListener("touchend", () => {
-    if (moveX < startX) {
+    if (moveX - 100 < startX) {
       movement += 20;
-      if (movement >= 100) {
-        movement = 100;
-      } 
+      if (movement >= 60) {
+        movement = 60;
+      }
+      document.body.style.overflowY = "hidden";
+      heroIndex++;
+      if (heroIndex > 3) {
+        heroIndex = 3;
+      }
       setTimeout(() => {
         carouselContainer.style.transform = `translateX(-${movement}%)`;
+        document.body.style.overflowY = "scroll";
+        addCarouselActiveClass(selectorArray[heroIndex]);
       }, 10);
     }
-    if (moveX > startX) {
+    if (moveX + 100 > startX) {
       movement -= 20;
       if (movement <= 0) {
         movement = 0;
       }
+      heroIndex--;
+      if (heroIndex < 0) {
+        heroIndex = 0;
+      }
+      document.body.style.overflowY = "hidden";
       setTimeout(() => {
         carouselContainer.style.transform = `translateX(-${movement}%)`;
+        document.body.style.overflowY = "scroll";
+        addCarouselActiveClass(selectorArray[heroIndex]);
       }, 10);
     }
   });
-}
+})();
 
 // EVENT CAROUSEL  ------------------------------------------------------------
 
@@ -461,6 +511,7 @@ window.addEventListener("resize", () => {
 });
 
 // EVENT CAROUSEL ENDLESS SCROLL FUNCTION --------------------------------------------
+
 (function handleEventCarousel() {
   eventCarouselRightArrow.addEventListener("click", () => {
     const movement = -eventContainerWidth;
@@ -474,9 +525,9 @@ window.addEventListener("resize", () => {
       eventCarouselContainer.style.transition = null;
       eventCarouselContainer.style.transform = `translateX(0px)`;
       setTimeout(() => {
-        eventCarouselContainer.style.transition = "transform ease-in-out 250ms";
+        eventCarouselContainer.style.transition = "transform ease-in-out 500ms";
       }, 10);
-    }, 250);
+    }, 500);
   });
   eventCarouselLeftArrow.addEventListener("click", () => {
     const movement = -eventContainerWidth;
@@ -488,8 +539,54 @@ window.addEventListener("resize", () => {
     eventCarouselContainer.removeChild(child);
     eventCarouselContainer.prepend(child);
     setTimeout(() => {
-      eventCarouselContainer.style.transition = "transform ease-in-out 250ms";
+      eventCarouselContainer.style.transition = "transform ease-in-out 500ms";
       eventCarouselContainer.style.transform = `translateX(0px)`;
     }, 10);
+  });
+})();
+
+// EVENT MOBILE SWIPE FUNCTION --------------------------------------------
+
+(function heroMobileSwipe() {
+  eventCarouselContainer.addEventListener("touchstart", (e) => {
+    document.querySelector("html").style.overflowY = "hidden";
+    startX = e.touches[0].clientX;
+  });
+
+  eventCarouselContainer.addEventListener("touchmove", (e) => {
+    moveX = e.touches[0].clientX;
+  });
+
+  eventCarouselContainer.addEventListener("touchend", () => {
+    document.querySelector("html").style.overflowY = "scroll";
+    if (moveX + 100 < startX) {
+      const movement = -eventContainerWidth;
+      eventCarouselContainer.style.transform = `translateX(${movement}px)`;
+
+      setTimeout(() => {
+        const child = eventCarouselContainer.firstElementChild;
+        eventCarouselContainer.removeChild(child);
+        eventCarouselContainer.append(child);
+        eventCarouselContainer.style.transition = null;
+        eventCarouselContainer.style.transform = `translateX(0px)`;
+        setTimeout(() => {
+          eventCarouselContainer.style.transition =
+            "transform ease-in-out 500ms";
+        }, 10);
+      }, 500);
+    }
+    if (moveX - 100 > startX) {
+      const movement = -eventContainerWidth;
+      eventCarouselContainer.style.transition = null;
+      eventCarouselContainer.style.transform = `translateX(0px)`;
+      eventCarouselContainer.style.transform = `translateX(${movement}px)`;
+      const child = eventCarouselContainer.lastElementChild;
+      eventCarouselContainer.removeChild(child);
+      eventCarouselContainer.prepend(child);
+      setTimeout(() => {
+        eventCarouselContainer.style.transition = "transform ease-in-out 500ms";
+        eventCarouselContainer.style.transform = `translateX(0px)`;
+      }, 10);
+    }
   });
 })();
