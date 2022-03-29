@@ -1922,9 +1922,9 @@ section {
 .carousel-controls {
   width: 50vw;
   height: 50px;
-  /*display: -webkit-box;
+  display: -webkit-box;
   display: -ms-flexbox;
-  display: -webkit-flex;*/
+  display: -webkit-flex;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -1938,9 +1938,9 @@ section {
   width: 15px;
   cursor: pointer;
   border-radius: 50%;
-  /*display: -webkit-box;
+  display: -webkit-box;
   display: -ms-flexbox;
-  display: -webkit-flex;*/
+  display: -webkit-flex;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1969,25 +1969,25 @@ section {
 
 @-webkit-keyframes coin-spin {
   0% {
-    -webkit-transform: rotateX(0deg);
-    -ms-transform: rotateX(0deg);
-    transform: rotateX(0deg);
+    -webkit-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    transform: rotateY(0deg);
   }
   100% {
-    -webkit-transform: rotateX(360deg);
-    -ms-transform: rotateX(360deg);
+    -webkit-transform: rotateY(360deg);
+    -ms-transform: rotateY(360deg);
     transform: rotateY(360deg);
   }
 }
 @keyframes coin-spin {
   0% {
-    -webkit-transform: rotateX(0deg);
-    -ms-transform: rotateX(0deg);
-    transform: rotateX(0deg);
+    -webkit-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    transform: rotateY(0deg);
   }
   100% {
-    -webkit-transform: rotateX(360deg);
-    -ms-transform: rotateX(360deg);
+    -webkit-transform: rotateY(360deg);
+    -ms-transform: rotateY(360deg);
     transform: rotateY(360deg);
   }
 }
