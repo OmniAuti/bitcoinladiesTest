@@ -349,14 +349,14 @@ let carouselIntervalForward; // DECLARED GLOBAL TO BE CLEARED ON CLICK FOR COIN 
 function carouselIntervalFunc(heroIndex) {
   let transformAmount = 0;
   carouselIntervalForward = setInterval(() => {
-    carouselContainer.style.transform = `translateX(-${(transformAmount += 20)}%)`;
+    carouselContainer.style.transform = `translateX(-${(transformAmount += 25)}%)`;
     selectorArray[heroIndex].classList.remove("active-carousel-selector");
     heroIndex++;
     selectorArray[heroIndex].classList.add("active-carousel-selector");
     if (heroIndex >= 3) {
       clearInterval(carouselIntervalForward);
       carouselIntervalBack = setInterval(() => {
-        carouselContainer.style.transform = `translateX(-${(transformAmount -= 20)}%)`;
+        carouselContainer.style.transform = `translateX(-${(transformAmount -= 25)}%)`;
         selectorArray[heroIndex].classList.remove("active-carousel-selector");
         heroIndex--;
         selectorArray[heroIndex].classList.add("active-carousel-selector");
@@ -383,7 +383,7 @@ carouselSelectors.forEach((selector) => {
     clearInterval(carouselIntervalForward);
     clearInterval(carouselIntervalBack);
     addCarouselActiveClass(selector);
-    const indexMove = selectorArray.indexOf(selector) * 20;
+    const indexMove = selectorArray.indexOf(selector) * 25;
     carouselContainer.style.transform = `translateX(-${indexMove}%)`;
   });
 });
@@ -442,13 +442,13 @@ let moveX;
 
   carouselContainer.addEventListener("touchend", () => {
     if (moveX - 100 < startX) {
-      movement += 20;
-      if (movement >= 60) {
-        movement = 60;
+      movement += 25;
+      if (movement >= 75) {
+        movement = 75;
       }
       document.body.style.overflowY = "hidden";
       heroIndex++;
-      if (heroIndex > 3) {
+      if (heroIndex >= 3) {
         heroIndex = 3;
       }
       setTimeout(() => {
@@ -458,7 +458,7 @@ let moveX;
       }, 10);
     }
     if (moveX + 100 > startX) {
-      movement -= 20;
+      movement -= 25;
       if (movement <= 0) {
         movement = 0;
       }
