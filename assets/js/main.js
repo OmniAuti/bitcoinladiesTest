@@ -179,7 +179,7 @@
 
   /**
    * Clients Slider
-  */
+ 
   new Swiper(".clients-slider", {
     speed: 400,
     loop: true,
@@ -211,7 +211,7 @@
         spaceBetween: 120,
       },
     },
-  });
+  }); */
 
   /**
    * Porfolio isotope and filter
@@ -256,7 +256,7 @@
 
   /**
    * Portfolio details slider
-   */
+  
   new Swiper(".portfolio-details-slider", {
     speed: 400,
     loop: true,
@@ -270,10 +270,10 @@
       clickable: true,
     },
   });
-
+ */
   /**
    * Testimonials slider
-   */
+   
   new Swiper(".testimonials-slider", {
     speed: 600,
     loop: true,
@@ -287,7 +287,7 @@
       type: "bullets",
       clickable: true,
     },
-  });
+  });*/
 
   /**
    * Animation on scroll

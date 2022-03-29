@@ -783,13 +783,15 @@ section {
 }
 @media screen and (max-width: 510px) {
   .clients-section-title-only p {
-    font-size: 20px;
-  }
-  .clients-section-title-only h2 {
-    font-size: 10px;
+    padding-bottom: 5px;
   }
   .clients-section-title-only h2::after {
-    width: 60px;
+    width: 50px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .clients-section-title-only h2::after {
+    width: 0px;
   }
 }
 
@@ -2409,6 +2411,32 @@ section {
   }
 }
 
+/*--------------------------------------------------------------
+# SPONSOR CAROUSEL
+--------------------------------------------------------------*/
+
+.sponsor-carousel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.sponsor-slide {
+  width: 20%;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+  .sponsor-carousel {
+    justify-content: space-between;
+  }
+  .sponsor-slide {
+    width: 30%;
+  }
+}
 /*--------------------------------------------------------------
 # INSTAFEED
 --------------------------------------------------------------*/
