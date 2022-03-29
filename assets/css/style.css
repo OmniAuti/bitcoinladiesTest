@@ -1922,9 +1922,9 @@ section {
 .carousel-controls {
   width: 50vw;
   height: 50px;
-  display: -webkit-box;
+  /*display: -webkit-box;
   display: -ms-flexbox;
-  display: -webkit-flex;
+  display: -webkit-flex;*/
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -1938,9 +1938,9 @@ section {
   width: 15px;
   cursor: pointer;
   border-radius: 50%;
-  display: -webkit-box;
+  /*display: -webkit-box;
   display: -ms-flexbox;
-  display: -webkit-flex;
+  display: -webkit-flex;*/
   display: flex;
   align-items: center;
   justify-content: center;
