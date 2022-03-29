@@ -562,6 +562,7 @@ window.addEventListener("resize", () => {
     document.querySelector("html").style.overflowY = "scroll";
     if (moveX + 100 < startX) {
       const movement = -eventContainerWidth;
+      eventCarouselContainer.style.transition = "transform ease-in-out 500ms";
       eventCarouselContainer.style.transform = `translateX(${movement}px)`;
 
       setTimeout(() => {
