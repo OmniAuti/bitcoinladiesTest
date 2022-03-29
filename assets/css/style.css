@@ -1753,13 +1753,16 @@ section {
 .carousel-content-holder {
   width: 400%;
   height: 90%;
+  -webkit-transform: translateX(0%);
+  -ms-transform: translateX(0%);
+  transform: translateX(0%);
   -webkit-transition: transform ease 750ms;
   transition: transform ease 750ms;
 }
 
 @media screen and (max-width: 500px) {
   .carousel-content-holder {
-    height: calc(90% - 100px);
+    height: calc(90% - 50px);
   }
 }
 
