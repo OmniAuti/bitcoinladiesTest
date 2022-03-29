@@ -1569,9 +1569,10 @@ section {
   color: #fff;
   font-size: 14px;
 }
+
 #footer .footer-top {
   background: #444;
- /* border-bottom: 1px solid #222222;*/
+ border-bottom: 1px solid #222222;
   padding: 30px 0 30px 0;
 }
 
@@ -1692,6 +1693,12 @@ section {
   text-align: center;
   padding-top: 30px;
 }
+
+@media screen and (max-width: 390px) {
+  #footer .copyright {
+  font-size: 10px;  }
+}
+
 #footer .credits {
   padding-top: 10px;
   text-align: center;
