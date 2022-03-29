@@ -1757,6 +1757,8 @@ section {
   -ms-transform: translateX(-0%);
   transform: translateX(-0%);
   transition: transform ease-in-out 500ms;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .carousel-content {
