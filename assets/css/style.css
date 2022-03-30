@@ -2629,12 +2629,21 @@ grid-row-gap: 0.5rem;*/
   text-shadow: 0px 0px 10px #fff;
   font-size: 3rem;
   text-align: center;
-  padding: 50px;
+  padding: 0px 15px;
 }
 
 @media screen and (min-width: 1400px) {
   .communities-page-main h1 {
     font-size: 5rem;
+  }
+}
+@media screen and (max-width: 700px) {
+  .communities-header {
+    height: 20vh;
+
+  }
+  .communities-page-main h1 {
+    font-size: 1.5rem;
   }
 }
 
@@ -2968,6 +2977,9 @@ grid-row-gap: 0.5rem;*/
 }
 
 @media screen and (max-width: 410px) {
+  .education-hero {
+    margin-top: 50px;
+  }
   .education-hero h1 {
     font-size: 1.25rem;
   }
