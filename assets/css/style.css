@@ -2522,12 +2522,13 @@ grid-row-gap: 0.5rem;*/
 # EVENTS PAGE
 --------------------------------------------------------------*/
 
-.events-page-body {
+.events-page-body,.communities-page-body, .education-page-body, .funding-page-body {
   background-image: url("../img/hero-bg.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
+
 
 .event-page-featured {
   padding-top: 75px;
@@ -2607,13 +2608,6 @@ grid-row-gap: 0.5rem;*/
 /*--------------------------------------------------------------
 # COMMUNITY PAGE
 --------------------------------------------------------------*/
-
-.communities-page-body {
-  background-image: url("../img/hero-bg.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
 
 .communities-page-main {
   min-height: 100vh;
@@ -2814,4 +2808,12 @@ box-shadow: 0px 0px 10px #ff61ab;
     width: auto;
     height: 50%;
   }
+}
+
+/*--------------------------------------------------------------
+# EDUCATION PAGE
+--------------------------------------------------------------*/
+
+.education-page-main {
+  min-height: 100vh;
 }
