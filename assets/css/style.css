@@ -2539,6 +2539,12 @@ grid-row-gap: 0.5rem;*/
   height: 90%;
   border-radius: 20px;
   box-shadow: 0px 0px 10px #444;
+  transition: all ease 500ms;
+}
+.event-page-featured img:hover {
+  -webkit-transform: translateY(-10px);
+  transform: translateY(-10px);
+  box-shadow: 0px 0px 10px #ff61ab;
 }
 
 .events-page__other-events h2 {
@@ -2567,6 +2573,12 @@ grid-row-gap: 0.5rem;*/
   height: 500px;
   padding: 0;
   box-shadow: 0px 0px 10px #444;
+  transition: all ease 500ms;
+}
+.events-page-card:hover {
+  -webkit-transform: translateY(-10px);
+  transform: translateY(-10px);
+  box-shadow: 0px 0px 10px #ff61ab;
 }
 
 .event-float-left {
@@ -2590,4 +2602,216 @@ grid-row-gap: 0.5rem;*/
 .event-page-footer {
   position: relative;
   z-index: 99;
+}
+
+/*--------------------------------------------------------------
+# COMMUNITY PAGE
+--------------------------------------------------------------*/
+
+.communities-page-body {
+  background-image: url("../img/hero-bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.communities-page-main {
+  min-height: 100vh;
+}
+.communities-header {
+  height: 45vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+}
+.communities-page-main h1 {
+  color: #fff;
+  text-shadow: 0px 0px 10px #fff;
+  font-size: 3rem;
+  text-align: center;
+  padding: 50px;
+}
+
+@media screen and (min-width: 1400px) {
+  .communities-page-main h1 {
+    font-size: 5rem;
+  }
+}
+
+.communities-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.communities-page-card {
+  overflow: hidden;
+  background-color: #fff;
+  border-radius: 20px;
+  height: 350px;
+  padding: 0;
+  box-shadow: 0px 0px 10px #444;
+  transition: all ease 500ms;
+}
+
+
+.communities-page-card img {
+  max-height: 50%;
+  width: 100%;
+}
+
+.communities-page-card:hover  {
+-webkit-transform: translateY(-10px);
+transform: translateY(-10px);
+box-shadow: 0px 0px 10px #ff61ab;
+}
+
+/*--------------------------------------------------------------
+# COMMUNITY PAGE
+--------------------------------------------------------------*/
+
+.funding-page-main {
+  min-height: 100vh;
+}
+
+.funding-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 100vh;
+}
+
+.funding-hero h1 {
+  color: #fff;
+  text-shadow: 0px 0px 10px #fff;
+  font-size: 4.5rem;
+  text-align: center;
+  width: 50%;
+  padding-right: 25px;
+}
+
+.funding-hero img {
+  width: auto;
+  height: 75%;
+  border-radius: 20px;
+}
+
+@media screen and (min-width: 2000px) {
+  .funding-hero h1 {
+    font-size: 5vw;
+  }
+  .funding-hero img {
+    width: auto;
+    height: 90%;
+    border-radius: 20px;
+  }
+  
+}
+
+@media screen and (max-width: 1000px) {
+  .funding-hero h1 {
+    font-size: 4rem;
+    width: 100%;
+    margin-top: 25px;
+  }
+  
+  .funding-hero img {
+    width: auto;
+    height: 75%;
+  }
+  .funding-hero {
+    flex-direction: column;
+    flex-flow: column-reverse;
+    justify-content: center;
+    margin-top: 50px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .funding-hero h1 {
+    font-size: 2.5rem;
+    width: 100%;
+  }
+  
+  .funding-hero img {
+    width: auto;
+    height: 75%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .funding-hero h1 {
+    font-size: 2.5rem;
+    width: 100%;
+  }
+  
+  .funding-hero img {
+    width: auto;
+    height: 50%;
+  }
+}
+
+
+.grants-container h2,
+.funding-container h2 {
+  color: #fff;
+  text-align: center;
+  text-shadow: 0px 0px 5px #fff;
+  white-space: nowrap;
+}
+
+.grant-funding-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.grant-funding-content h3 {
+  white-space: nowrap;
+}
+
+.grant-funding-content-card {
+  height: 250px;
+  background-color: #fff;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: 0px 0px 10px #444;
+  transition: all ease 500ms;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.grant-funding-content-card:hover {
+  -webkit-transform: translateY(-10px);
+  transform: translateY(-10px);
+  box-shadow: 0px 0px 10px #ff61ab;
+}
+
+.grant-funding-content-card > div {
+  padding: 10px;
+}
+
+.grant-funding-content-card img {
+  width: auto;
+  height: 90%;
+}
+
+@media screen and (max-width: 420px) {
+  .grant-funding-content-card {
+    padding: 20px;
+  }
+  .grant-funding-content-card img {
+    width: auto;
+    height: 50%;
+  }
 }
