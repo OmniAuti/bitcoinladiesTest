@@ -2522,13 +2522,15 @@ grid-row-gap: 0.5rem;*/
 # EVENTS PAGE
 --------------------------------------------------------------*/
 
-.events-page-body,.communities-page-body, .education-page-body, .funding-page-body {
+.events-page-body,
+.communities-page-body,
+.education-page-body,
+.funding-page-body {
   background-image: url("../img/hero-bg.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
-
 
 .event-page-featured {
   padding-top: 75px;
@@ -2657,16 +2659,15 @@ grid-row-gap: 0.5rem;*/
   transition: all ease 500ms;
 }
 
-
 .communities-page-card img {
   max-height: 50%;
   width: 100%;
 }
 
-.communities-page-card:hover  {
--webkit-transform: translateY(-10px);
-transform: translateY(-10px);
-box-shadow: 0px 0px 10px #ff61ab;
+.communities-page-card:hover {
+  -webkit-transform: translateY(-10px);
+  transform: translateY(-10px);
+  box-shadow: 0px 0px 10px #ff61ab;
 }
 
 /*--------------------------------------------------------------
@@ -2678,6 +2679,9 @@ box-shadow: 0px 0px 10px #ff61ab;
 }
 
 .funding-hero {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -2708,7 +2712,6 @@ box-shadow: 0px 0px 10px #ff61ab;
     height: 90%;
     border-radius: 20px;
   }
-  
 }
 
 @media screen and (max-width: 1000px) {
@@ -2717,7 +2720,7 @@ box-shadow: 0px 0px 10px #ff61ab;
     width: 100%;
     margin-top: 25px;
   }
-  
+
   .funding-hero img {
     width: auto;
     height: 75%;
@@ -2735,7 +2738,7 @@ box-shadow: 0px 0px 10px #ff61ab;
     font-size: 2.5rem;
     width: 100%;
   }
-  
+
   .funding-hero img {
     width: auto;
     height: 75%;
@@ -2746,13 +2749,12 @@ box-shadow: 0px 0px 10px #ff61ab;
     font-size: 2.5rem;
     width: 100%;
   }
-  
+
   .funding-hero img {
     width: auto;
     height: 50%;
   }
 }
-
 
 .grants-container h2,
 .funding-container h2 {
@@ -2763,6 +2765,9 @@ box-shadow: 0px 0px 10px #ff61ab;
 }
 
 .grant-funding-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -2776,6 +2781,9 @@ box-shadow: 0px 0px 10px #ff61ab;
   height: 250px;
   background-color: #fff;
   border-radius: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -2816,4 +2824,163 @@ box-shadow: 0px 0px 10px #ff61ab;
 
 .education-page-main {
   min-height: 100vh;
+}
+
+.education-hero {
+  margin-top: 70px;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.education-hero h1 {
+  color: #fff;
+  font-size: 2.5rem;
+}
+
+.education-hero-top,
+.education-hero-bottom {
+  height: calc(50vh - 50px);
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.education-text-container {
+  width: 50%;
+}
+
+.education-top-carousel,
+.education-bottom-carousel {
+  width: 50%;
+  height: 100%;
+}
+
+.education-carousel-content-holder {
+  height: calc(100% - 50px);
+  overflow: hidden;
+}
+
+.education-carousel-content-container-top,
+.education-carousel-content-container-bottom {
+  width: 400%;
+  height: 100%;
+  -webkit-transform: translateX(0%);
+  transform: translateX(0%);
+  transition: transform ease 750ms;
+}
+
+.education-carousel-slide-top {
+  width: 25%;
+  height: 100%;
+  float: left;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.education-carousel-slide-bottom {
+  width: 25%;
+  height: 100%;
+  float: left;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.education-carousel-slide-bottom img,
+.education-carousel-slide-top img {
+  object-fit: cover;
+  object-position: bottom;
+  width: 100%;
+  height: 100%;
+}
+
+.education-carousel-controls {
+  width: 100%;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0 auto;
+  transition: opacity 500ms ease-in;
+}
+
+.education-top-carousel-selector,
+.education-bottom-carousel-selector {
+  height: 15px;
+  width: 15px;
+  cursor: pointer;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.education-top-carousel-selector img,
+.education-bottom-carousel-selector img {
+  width: 200%;
+  height: 200%;
+}
+
+@media screen and (max-width: 790px) {
+  .education-hero h1 {
+    font-size: 1.5rem;
+  }
+  .education-hero p {
+    font-size: 0.85rem;
+  }
+  .education-hero-top,
+  .education-hero-bottom {
+    height: calc(100vh - 50px);
+    flex-direction: column-reverse;
+  }
+
+  .education-top-carousel,
+  .education-bottom-carousel {
+    width: 100%;
+    height: 50%;
+  }
+
+  .education-text-container {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 410px) {
+  .education-hero h1 {
+    font-size: 1.25rem;
+  }
+}
+
+@media screen and (min-width: 2000px) {
+  .education-hero h1 {
+    font-size: 2rem;
+  }
+  .education-hero p {
+    font-size: 1.5rem;
+  }
+
+  .education-top-carousel,
+  .education-bottom-carousel {
+    width: 100%;
+    height: 100%;
+  }
+
+  .education-text-container {
+    width: 100%;
+  }
 }
