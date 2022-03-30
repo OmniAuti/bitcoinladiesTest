@@ -2533,8 +2533,8 @@ grid-row-gap: 0.5rem;*/
 }
 
 .event-page-featured {
-  padding-top: 75px;
-  height: calc(100vh - 75px);
+  margin-top: 50px;
+  height: calc(90vh - 100px);
   text-align: center;
 }
 
