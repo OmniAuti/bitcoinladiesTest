@@ -2541,13 +2541,13 @@ grid-row-gap: 0.5rem;*/
 .event-page-featured img {
   height: 90%;
   border-radius: 20px;
-  box-shadow: 0px 0px 10px #444;
+  box-shadow: 0px 0px 10px rgba(68, 68, 68, 0.5);
   transition: all ease 500ms;
 }
 .event-page-featured img:hover {
   -webkit-transform: translateY(-10px);
   transform: translateY(-10px);
-  box-shadow: 0px 0px 10px #ff61ab;
+  box-shadow: 0px 0px 10px rgba(255, 97, 171,0.5);
 }
 
 .events-page__other-events h2 {
@@ -2575,13 +2575,13 @@ grid-row-gap: 0.5rem;*/
   border-radius: 20px;
   height: 500px;
   padding: 0;
-  box-shadow: 0px 0px 10px #444;
+  box-shadow: 0px 0px 10px rgba(68, 68, 68, 0.5);
   transition: all ease 500ms;
 }
 .events-page-card:hover {
   -webkit-transform: translateY(-10px);
   transform: translateY(-10px);
-  box-shadow: 0px 0px 10px #ff61ab;
+  box-shadow: 0px 0px 10px rgba(255, 97, 171,0.5);
 }
 
 .event-float-left {
@@ -2655,7 +2655,7 @@ grid-row-gap: 0.5rem;*/
   border-radius: 20px;
   height: 350px;
   padding: 0;
-  box-shadow: 0px 0px 10px #444;
+  box-shadow: 0px 0px 10px rgba(68, 68, 68, 0.5);
   transition: all ease 500ms;
 }
 
@@ -2667,11 +2667,11 @@ grid-row-gap: 0.5rem;*/
 .communities-page-card:hover {
   -webkit-transform: translateY(-10px);
   transform: translateY(-10px);
-  box-shadow: 0px 0px 10px #ff61ab;
+  box-shadow: 0px 0px 10px rgba(255, 97, 171,0.5);
 }
 
 /*--------------------------------------------------------------
-# COMMUNITY PAGE
+# FUNDING PAGE
 --------------------------------------------------------------*/
 
 .funding-page-main {
@@ -2787,7 +2787,7 @@ grid-row-gap: 0.5rem;*/
   display: flex;
   align-items: center;
   justify-content: space-around;
-  box-shadow: 0px 0px 10px #444;
+  box-shadow: 0px 0px 10px rgba(68, 68, 68, 0.5);
   transition: all ease 500ms;
   padding: 10px;
   overflow: hidden;
@@ -2796,7 +2796,7 @@ grid-row-gap: 0.5rem;*/
 .grant-funding-content-card:hover {
   -webkit-transform: translateY(-10px);
   transform: translateY(-10px);
-  box-shadow: 0px 0px 10px #ff61ab;
+  box-shadow: 0px 0px 10px rgba(255, 97, 171, 0.5);
 }
 
 .grant-funding-content-card > div {
@@ -2870,12 +2870,19 @@ grid-row-gap: 0.5rem;*/
   overflow: hidden;
 }
 
-.education-carousel-content-container-top,
-.education-carousel-content-container-bottom {
+.education-carousel-content-container-top {
   width: 400%;
   height: 100%;
   -webkit-transform: translateX(0%);
   transform: translateX(0%);
+  transition: transform ease 750ms;
+}
+
+.education-carousel-content-container-bottom {
+  width: 400%;
+  height: 100%;
+  -webkit-transform: translateX(-75%);
+  transform: translateX(-75%);
   transition: transform ease 750ms;
 }
 
