@@ -111,16 +111,130 @@
     <!-- End Header -->
       <!--====================================== MAIN ======================================-->
 
-    <main class="education-page-main">
+        <main class="education-page-main">
 
-     
-        <div class="education-hero">
+            <div class="education-hero container-fluid px-5">
+                <div class="education-hero-top">
+                    <div class="education-text-container px-3">
+                        <h1>New to Bitcoin?</h1>
+                        <p>Bitcoin ipsum dolor sit amet. Soft fork Merkle Tree block height digital signature Merkle Tree, cryptocurrency soft fork? Mining, public key UTXO SHA-256 stacking sats SHA-256 whitepaper. Difficulty hashrate full node inputs difficulty block reward blockchain Merkle Tree. Private key, wallet.</p>
+                    </div>
+                        
+                    <!-- CAROUSEL START -->
 
-        </div>
-       
-      <!--====================================== END MAIN ======================================-->
-    </main>
-      <!--====================================== FOOTER ======================================-->
+                    <div class="education-top-carousel">
+
+
+                            <div class="education-carousel-content-holder">
+                                <div class="education-carousel-content-container-top">
+                                    <div class="education-carousel-slide-top">
+                                        <img src="assets/img/cna0.jpg" alt="">
+                                    </div>
+                                    <div class="education-carousel-slide-top">
+                                        <img src="assets/img/cna.jpg" alt="">
+                                    </div>
+                                    <div class="education-carousel-slide-top">
+                                        <img src="assets/img/cna0.jpg" alt="">
+                                    </div>
+                                    <div class="education-carousel-slide-top">
+                                        <img src="assets/img/cna.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                    
+                            <!-- CAROUSEL CONTROL COINS -->
+                            <div class="education-carousel-controls">
+                              <div class="education-top-carousel-selector active-carousel-selector">
+                                <img
+                                  src="assets/img/carousel-selector-bitcoin.svg"
+                                  alt="bitcoin-carousel-selector"
+                                />
+                              </div>
+                              <div class="education-top-carousel-selector">
+                                <img
+                                  src="assets/img/carousel-selector-bitcoin.svg"
+                                  alt="bitcoin-carousel-selector"
+                                />
+                              </div>
+                              <div class="education-top-carousel-selector">
+                                <img
+                                  src="assets/img/carousel-selector-bitcoin.svg"
+                                  alt="bitcoin-carousel-selector"
+                                />
+                              </div>
+                              <div class="education-top-carousel-selector">
+                                <img
+                                  src="assets/img/carousel-selector-bitcoin.svg"
+                                  alt="bitcoin-carousel-selector"
+                                />
+                              </div>
+                            </div>
+                     </div>
+                    
+                          <!-- CAROUSEL END -->
+                    
+                </div>
+                
+                <div class="education-hero-bottom">
+                    
+                    <div class="education-bottom-carousel">
+                        <div class="education-carousel-content-holder">
+                            <div class="education-carousel-content-container-bottom">
+                                <div class="education-carousel-slide-bottom">
+                                    <img src="assets/img/cna.jpg" alt="">
+                                </div>
+                                <div class="education-carousel-slide-bottom">
+                                    <img src="assets/img/cna0.jpg" alt="">
+                                </div>
+                               
+                                <div class="education-carousel-slide-bottom">
+                                    <img src="assets/img/cna.jpg" alt="">
+                                </div>
+                                <div class="education-carousel-slide-bottom">
+                                    <img src="assets/img/cna0.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- CAROUSEL CONTROL COINS -->
+                        <div class="education-carousel-controls">
+                          <div class="education-bottom-carousel-selector">
+                            <img
+                              src="assets/img/carousel-selector-bitcoin.svg"
+                              alt="bitcoin-carousel-selector"
+                            />
+                          </div>
+                          <div class="education-bottom-carousel-selector">
+                            <img
+                              src="assets/img/carousel-selector-bitcoin.svg"
+                              alt="bitcoin-carousel-selector"
+                            />
+                          </div>
+                          <div class="education-bottom-carousel-selector">
+                            <img
+                              src="assets/img/carousel-selector-bitcoin.svg"
+                              alt="bitcoin-carousel-selector"
+                            />
+                          </div>
+                          <div class="education-bottom-carousel-selector active-carousel-selector">
+                            <img
+                              src="assets/img/carousel-selector-bitcoin.svg"
+                              alt="bitcoin-carousel-selector"
+                            />
+                          </div>
+                        </div>
+                        
+                    </div>
+                    <div class="education-text-container text-end px-3">
+                        <h1>Want to take your knowledge to the next level?</h1>
+                        <p>Bitcoin ipsum dolor sit amet. Soft fork Merkle Tree block height digital signature Merkle Tree, cryptocurrency soft fork? Mining, public key UTXO SHA-256 stacking sats SHA-256 whitepaper. Difficulty hashrate full node inputs difficulty block reward blockchain Merkle Tree. Private key, wallet.</p>
+                    </div>
+                </div>
+            </div> 
+
+            <!--====================================== END MAIN ======================================-->
+        </main>
+        <!--====================================== FOOTER ======================================-->
       <footer id="footer" class="event-page-footer">
         
       <div class="footer-top">
@@ -178,7 +292,6 @@
     </footer>
      <!--====================================== END FOOTER ======================================-->
 
-
     <div id="preloader">
 
       <div class="coin">
@@ -193,14 +306,55 @@
       ><i class="bi bi-arrow-up-short"></i
     ></a>
 
-
    <!-- <script src="assets/vendor/aos/aos.js"></script>    FOR SCROLL ANIMATIONS-->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     
-    
+
     <!-- Extra Pages JS -->
-    <script src="assets/js/extraPages.js">
+    <script src="assets/js/extraPages.js"></script>
+    <script>
+ 
+     const coinSelectorTop = document.querySelectorAll('.education-top-carousel-selector')
+     const coinSelectorBottom = document.querySelectorAll('.education-bottom-carousel-selector')
+
+     const topCarouselContainer = document.querySelector('.education-carousel-content-container-top')
+     const bottomCarouselContainer = document.querySelector('.education-carousel-content-container-bottom')
+
+     const topCoinArray = Array.from(coinSelectorTop)
+     const bottomCoinArray = Array.from(coinSelectorBottom)
+
+       coinSelectorTop.forEach(coin => {
+           coin.addEventListener('click', () => {
+                coinSelectorTop.forEach((selector) => {
+                   selector.classList.remove('active-carousel-selector')
+               })
+               coin.classList.add('active-carousel-selector')
+               moveTopContainer(topCarouselContainer, coin)
+           })
+       })
+
+       coinSelectorBottom.forEach(coin => {
+           coin.addEventListener('click', () => {
+                coinSelectorBottom.forEach((selector) => {
+                   selector.classList.remove('active-carousel-selector')
+               })
+               coin.classList.add('active-carousel-selector')
+               moveBottomContainer(bottomCarouselContainer, coin)
+           })
+       })
+
+       function moveTopContainer(container, selected) {
+        const indexCoin = topCoinArray.indexOf(selected);
+        const movement = indexCoin * 25;
+        container.style.transform = `translateX(-${movement}%)`
+       }
+
+       function moveBottomContainer(container, selected) {
+        const indexCoin = bottomCoinArray.indexOf(selected);
+        const movement = indexCoin * 25;
+        container.style.transform = `translateX(-${movement}%)`
+       }
 
     </script>
   </body>
