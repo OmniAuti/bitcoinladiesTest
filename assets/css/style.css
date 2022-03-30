@@ -906,7 +906,7 @@ section {
   padding: 60px 0;
   background-repeat: no-repeat;
 }
-@media screen and (max-width: 500px ) {
+@media screen and (max-width: 500px) {
   .cta {
     background-size: 300vw;
   }
@@ -1578,7 +1578,7 @@ section {
 
 #footer .footer-top {
   background: #444;
- border-bottom: 1px solid #222222;
+  border-bottom: 1px solid #222222;
   padding: 30px 0 30px 0;
 }
 
@@ -1708,7 +1708,8 @@ section {
 
 @media screen and (max-width: 390px) {
   #footer .copyright {
-  font-size: 10px;  }
+    font-size: 10px;
+  }
 }
 
 #footer .credits {
@@ -2515,4 +2516,78 @@ grid-row-gap: 0.5rem;*/
 #instafeed img {
   display: block;
   width: 95%;
+}
+
+/*--------------------------------------------------------------
+# EVENTS PAGE
+--------------------------------------------------------------*/
+
+.events-page-body {
+  background-image: url("../img/hero-bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.event-page-featured {
+  padding-top: 75px;
+  height: calc(100vh - 75px);
+  text-align: center;
+}
+
+.event-page-featured img {
+  height: 90%;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px #444;
+}
+
+.events-page__other-events h2 {
+  color: #fff;
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+  height: 100px;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+@media screen and (max-width: 500px) {
+  .events-page__other-events h2 {
+    font-size: 2rem;
+  }
+}
+
+.events-page-card img {
+  max-height: 50%;
+  width: 100%;
+}
+
+.events-page-card {
+  overflow: hidden;
+  background-color: #fff;
+  border-radius: 20px;
+  height: 500px;
+  padding: 0;
+  box-shadow: 0px 0px 10px #444;
+}
+
+.event-float-left {
+  float: left;
+}
+.event-float-right {
+  float: right;
+}
+
+.event-stagger-card {
+  float: right;
+  height: 250px;
+}
+
+@media screen and (max-width: 768px) {
+  .event-stagger-card {
+    display: none;
+  }
+}
+
+.event-page-footer {
+  position: relative;
+  z-index: 99;
 }
