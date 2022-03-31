@@ -2986,7 +2986,7 @@ grid-row-gap: 0.5rem;*/
   }
 }
 
-@media screen and (max-width: 410px) {
+@media screen and (max-width: 415px) {
   .education-top-carousel,
   .education-bottom-carousel {
     width: 100%;
