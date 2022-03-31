@@ -2961,7 +2961,7 @@ grid-row-gap: 0.5rem;*/
 
 @media screen and (max-width: 875px) {
   .education-hero {
-    margin-top: 50px;
+    margin-top: 25px;
   }
   .education-hero h1 {
     font-size: 1.5rem;
