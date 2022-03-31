@@ -1518,6 +1518,11 @@ section {
     bottom: 0;
   }
 }
+@media screen and (max-width: 768px) {
+  .contact-image-bitcoin-ladies {
+    display: none;
+  }
+}
 
 /*--------------------------------------------------------------
 # Breadcrumbs
@@ -1624,6 +1629,7 @@ section {
   color: #151515;
   text-decoration: none;
 }
+
 #footer .footer-top h4 {
   font-size: 16px;
   font-weight: 600;
@@ -1748,8 +1754,17 @@ section {
     padding: 50px;
     width: 100%;
     height: 45%;
+    background-color: #facadf;
+    color: #292929;
+  }
+
+  #footer .footer-top .social-links a:hover {
+    background: #151515;
+    color: #facadf;
+    text-decoration: none;
   }
 }
+
 @media screen and (max-width: 400px) {
   #footer .footer-top .social-links a {
     font-size: 75px;
@@ -2348,9 +2363,9 @@ section {
 --------------------------------------------------------------*/
 
 .featured-hero-event {
-  height: 60%;
-  width: 100%;
-  border-radius: 20px 20px 0px 0px !important;
+  height: auto;
+  max-width: 100%;
+  border-radius: 20px 20px 0px 0px;
   margin-bottom: 20px;
 }
 
@@ -2361,16 +2376,6 @@ section {
   margin-bottom: 25px;
 }
 
-.featured-hero-event-p {
-  font-size: 1rem;
-}
-
-@media screen and (max-width: 900px) {
-  .featured-hero-event {
-    height: 50%;
-    width: 100%;
-  }
-}
 @media screen and (max-width: 590px) {
   .featured-hero-event-h2 {
     font-size: 2.25rem !important;
@@ -2385,11 +2390,6 @@ section {
 @media screen and (min-width: 1800px) {
   .featured-hero-event-h2 {
     font-size: 5rem !important;
-  }
-  .featured-hero-event-p {
-    font-size: 2rem !important;
-    font-weight: 100;
-    line-height: 45px !important;
   }
 }
 
@@ -2532,7 +2532,7 @@ grid-row-gap: 0.5rem;*/
   background-repeat: no-repeat;
 }
 .events-page__featured {
-  overflow-y:visible;
+  overflow-y: visible;
 }
 .event-page-featured {
   margin-top: 100px;
@@ -2546,12 +2546,11 @@ grid-row-gap: 0.5rem;*/
   border-radius: 20px;
   box-shadow: 0px 0px 10px rgba(68, 68, 68, 0.5);
   transition: all ease 500ms;
-  
 }
 .event-page-featured img:hover {
   -webkit-transform: translateY(-10px);
   transform: translateY(-10px);
-  box-shadow: 0px 0px 10px rgba(255, 97, 171,0.5);
+  box-shadow: 0px 0px 10px rgba(255, 97, 171, 0.5);
 }
 
 .events-page__other-events h2 {
@@ -2585,7 +2584,7 @@ grid-row-gap: 0.5rem;*/
 .events-page-card:hover {
   -webkit-transform: translateY(-10px);
   transform: translateY(-10px);
-  box-shadow: 0px 0px 10px rgba(255, 97, 171,0.5);
+  box-shadow: 0px 0px 10px rgba(255, 97, 171, 0.5);
 }
 
 .event-float-left {
@@ -2644,7 +2643,6 @@ grid-row-gap: 0.5rem;*/
 @media screen and (max-width: 700px) {
   .communities-header {
     height: 20vh;
-
   }
   .communities-page-main h1 {
     font-size: 2rem;
@@ -2680,7 +2678,7 @@ grid-row-gap: 0.5rem;*/
 .communities-page-card:hover {
   -webkit-transform: translateY(-10px);
   transform: translateY(-10px);
-  box-shadow: 0px 0px 10px rgba(255, 97, 171,0.5);
+  box-shadow: 0px 0px 10px rgba(255, 97, 171, 0.5);
 }
 
 /*--------------------------------------------------------------
@@ -2761,7 +2759,7 @@ grid-row-gap: 0.5rem;*/
   .funding-hero {
     margin-top: 0px;
   }
-  
+
   .funding-hero h1 {
     font-size: 2.5rem;
     width: 100%;
