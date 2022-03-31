@@ -2643,7 +2643,7 @@ grid-row-gap: 0.5rem;*/
 
   }
   .communities-page-main h1 {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 }
 
@@ -2662,7 +2662,7 @@ grid-row-gap: 0.5rem;*/
   overflow: hidden;
   background-color: #fff;
   border-radius: 20px;
-  height: 350px;
+  height: 250px;
   padding: 0;
   box-shadow: 0px 0px 10px rgba(68, 68, 68, 0.5);
   transition: all ease 500ms;
@@ -2732,7 +2732,7 @@ grid-row-gap: 0.5rem;*/
 
   .funding-hero img {
     width: auto;
-    height: 75%;
+    height: 60%;
   }
   .funding-hero {
     flex-direction: column;
@@ -2754,6 +2754,10 @@ grid-row-gap: 0.5rem;*/
   }
 }
 @media screen and (max-width: 500px) {
+  .funding-hero {
+    margin-top: 0px;
+  }
+  
   .funding-hero h1 {
     font-size: 2.5rem;
     width: 100%;
@@ -2848,7 +2852,10 @@ grid-row-gap: 0.5rem;*/
 }
 .education-hero h1 {
   color: #fff;
-  font-size: 2.5rem;
+  font-size: 2.25rem;
+}
+.education-hero p {
+  color: #fff;
 }
 
 .education-hero-top,
@@ -2952,7 +2959,10 @@ grid-row-gap: 0.5rem;*/
   height: 200%;
 }
 
-@media screen and (max-width: 790px) {
+@media screen and (max-width: 875px) {
+  .education-hero {
+    margin-top: 50px;
+  }
   .education-hero h1 {
     font-size: 1.5rem;
   }
@@ -2977,9 +2987,12 @@ grid-row-gap: 0.5rem;*/
 }
 
 @media screen and (max-width: 410px) {
-  .education-hero {
-    margin-top: 50px;
+  .education-top-carousel,
+  .education-bottom-carousel {
+    width: 100%;
+    height: 40%;
   }
+
   .education-hero h1 {
     font-size: 1.25rem;
   }
