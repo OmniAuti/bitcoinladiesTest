@@ -636,6 +636,7 @@ h6::selection {
 }
 
 #hero-pronunciation {
+  color: #fff;
     font-style: italic;
     font-size: 1.25rem;
 }
@@ -2395,6 +2396,28 @@ section {
 .event-content-card {
   width: calc(16%);
   margin: 0 10px;
+  height: 350px;
+  min-height: 350px;
+  max-height: 350px;
+  background-color: #fff;
+  transition: transform ease 250ms;
+  -webkit-transform: translateY(0px);
+  transform: translateY(0px);
+}
+
+.event-content-card:hover {
+  -webkit-transform: translateY(-5px);
+  transform: translateY(-5px);
+}
+
+.event-content-card img {
+  min-width: 100%;
+  width: 100%;
+  height: 250px;
+  min-height: 250px;
+  max-height: 250px;
+  object-position: center;
+  object-fit:inherit;
 }
 
 .event-carousel-controls {
