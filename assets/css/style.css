@@ -610,7 +610,7 @@ h6::selection {
 }
 #hero h1 {
   margin: 0;
-  font-size: 7.5rem;
+  font-size: 6rem;
   font-weight: 100;
   text-shadow: 0px 0px 20px #fff;
   color: #fff;
@@ -624,8 +624,6 @@ h6::selection {
   text-shadow: 0px 0px 10px #ff61ab;
 }
 
-@media screen and (min-width: 900px) {
-}
 
 #hero h1 span {
   color: #facadf;
@@ -635,6 +633,11 @@ h6::selection {
   font-size: 1.5rem;
   font-weight: 500 !important;
   font-family: "Poppins", sans-serif;
+}
+
+#hero-pronunciation {
+    font-style: italic;
+    font-size: 1.25rem;
 }
 
 #hero .icon-box {
@@ -1824,10 +1827,6 @@ section {
   position: relative;
 }
 
-#hero-pronunciation {
-  font-style: italic;
-}
-
 .carousel-content img {
   border-radius: 20px;
 }
@@ -2059,10 +2058,11 @@ section {
 
 .typewriter-text {
   height: 30%;
-  width: 55%;
-  font-size: 1.75rem;
+  width: 775px;
+  word-spacing: 0px;
+  font-size: 1.5rem;
   color: #fff;
-  font-weight: 300;
+  font-weight: 200;
   font-size: "Poppins", sans-serif;
 }
 
@@ -2074,14 +2074,20 @@ section {
 
 @media screen and (max-width: 980px) {
   #hero h1 {
-    font-size: 7.5rem;
+    font-size: 6rem;
   }
   #hero h2 {
-    font-size: 1.25rem;
+    font-size: 1rem;
   }
+
+  #hero-pronunciation {
+    font-style: italic;
+    font-size: 1.5rem !important;
+}
+
   .typewriter-text {
     height: 30%;
-    width: 75%;
+    width: 775px;
     font-size: 1.5rem;
   }
   .carousel-controls {
@@ -2098,17 +2104,39 @@ section {
     font-size: 0.75rem !important;
   }
 }
+
+@media screen and (max-width: 980px) {
+  .typewriter-text {
+    height: 30%;
+    width: 650px;
+    font-size: 1.25rem;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .typewriter-text {
+    height: 30%;
+    width: 525px;
+    font-size: 1rem;
+  }
+}
+
 @media screen and (max-width: 550px) {
   #hero h1 {
-    font-size: 7.5rem;
+    font-size: 5rem;
   }
   #hero h2 {
     font-size: 1rem;
   }
+
+  #hero-pronunciation {
+    font-style: italic;
+    font-size: 1rem !important;
+}
   .typewriter-text {
     height: 30%;
-    width: 80%;
-    font-size: 1.25rem;
+    width: 390px;
+    font-size: .75rem;
   }
 }
 @media screen and (max-width: 390px) {
@@ -2120,21 +2148,30 @@ section {
   }
   .typewriter-text {
     height: 30%;
-    width: 80%;
-    font-size: 1.25rem;
+    width: 320px;
+    font-size: .62rem;
   }
 }
 @media screen and (min-width: 1800px) {
   #hero h1 {
-    font-size: 17rem;
+    font-size: 10rem;
   }
   #hero h2 {
     font-size: 3.75rem;
   }
+
+  #hero-pronunciation {
+    font-style: italic;
+    font-size: 2rem !important;
+}
   .typewriter-text {
     height: 30%;
-    width: 60%;
+    width: 1550px;
+    word-spacing: 0px;
     font-size: 3rem;
+    color: #fff;
+    font-weight: 200;
+    font-size: "Poppins", sans-serif;
   }
 
   .carousel-selector {
