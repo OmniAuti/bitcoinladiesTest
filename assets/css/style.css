@@ -2659,8 +2659,10 @@ grid-row-gap: 0.5rem;*/
   background-repeat: no-repeat;
 }
 .events-page__featured {
-  margin-top: 25px;
-  height: calc(100vh - 25px);
+  background-color: #000;
+  margin-top: 70px;
+  
+  height: calc(100vh - 70px);
   min-width: 100vw;
 }
 .events-page__featured h1 {
@@ -2757,13 +2759,13 @@ grid-row-gap: 0.5rem;*/
 }
 @media screen and (max-width: 450px) {
   .events-page__featured h1 {
-    margin-top: 25px;
+    margin:25px 0 50px 0;
    }
    .events-page__featured img {
-     height: 55%;
+     height: 40%;
      width:100%;
      min-width: 100%;
-     margin-bottom: 25px;
+     margin-bottom: 50px;
    }
 }
 
