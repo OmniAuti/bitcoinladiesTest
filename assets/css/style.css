@@ -787,7 +787,7 @@ section {
   width: 1200px;
   border-radius: 100px;
   margin: 0 auto;
-  background-image: url("/assets/img/aboutCardBackground.jpg");
+  background-image: url("../img/aboutCardBackground.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1021,7 +1021,7 @@ section {
 
 .features-header::before {
   position: absolute;
-  content: url('/assets/img/bolticonpng.png');
+  content: url('../img/bolticonpng.png');
   left: -250px;
   top: -250px; 
 }
