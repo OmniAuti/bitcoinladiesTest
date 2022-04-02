@@ -576,7 +576,7 @@ h6::selection {
 
 #hero {
   width: 100%;
-  height: calc(100vh - 50px) !important;
+  height: 130vh;
   background-image:
   /*linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1)),*/ url("../img/hero-bg.jpg");
   background-size: cover;
@@ -584,10 +584,12 @@ h6::selection {
   position: relative;
 }
 
+
+
 #hero:before {
   content: "";
   /*background: rgba(0, 0, 0, 0.3);*/
-  background-image: linear-gradient(to bottom, transparent 75%, #000);
+  background: linear-gradient(transparent 75vh, rgb(0, 0, 0));
   position: absolute;
   bottom: 0;
   top: 0;
@@ -595,12 +597,6 @@ h6::selection {
   right: 0;
   height: 100%;
   width: 100%;
-}
-
-@media screen and (max-width: 500px) {
-  #hero:before {
-    background-image: linear-gradient(to bottom, transparent 30%, #fff);
-  }
 }
 
 #hero .container {
@@ -744,12 +740,14 @@ section {
 }
 
 /*--------------------------------------------------------------
-# About
+# About - OLD
 --------------------------------------------------------------*/
 
-#about {
+/*#about {
+  background-color: #000;
+  height: calc(100vh);
 }
-
+*/
 .about .content h3 {
   font-weight: 700;
   font-size: 28px;
@@ -777,6 +775,140 @@ section {
   margin-bottom: 0;
 }
 
+/*--------------------------------------------------------------
+# About - NEW
+--------------------------------------------------------------*/
+
+#about {
+  background-color: #000;
+  height: fit-content;
+  padding: 200px 0px 200px 0px;
+}
+
+.about-me-container {
+  height: 600px;
+  width: 1300px;
+  border-radius: 100px;
+  margin: 0 auto;
+  background-image: url('/assets/img/aboutCardBackground.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.about-me-header {
+  font-family: 'Source Code Pro', monospace;
+  color: #ff61ab;
+  font-size: 5rem;
+}
+
+.about-me-text {
+  font-family: "Poppins", sans-serif;
+  width:775px;
+  font-size: 1.85rem;
+  color: #c98350;
+}
+
+@media screen and (max-width: 1350px) {
+  
+  .about-me-container {
+    height: 600px;
+    width: 1000px;
+  }
+  
+  .about-me-header {
+    font-size: 5rem;
+  }
+  
+  .about-me-text {
+    width:775px;
+    font-size: 1.85rem;
+  }
+}
+@media screen and (max-width: 1050px) {
+  #about {
+    padding: 150px 0px 150px 0px;
+  }
+  
+  .about-me-container {
+    height: 450px;
+    width: 750px;
+  }
+  
+  .about-me-header {
+    font-size: 4rem;
+  }
+  
+  .about-me-text {
+    width:525px;
+    font-size: 1.25rem;
+  }
+}
+@media screen and (max-width: 800px) {
+  .about-me-container {
+    height: 400px;
+    width: 600px;
+  }
+  
+  .about-me-header {
+    font-size: 3rem;
+  }
+  
+  .about-me-text {
+    width:425px;
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  #about {
+    background-color: #000;
+    height: fit-content;
+    padding: 100px 0px 100px 0px;
+  }
+  
+  .about-me-container {
+    height: 400px;
+    width: 100%;
+    border-radius: 50px;
+  }
+  
+  .about-me-header {
+    font-size: 3rem;
+  }
+  
+  .about-me-text {
+    width:425px;
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 450px) {
+  
+  .about-me-container {
+    height: 300px;
+  }
+  
+  .about-me-header {
+    font-size: 2.5rem;
+  }
+  
+  .about-me-text {
+    width:350px;
+    font-size: .85rem;
+  }
+}
+@media screen and (max-width: 350px) {
+  .about-me-text {
+    width:275px;
+    font-size: .65rem;
+  }
+}
 
 /*--------------------------------------------------------------
 # Clients
@@ -1807,7 +1939,7 @@ section {
   height: 90vh;
   overflow-x: hidden;
   z-index: 99;
-  margin-top: 50px;
+  margin-bottom: 30vh;
 }
 
 .carousel-content-holder {
@@ -2568,7 +2700,7 @@ section {
   }
 
   .parallax-bitcoin {
-    background-image: url("../img/parallax-bitcoin-scroll.png");
+    background-image: url("../img/parallax-bitcoin-scroll.jpg");
     min-height: 100%;
     width: 150%;
     background-size: 75%;
@@ -2577,7 +2709,7 @@ section {
 
 @media screen and (max-width: 500px) {
   .parallax-bitcoin {
-    background-image: url("../img/parallax-bitcoin-scroll.png");
+    background-image: url("../img/parallax-bitcoin-scroll.jpg");
     min-height: 100%;
     width: 150%;
     background-size: 120%;
