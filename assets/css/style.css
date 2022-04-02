@@ -2403,7 +2403,7 @@ section {
   height: 350px;
   min-height: 350px;
   max-height: 350px;
-  background-color: #fff;
+  background-color: #000;
   transition: transform ease 250ms;
   -webkit-transform: translateY(0px);
   transform: translateY(0px);
@@ -2412,6 +2412,19 @@ section {
 .event-content-card:hover {
   -webkit-transform: translateY(-5px);
   transform: translateY(-5px);
+}
+
+.event-card-text-container {
+  height: 100px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.event-card-text-container p,
+.event-card-text-container h4 {
+  margin-bottom: 0;
 }
 
 .event-content-card img {
