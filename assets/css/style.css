@@ -765,7 +765,7 @@ section {
 }
 
 .about-before-doublecheck::before {
-  content: url('/assets/img/doubleChecls.svg');
+  content: url('/assets/img/doubleChecks.svg');
   position: absolute;
   width: 20px;
   height: 20px;
