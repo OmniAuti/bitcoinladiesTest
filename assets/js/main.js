@@ -592,3 +592,76 @@ window.addEventListener("resize", () => {
     }
   });
 })();
+
+// FEATURED FUNCTIONALITY --------------------------------------------
+
+const featuredCardOne =  document.querySelector('.featured-scroll-card-one')
+const featuredCardTwo =  document.querySelector('.featured-scroll-card-two')
+const featuredCardThree =  document.querySelector('.featured-scroll-card-three')
+
+const featuredIconOne =  document.querySelector('.featured-icon-one')
+const featuredIconTwo =  document.querySelector('.featured-icon-two')
+const featuredIconThree =  document.querySelector('.featured-icon-three')
+
+const featuredHeaderOne =  document.querySelector('.featured-icon-header-one')
+const featuredHeaderTwo =  document.querySelector('.featured-icon-header-two')
+const featuredHeaderThree =  document.querySelector('.featured-icon-header-three')
+
+const featuredCardHeight = ((featuredCardOne.offsetHeight * .2)).toFixed(0)
+console.log(featuredCardHeight)
+const options = {
+  root: null,
+  threshold: .75,
+  rootMargin: `-${featuredCardHeight}px`,
+}
+
+const observorTopOne = new IntersectionObserver((entries) => {
+  console.log(entries[0].isIntersecting, 'one')
+  if (entries[0].isIntersecting) {
+    featuredIconOne.classList.add('active-featured-icon')
+    featuredIconTwo.classList.remove('active-featured-icon')
+    featuredIconThree.classList.remove('active-featured-icon')
+
+    featuredHeaderOne.classList.add('active-featured-icon-header')
+    featuredHeaderTwo.classList.remove('active-featured-icon-header')
+    featuredHeaderThree.classList.remove('active-featured-icon-header')
+  }
+},options)
+const observorTopTwo = new IntersectionObserver((entries) => {
+  console.log(entries[0].isIntersecting, 'two')
+  if (entries[0].isIntersecting) {
+    featuredIconTwo.classList.add('active-featured-icon')
+    featuredIconOne.classList.remove('active-featured-icon')
+    featuredIconThree.classList.remove('active-featured-icon')
+
+    featuredHeaderTwo.classList.add('active-featured-icon-header')
+    featuredHeaderOne.classList.remove('active-featured-icon-header')
+    featuredHeaderThree.classList.remove('active-featured-icon-header')
+  } 
+},options)
+const observorTopThree = new IntersectionObserver((entries) => {
+  console.log(entries[0].isIntersecting, 'three')
+  if (entries[0].isIntersecting) {
+    featuredIconThree.classList.add('active-featured-icon')
+    featuredIconOne.classList.remove('active-featured-icon')
+    featuredIconTwo.classList.remove('active-featured-icon')
+
+    featuredHeaderThree.classList.add('active-featured-icon-header')
+    featuredHeaderTwo.classList.remove('active-featured-icon-header')
+    featuredHeaderOne.classList.remove('active-featured-icon-header')
+  } 
+},options)
+//const observorBottom = new IntersectionObserver(callback, options)
+
+observorTopOne.observe(featuredCardOne)
+observorTopTwo.observe(featuredCardTwo)
+observorTopThree.observe(featuredCardThree)
+
+/*
+
+  if (entries[0].isIntersecting) {
+    featuredIconOne.classList.add('active-featured-icon')
+  } else {
+    featuredIconOne.classList.remove('active-featured-icon')
+  }
+*/ 
