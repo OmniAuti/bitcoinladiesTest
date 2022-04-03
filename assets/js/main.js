@@ -682,3 +682,20 @@ observorTopThree.observe(featuredCardThree)
     featuredIconOne.classList.remove('active-featured-icon')
   }
 */ 
+
+
+// CONTACT MODAL -----------------------------------------------------------------------------
+
+const contactModal = document.querySelector('.contact-modal')
+const contactModalCloseBtn = document.querySelector('.modal-close-btn')
+const contactLink = document.getElementById('contact-nav-link')
+
+contactLink.addEventListener('click', () => {
+  contactModal.classList.add('active-contact-modal');
+  document.body.style.overflow = 'hidden';
+})
+
+contactModalCloseBtn.addEventListener('click', () => {
+  contactModal.classList.remove('active-contact-modal');
+  document.body.style.overflow = null;
+})
