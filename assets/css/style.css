@@ -3886,7 +3886,7 @@ grid-row-gap: 0.5rem;*/
   height: fit-content;
   border-radius: 20px;
   position: relative;
-  box-shadow: 0px 0px 10px rgba(68, 68, 68, 0.5);
+  box-shadow: 0px 0px 10px #000;
   padding: 50px 0px;
 }
 
