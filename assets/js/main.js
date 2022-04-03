@@ -607,8 +607,13 @@ const featuredHeaderOne =  document.querySelector('.featured-icon-header-one')
 const featuredHeaderTwo =  document.querySelector('.featured-icon-header-two')
 const featuredHeaderThree =  document.querySelector('.featured-icon-header-three')
 
-const featuredCardHeight = ((featuredCardOne.offsetHeight * .2)).toFixed(0)
-console.log(featuredCardHeight)
+let featuredCardHeight = ((featuredCardOne.offsetHeight * .2)).toFixed(0)
+// mobiel needs this check
+if (window.innerWidth < 770) {
+  featuredCardHeight = ((featuredCardOne.offsetHeight * .15)).toFixed(0)
+}
+
+
 const options = {
   root: null,
   threshold: .75,
@@ -616,7 +621,6 @@ const options = {
 }
 
 const observorTopOne = new IntersectionObserver((entries) => {
-  console.log(entries[0].isIntersecting, 'one')
   if (entries[0].isIntersecting) {
     featuredIconOne.classList.add('active-featured-icon')
     featuredIconTwo.classList.remove('active-featured-icon')
@@ -628,7 +632,6 @@ const observorTopOne = new IntersectionObserver((entries) => {
   }
 },options)
 const observorTopTwo = new IntersectionObserver((entries) => {
-  console.log(entries[0].isIntersecting, 'two')
   if (entries[0].isIntersecting) {
     featuredIconTwo.classList.add('active-featured-icon')
     featuredIconOne.classList.remove('active-featured-icon')
@@ -640,7 +643,6 @@ const observorTopTwo = new IntersectionObserver((entries) => {
   } 
 },options)
 const observorTopThree = new IntersectionObserver((entries) => {
-  console.log(entries[0].isIntersecting, 'three')
   if (entries[0].isIntersecting) {
     featuredIconThree.classList.add('active-featured-icon')
     featuredIconOne.classList.remove('active-featured-icon')
