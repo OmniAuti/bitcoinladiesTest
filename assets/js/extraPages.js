@@ -68,7 +68,8 @@ const contactModal = document.querySelector('.contact-modal')
 const contactModalCloseBtn = document.querySelector('.modal-close-btn')
 const contactLink = document.getElementById('contact-nav-link')
 
-contactLink.addEventListener('click', () => {
+contactLink.addEventListener('click', (e) => {
+  e.preventDefault()
   contactModal.classList.add('active-contact-modal');
   document.body.style.overflow = 'hidden';
 })
