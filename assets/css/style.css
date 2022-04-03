@@ -1141,12 +1141,6 @@ section {
     font-size: 6rem;
   }
 
-  .features-bolt-icon {
-    width: 400px;
-    height: 400px;
-    left: 9%;
-  }
-
   .featured-icon h4 {
     color: #fff;
     transition: all ease 250ms;
@@ -1264,7 +1258,7 @@ section {
     width: calc(90% - 100px);
   }
   .features-header::before {
-    left: -250px;
+    left: -225px;
     top: -275px;
     -webkit-transform: scale(0.35);
     transform: scale(0.35);
