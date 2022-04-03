@@ -60,8 +60,6 @@ h6::selection {
   background: #facadf;
 }
 
-
-
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
@@ -591,7 +589,11 @@ h6::selection {
 #hero:before {
   content: "";
   /*background: rgba(0, 0, 0, 0.3);*/
-  background: -webkit-linear-gradient(to bottom, transparent 75vh, rgb(0, 0, 0));
+  background: -webkit-linear-gradient(
+    to bottom,
+    transparent 75vh,
+    rgb(0, 0, 0)
+  );
   background: -moz-linear-gradient(to bottom, transparent 75vh, rgb(0, 0, 0));
   background: -o-linear-gradient(to bottom, transparent 75vh, rgb(0, 0, 0));
   background: linear-gradient(to bottom, transparent 75vh, rgb(0, 0, 0));
@@ -993,7 +995,6 @@ section {
   background-color: #000;
   padding-bottom: 0px;
   margin-top: -25px;
-
 }
 
 .overflow-control {
@@ -1017,7 +1018,6 @@ section {
   text-align: center;
   padding-top: 150px;
   position: relative;
-  
 }
 
 .features-header {
@@ -1060,6 +1060,7 @@ section {
   position: -ms-sticky;
   top: 72px;
   padding: 25px 25px 100px 0px;
+  height: 475px;
 }
 
 .featured-icon {
@@ -1198,6 +1199,11 @@ section {
   }
 
   .featured-scroll-icon-container {
+    position: sticky;
+    position: -webkit-sticky;
+    position: -moz-sticky;
+    position: -o-sticky;
+    position: -ms-sticky;
     background-color: #facadf;
     display: flex;
     align-items: center;
@@ -1208,6 +1214,7 @@ section {
     margin-top: 0px;
     padding: 0px 0px 0px 0px;
     box-shadow: 0px 15px 10px rgba(68, 68, 68, 0.1);
+    height: 150px;
   }
 
   .featured-icon {
@@ -1263,6 +1270,12 @@ section {
     transform: scale(0.35);
   }
   .featured-scroll-icon-container {
+    position: sticky;
+    position: -webkit-sticky;
+    position: -moz-sticky;
+    position: -o-sticky;
+    position: -ms-sticky;
+    height: 150px;
     top: 62px;
   }
   .featured-icon h4 {
@@ -2687,10 +2700,26 @@ section {
   text-align: right;
   letter-spacing: 2.5px;
   position: absolute;
-  background: -webkit-linear-gradient(to right, rgba(255,255,255, 0.35) 40%, #fff 60%);
-  background: -moz-linear-gradient(to right, rgba(255,255,255, 0.35) 40%, #fff 60%);
-  background: -o-linear-gradient(to right, rgba(255,255,255, 0.35) 40%, #fff 60%);
-  background: linear-gradient(to right, rgba(255,255,255, 0.35) 40%, #fff 60%);
+  background: -webkit-linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.35) 40%,
+    #fff 60%
+  );
+  background: -moz-linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.35) 40%,
+    #fff 60%
+  );
+  background: -o-linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.35) 40%,
+    #fff 60%
+  );
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.35) 40%,
+    #fff 60%
+  );
   bottom: 0px;
   right: 0;
   width: 100px;
@@ -2765,13 +2794,13 @@ section {
   z-index: -1;
 }
 
-@media screen and (min-width:1000px) {
+@media screen and (min-width: 1000px) {
   .subscribe-img-background {
     width: 150vw;
     height: auto;
   }
 }
-@media screen and (min-width:1500px) {
+@media screen and (min-width: 1500px) {
   .subscribe-img-background {
     width: 140vw;
     object-position: bottom;
