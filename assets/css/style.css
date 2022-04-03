@@ -901,11 +901,11 @@ section {
   }
 
   .about-me-text {
-    width: 350px;
+    width: 370px;
     font-size: 0.85rem;
   }
 }
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 375px) {
   .about-me-text {
     width: 275px;
     font-size: 0.65rem;
