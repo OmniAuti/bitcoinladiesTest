@@ -464,8 +464,18 @@ let moveX;
       }
       document.body.style.overflowY = "hidden";
       heroIndex++;
-      if (heroIndex >= 3) {
-        heroIndex = 3;
+      if (heroIndex > 3) {
+        // TRICKY LITTLE SWITCH TO SEEM LIKE ENDLESS CAROUSEL
+        heroIndex = 0;
+        setTimeout(() => {
+          carouselContainer.style.transition = "none";
+          carouselContainer.style.transform = `translateX(0%)`;
+          setTimeout(() => {
+            carouselContainer.style.transition = "transform ease 750ms";
+          }, 10);
+          movement = 0;
+        }, 550);
+      
       }
       setTimeout(() => {
         carouselContainer.style.transform = `translateX(-${movement}%)`;
@@ -719,7 +729,7 @@ if (window.innerWidth > 800) { // MOBILE CHECK TO REDUCE LAG
 
       let imgX = x * -1
       let imgY = y * -1
-      
+
       heroParallaxImg.forEach((img) => {
         img.style.transform = `translate(${imgX}px,${imgY}px)`;
       });
