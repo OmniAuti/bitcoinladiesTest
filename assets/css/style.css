@@ -2659,7 +2659,7 @@ section {
   overflow-x: hidden;
 }
 .card {
-  max-height: 410px;
+  max-height: 415px;
 }
 
 .blog-card {
@@ -2689,10 +2689,10 @@ section {
   text-align: right;
   letter-spacing: 2.5px;
   position: absolute;
-  background: -webkit-linear-gradient(to right, transparent 40%, #fff 60%);
-  background: -moz-linear-gradient(to right, transparent 40%, #fff 60%);
-  background: -o-linear-gradient(to right, transparent 40%, #fff 60%);
-  background: linear-gradient(to right, transparent 40%, #fff 60%);
+  background: -webkit-linear-gradient(to right, rgba(220 170 80 / 0) 40%, #fff 60%);
+  background: -moz-linear-gradient(to right, rgba(220 170 80 / 0) 40%, #fff 60%);
+  background: -o-linear-gradient(to right, rgba(220 170 80 / 0) 40%, #fff 60%);
+  background: linear-gradient(to right, rgba(220 170 80 / 0) 40%, #fff 60%);
   bottom: 0px;
   right: 0;
   width: 100px;
