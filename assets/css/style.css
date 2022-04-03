@@ -60,6 +60,8 @@ h6::selection {
   background: #facadf;
 }
 
+
+
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
@@ -582,7 +584,8 @@ h6::selection {
   background-size: cover;
   background-position: center;
   position: relative;
-  overflow-x: hidden;
+  overflow: hidden;
+  padding-bottom: 0;
 }
 
 #hero:before {
