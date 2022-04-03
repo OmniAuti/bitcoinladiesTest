@@ -3831,6 +3831,10 @@ grid-row-gap: 0.5rem;*/
 }
 
 
+/*--------------------------------------------------------------
+#CONTACT MODAL
+--------------------------------------------------------------*/
+
 .contact-modal {
   position: absolute;
   top: 0;
@@ -3863,14 +3867,16 @@ grid-row-gap: 0.5rem;*/
   justify-content: center;
   flex-direction: column;
   width: 40%;
-  height: 50%;
+  height: fit-content;
   border-radius: 20px;
   position: relative;
   box-shadow:0px 0px 10px rgba(68, 68, 68, 0.5) ;
+  padding: 50px 0px;
 }
 
 .contact-modal-header {
   color: #fff;
+  padding: 25px 0px 0px 0px;
 }
 
 .modal-close-btn {
@@ -3887,4 +3893,20 @@ grid-row-gap: 0.5rem;*/
 .modal-close-btn:active {
   -webkit-transform: scale(0.95);
   transform: scale(0.95)
+}
+
+@media screen and (max-width:1150px) {
+  .contact-modal-form-container {
+    width: 75%;
+  }
+}
+
+@media screen and (max-width:650px) {
+  .contact-modal-form-container {
+    width: 95%;
+  }
+
+  .contact-modal-form-container form {
+    width: 90%;
+  }
 }
