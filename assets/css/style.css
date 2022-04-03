@@ -2599,7 +2599,8 @@ section {
     font-size: 1.5rem !important;
   }
 
-  .typewriter-text {
+  .typewriter-text,
+  .typewriter-text-place-holder {
     height: 30%;
     width: 775px;
     font-size: 1.5rem;
@@ -2620,7 +2621,8 @@ section {
 }
 
 @media screen and (max-width: 980px) {
-  .typewriter-text {
+  .typewriter-text,
+  .typewriter-text-place-holder {
     height: 30%;
     width: 650px;
     font-size: 1.25rem;
@@ -2628,7 +2630,8 @@ section {
 }
 
 @media screen and (max-width: 650px) {
-  .typewriter-text {
+  .typewriter-text,
+  .typewriter-text-place-holder {
     height: 30%;
     width: 525px;
     font-size: 1rem;
@@ -2647,7 +2650,8 @@ section {
     font-style: italic;
     font-size: 1rem !important;
   }
-  .typewriter-text {
+  .typewriter-text,
+  .typewriter-text-place-holder {
     height: 30%;
     width: 390px;
     font-size: 0.75rem;
@@ -2660,7 +2664,8 @@ section {
   #hero h2 {
     font-size: 1rem;
   }
-  .typewriter-text {
+  .typewriter-text,
+  .typewriter-text-place-holder {
     height: 30%;
     width: 320px;
     font-size: 0.62rem;
@@ -2678,7 +2683,8 @@ section {
     font-style: italic;
     font-size: 2rem !important;
   }
-  .typewriter-text {
+  .typewriter-text,
+  .typewriter-text-place-holder {
     height: 30%;
     width: 1550px;
     word-spacing: 0px;
