@@ -737,4 +737,3 @@ if (window.innerWidth > 800) { // MOBILE CHECK TO REDUCE LAG
   });
 
 }
-
