@@ -1053,11 +1053,11 @@ section {
 .featured-scroll-icon-container {
   float: left;
   width: 35%;
+  position: sticky;
   position: -webkit-sticky;
   position: -moz-sticky;
   position: -o-sticky;
   position: -ms-sticky;
-  position: sticky;
   top: 72px;
   margin-top: 50px;
   padding: 25px 25px 100px 0px;
