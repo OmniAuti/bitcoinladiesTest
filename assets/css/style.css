@@ -1043,7 +1043,8 @@ section {
 }
 
 .featured-scroll-container {
-  margin-top: -25px;
+  display:block;
+  margin-top: -15px;
   background-color: #facadf;
   width: calc(100%);
   height: 1600px;
@@ -1060,6 +1061,7 @@ section {
   top: 72px;
   padding: 25px 25px 100px 0px;
   height: 475px;
+  background-color: #facadf;
 }
 
 .featured-icon {
@@ -1098,6 +1100,7 @@ section {
 .featured-card-container {
   width: 65%;
   float: right;
+  background-color: #facadf;
 }
 .featured-scroll-container::after {
   content: "";
