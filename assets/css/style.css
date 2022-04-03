@@ -1189,7 +1189,6 @@ section {
     transform: translateX(-50px);
     border-radius: 200px 200px 0px 0px;
     padding-top: 100px;
-    padding-bottom: 50px;
   }
 
   .features-header {
@@ -1285,6 +1284,9 @@ section {
   .featured-card-container {
     width: 100%;
     float: none;
+  }
+  .featured-scroll-card {
+    margin: 25px auto;
   }
 
   .featured-card h4 {
