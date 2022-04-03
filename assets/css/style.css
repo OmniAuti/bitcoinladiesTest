@@ -581,7 +581,7 @@ h6::selection {
   background-size: cover;
   background-position: center;
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
   padding-bottom: 0;
 }
 
