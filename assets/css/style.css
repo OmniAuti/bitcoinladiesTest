@@ -2268,7 +2268,7 @@ section {
 }
 
 .carousel-content-holder {
-  width: 400%;
+  width: 500%;
   height: 90%;
   -webkit-transform: translateX(0%);
   -ms-transform: translateX(0%);
@@ -2284,7 +2284,7 @@ section {
 }
 
 .carousel-content {
-  width: 25%;
+  width: 20%;
   float: left;
   position: relative;
 }
@@ -2331,6 +2331,39 @@ section {
 .hero-text-container-left h2,
 .hero-text-container-right h2 {
   color: black !important;
+}
+
+@media screen and (min-width: 1800px) {
+
+  .hero-first-slide-img {
+    right: 10%;
+    width: 50%;
+    height: 75%;
+  }
+  
+  .hero-second-slide-img {
+    left: 15%;
+    width: 50%;
+    height: 75%;
+  }
+  
+  .hero-text-container-left {
+    width: 900px;
+    left: 20%;
+  }
+  .hero-text-container-right {
+    width: 900px;
+    right: 20%;
+  }
+  
+  .hero-text-container-left h2,
+  .hero-text-container-right h2 {
+    font-size: 4rem !important;
+  }
+
+  .hero-p-container {
+    font-size: 2rem;
+  }
 }
 
 @media screen and (max-width: 1000px) {
@@ -2470,6 +2503,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 99;
 }
 
 @media screen and (max-width: 700px) {
@@ -2518,7 +2552,8 @@ section {
   }
 }
 
-.typewriter-text {
+.typewriter-text,
+.typewriter-text-place-holder {
   height: 30%;
   width: 780px;
   word-spacing: 0px;
@@ -2528,7 +2563,8 @@ section {
   font-size: "Poppins", sans-serif;
 }
 
-.typewrite-writer {
+.typewrite-writer,
+.typewrite-writer-place-holder {
   -webkit-animation: typer 750ms infinite;
   animation: typer 750ms infinite;
   opacity: 0;
@@ -3053,7 +3089,7 @@ section {
 
 @media screen and (min-width: 1800px) {
   .featured-hero-event-h2 {
-    font-size: 5rem !important;
+    font-size: 6rem !important;
   }
 }
 

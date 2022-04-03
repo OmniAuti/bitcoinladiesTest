@@ -349,11 +349,26 @@ let carouselIntervalForward; // DECLARED GLOBAL TO BE CLEARED ON CLICK FOR COIN 
 function carouselIntervalFunc(heroIndex) {
   let transformAmount = 0;
   carouselIntervalForward = setInterval(() => {
-    carouselContainer.style.transform = `translateX(-${(transformAmount += 25)}%)`;
+    // MOVEMENT
+    carouselContainer.style.transform = `translateX(-${(transformAmount += 20)}%)`;
     selectorArray[heroIndex].classList.remove("active-carousel-selector");
-    heroIndex++;
-    selectorArray[heroIndex].classList.add("active-carousel-selector");
-    if (heroIndex >= 3) {
+    heroIndex++; // INTERVAL UP FOR COIN SELECTOR ANIMATION
+    
+    if (heroIndex > 3) { // TRICKY LITTLE SWITCH TO SEEM LIKE ENDLESS CAROUSEL
+      heroIndex = 0;
+      setTimeout(() => {
+        carouselContainer.style.transition = 'none';
+        carouselContainer.style.transform = `translateX(0%)`;
+        setTimeout(() => {
+          carouselContainer.style.transition = 'transform ease 750ms';
+        }, 50);
+        transformAmount = 0;
+      }, 750)
+    }
+      selectorArray[heroIndex].classList.add("active-carousel-selector");
+   /* if (heroIndex > 3) {
+
+      // BACKWARDS INTERVAL  transition: transform ease 750ms;
       clearInterval(carouselIntervalForward);
       carouselIntervalBack = setInterval(() => {
         carouselContainer.style.transform = `translateX(-${(transformAmount -= 25)}%)`;
@@ -366,8 +381,8 @@ function carouselIntervalFunc(heroIndex) {
           return;
         }
       }, 4000);
-      return;
-    }
+   
+    }*/
   }, 4000);
 }
 
@@ -383,7 +398,7 @@ carouselSelectors.forEach((selector) => {
     clearInterval(carouselIntervalForward);
     clearInterval(carouselIntervalBack);
     addCarouselActiveClass(selector);
-    const indexMove = selectorArray.indexOf(selector) * 25;
+    const indexMove = selectorArray.indexOf(selector) * 20;
     carouselContainer.style.transform = `translateX(-${indexMove}%)`;
   });
 });
@@ -442,9 +457,9 @@ let moveX;
 
   carouselContainer.addEventListener("touchend", () => {
     if (moveX - 100 < startX) {
-      movement += 25;
-      if (movement >= 75) {
-        movement = 75;
+      movement += 20;
+      if (movement >= 100) {
+        movement = 100;
       }
       document.body.style.overflowY = "hidden";
       heroIndex++;
@@ -458,7 +473,7 @@ let moveX;
       }, 10);
     }
     if (moveX + 100 > startX) {
-      movement -= 25;
+      movement -= 20;
       if (movement <= 0) {
         movement = 0;
       }
@@ -608,7 +623,7 @@ const featuredHeaderTwo =  document.querySelector('.featured-icon-header-two')
 const featuredHeaderThree =  document.querySelector('.featured-icon-header-three')
 
 let featuredCardHeight = ((featuredCardOne.offsetHeight * .2)).toFixed(0)
-// mobiel needs this check
+// MOBILE NEEDS THIS CHECK TO WORK
 if (window.innerWidth < 770) {
   featuredCardHeight = ((featuredCardOne.offsetHeight * .15)).toFixed(0)
 }
@@ -619,7 +634,7 @@ const options = {
   threshold: .75,
   rootMargin: `-${featuredCardHeight}px`,
 }
-
+// OBSERVORS ----------------------------------------------------
 const observorTopOne = new IntersectionObserver((entries) => {
   if (entries[0].isIntersecting) {
     featuredIconOne.classList.add('active-featured-icon')
