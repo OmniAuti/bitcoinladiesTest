@@ -353,20 +353,21 @@ function carouselIntervalFunc(heroIndex) {
     carouselContainer.style.transform = `translateX(-${(transformAmount += 20)}%)`;
     selectorArray[heroIndex].classList.remove("active-carousel-selector");
     heroIndex++; // INTERVAL UP FOR COIN SELECTOR ANIMATION
-    
-    if (heroIndex > 3) { // TRICKY LITTLE SWITCH TO SEEM LIKE ENDLESS CAROUSEL
+
+    if (heroIndex > 3) {
+      // TRICKY LITTLE SWITCH TO SEEM LIKE ENDLESS CAROUSEL
       heroIndex = 0;
       setTimeout(() => {
-        carouselContainer.style.transition = 'none';
+        carouselContainer.style.transition = "none";
         carouselContainer.style.transform = `translateX(0%)`;
         setTimeout(() => {
-          carouselContainer.style.transition = 'transform ease 750ms';
+          carouselContainer.style.transition = "transform ease 750ms";
         }, 50);
         transformAmount = 0;
-      }, 750)
+      }, 750);
     }
-      selectorArray[heroIndex].classList.add("active-carousel-selector");
-   /* if (heroIndex > 3) {
+    selectorArray[heroIndex].classList.add("active-carousel-selector");
+    /* if (heroIndex > 3) {
 
       // BACKWARDS INTERVAL  transition: transform ease 750ms;
       clearInterval(carouselIntervalForward);
@@ -412,7 +413,7 @@ let moveX;
 //let moveY;
 (function heroMobileSwipe() {
   // Y SCROLL CHECK FOR INTENDED UP DOWN SCROLLING -----------------
- /* carouselContainer.addEventListener("touchstart", (e) => {
+  /* carouselContainer.addEventListener("touchstart", (e) => {
     document.querySelector("html").style.overflowY = "hidden";
     startY = e.touches[0].clientY;
   });
@@ -610,69 +611,70 @@ window.addEventListener("resize", () => {
 
 // FEATURED FUNCTIONALITY --------------------------------------------
 
-const featuredCardOne =  document.querySelector('.featured-scroll-card-one')
-const featuredCardTwo =  document.querySelector('.featured-scroll-card-two')
-const featuredCardThree =  document.querySelector('.featured-scroll-card-three')
+const featuredCardOne = document.querySelector(".featured-scroll-card-one");
+const featuredCardTwo = document.querySelector(".featured-scroll-card-two");
+const featuredCardThree = document.querySelector(".featured-scroll-card-three");
 
-const featuredIconOne =  document.querySelector('.featured-icon-one')
-const featuredIconTwo =  document.querySelector('.featured-icon-two')
-const featuredIconThree =  document.querySelector('.featured-icon-three')
+const featuredIconOne = document.querySelector(".featured-icon-one");
+const featuredIconTwo = document.querySelector(".featured-icon-two");
+const featuredIconThree = document.querySelector(".featured-icon-three");
 
-const featuredHeaderOne =  document.querySelector('.featured-icon-header-one')
-const featuredHeaderTwo =  document.querySelector('.featured-icon-header-two')
-const featuredHeaderThree =  document.querySelector('.featured-icon-header-three')
+const featuredHeaderOne = document.querySelector(".featured-icon-header-one");
+const featuredHeaderTwo = document.querySelector(".featured-icon-header-two");
+const featuredHeaderThree = document.querySelector(
+  ".featured-icon-header-three"
+);
 
-let featuredCardHeight = ((featuredCardOne.offsetHeight * .2)).toFixed(0)
+let featuredCardHeight = (featuredCardOne.offsetHeight * 0.2).toFixed(0);
 // MOBILE NEEDS THIS CHECK TO WORK
 if (window.innerWidth < 770) {
-  featuredCardHeight = ((featuredCardOne.offsetHeight * .15)).toFixed(0)
+  featuredCardHeight = (featuredCardOne.offsetHeight * 0.15).toFixed(0);
 }
-
 
 const options = {
   root: null,
-  threshold: .75,
+  threshold: 0.75,
   rootMargin: `-${featuredCardHeight}px`,
-}
+};
 // OBSERVORS ----------------------------------------------------
 const observorTopOne = new IntersectionObserver((entries) => {
   if (entries[0].isIntersecting) {
-    featuredIconOne.classList.add('active-featured-icon')
-    featuredIconTwo.classList.remove('active-featured-icon')
-    featuredIconThree.classList.remove('active-featured-icon')
+    featuredIconOne.classList.add("active-featured-icon");
+    featuredIconTwo.classList.remove("active-featured-icon");
+    featuredIconThree.classList.remove("active-featured-icon");
 
-    featuredHeaderOne.classList.add('active-featured-icon-header')
-    featuredHeaderTwo.classList.remove('active-featured-icon-header')
-    featuredHeaderThree.classList.remove('active-featured-icon-header')
+    featuredHeaderOne.classList.add("active-featured-icon-header");
+    featuredHeaderTwo.classList.remove("active-featured-icon-header");
+    featuredHeaderThree.classList.remove("active-featured-icon-header");
   }
-},options)
+}, options);
 const observorTopTwo = new IntersectionObserver((entries) => {
   if (entries[0].isIntersecting) {
-    featuredIconTwo.classList.add('active-featured-icon')
-    featuredIconOne.classList.remove('active-featured-icon')
-    featuredIconThree.classList.remove('active-featured-icon')
+    featuredIconTwo.classList.add("active-featured-icon");
+    featuredIconOne.classList.remove("active-featured-icon");
+    featuredIconThree.classList.remove("active-featured-icon");
 
-    featuredHeaderTwo.classList.add('active-featured-icon-header')
-    featuredHeaderOne.classList.remove('active-featured-icon-header')
-    featuredHeaderThree.classList.remove('active-featured-icon-header')
-  } 
-},options)
+    featuredHeaderTwo.classList.add("active-featured-icon-header");
+    featuredHeaderOne.classList.remove("active-featured-icon-header");
+    featuredHeaderThree.classList.remove("active-featured-icon-header");
+  }
+}, options);
 const observorTopThree = new IntersectionObserver((entries) => {
   if (entries[0].isIntersecting) {
-    featuredIconThree.classList.add('active-featured-icon')
-    featuredIconOne.classList.remove('active-featured-icon')
-    featuredIconTwo.classList.remove('active-featured-icon')
+    featuredIconThree.classList.add("active-featured-icon");
+    featuredIconOne.classList.remove("active-featured-icon");
+    featuredIconTwo.classList.remove("active-featured-icon");
 
-    featuredHeaderThree.classList.add('active-featured-icon-header')
-    featuredHeaderTwo.classList.remove('active-featured-icon-header')
-    featuredHeaderOne.classList.remove('active-featured-icon-header')
-  } 
-},options)
+    featuredHeaderThree.classList.add("active-featured-icon-header");
+    featuredHeaderTwo.classList.remove("active-featured-icon-header");
+    featuredHeaderOne.classList.remove("active-featured-icon-header");
+  }
+}, options);
 //const observorBottom = new IntersectionObserver(callback, options)
 
-observorTopOne.observe(featuredCardOne)
-observorTopTwo.observe(featuredCardTwo)
-observorTopThree.observe(featuredCardThree)
+observorTopOne.observe(featuredCardOne);
+observorTopTwo.observe(featuredCardTwo);
+observorTopThree.observe(featuredCardThree);
 
 /*
 
@@ -681,22 +683,48 @@ observorTopThree.observe(featuredCardThree)
   } else {
     featuredIconOne.classList.remove('active-featured-icon')
   }
-*/ 
-
+*/
 
 // CONTACT MODAL -----------------------------------------------------------------------------
 
-const contactModal = document.querySelector('.contact-modal')
-const contactModalCloseBtn = document.querySelector('.modal-close-btn')
-const contactLink = document.getElementById('contact-nav-link')
+const contactModal = document.querySelector(".contact-modal");
+const contactModalCloseBtn = document.querySelector(".modal-close-btn");
+const contactLink = document.getElementById("contact-nav-link");
 
-contactLink.addEventListener('click', (e) => {
-  e.preventDefault()
-  contactModal.classList.add('active-contact-modal');
-  document.body.style.overflow = 'hidden';
-})
+contactLink.addEventListener("click", (e) => {
+  e.preventDefault();
+  contactModal.classList.add("active-contact-modal");
+  document.body.style.overflow = "hidden";
+});
 
-contactModalCloseBtn.addEventListener('click', () => {
-  contactModal.classList.remove('active-contact-modal');
+contactModalCloseBtn.addEventListener("click", () => {
+  contactModal.classList.remove("active-contact-modal");
   document.body.style.overflow = null;
-})
+});
+
+// MOUSE PARALLAX HERO CAROUSEL
+const heroParallaxSlide = document.querySelectorAll(".parallax-hero-slide");
+const heroParallaxText = document.querySelectorAll(".carousel-parallax-text");
+const heroParallaxImg = document.querySelectorAll(".carousel-parallax-image");
+if (window.innerWidth > 800) { // MOBILE CHECK TO REDUCE LAG
+
+  heroParallaxSlide.forEach((slide) => {
+    slide.addEventListener("mousemove", (e) => {
+      let x = e.clientX * 0.02;
+      let y = e.clientY * 0.02;
+
+      heroParallaxText.forEach((box) => {
+        box.style.transform = `translate(${x}px,${y}px)`;
+      });
+
+      let imgX = x * -1
+      let imgY = y * -1
+      
+      heroParallaxImg.forEach((img) => {
+        img.style.transform = `translate(${imgX}px,${imgY}px)`;
+      });
+    });
+  });
+
+}
+

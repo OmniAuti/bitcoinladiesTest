@@ -2300,6 +2300,12 @@ section {
   position: relative;
 }
 
+.carousel-parallax-text {
+  -webkit-transform: translate(0px,0px);
+  transform: translate(0px,0px);
+  transition: transform ease 100ms;
+}
+
 .carousel-content img {
   border-radius: 20px;
 }
