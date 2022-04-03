@@ -1043,7 +1043,7 @@ section {
 }
 
 .featured-scroll-container {
-  display:block;
+  display: block;
   margin-top: -15px;
   background-color: #facadf;
   width: calc(100%);
@@ -2345,19 +2345,18 @@ section {
 }
 
 @media screen and (min-width: 1800px) {
-
   .hero-first-slide-img {
     right: 10%;
     width: 50%;
     height: 75%;
   }
-  
+
   .hero-second-slide-img {
     left: 15%;
     width: 50%;
     height: 75%;
   }
-  
+
   .hero-text-container-left {
     width: 900px;
     left: 20%;
@@ -2366,7 +2365,7 @@ section {
     width: 900px;
     right: 20%;
   }
-  
+
   .hero-text-container-left h2,
   .hero-text-container-right h2 {
     font-size: 4rem !important;
@@ -3399,6 +3398,14 @@ grid-row-gap: 0.5rem;*/
   float: right;
 }
 
+.event-float-right::after,
+.event-float-right::after,
+.events-page__other-events::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
 .event-stagger-card {
   float: right;
   height: 250px;
@@ -3830,7 +3837,6 @@ grid-row-gap: 0.5rem;*/
   }
 }
 
-
 /*--------------------------------------------------------------
 #CONTACT MODAL
 --------------------------------------------------------------*/
@@ -3868,7 +3874,7 @@ grid-row-gap: 0.5rem;*/
   height: fit-content;
   border-radius: 20px;
   position: relative;
-  box-shadow:0px 0px 10px rgba(68, 68, 68, 0.5) ;
+  box-shadow: 0px 0px 10px rgba(68, 68, 68, 0.5);
   padding: 50px 0px;
 }
 
@@ -3890,16 +3896,16 @@ grid-row-gap: 0.5rem;*/
 
 .modal-close-btn:active {
   -webkit-transform: scale(0.95);
-  transform: scale(0.95)
+  transform: scale(0.95);
 }
 
-@media screen and (max-width:1150px) {
+@media screen and (max-width: 1150px) {
   .contact-modal-form-container {
     width: 75%;
   }
 }
 
-@media screen and (max-width:650px) {
+@media screen and (max-width: 650px) {
   .contact-modal-form-container {
     width: 95%;
   }
