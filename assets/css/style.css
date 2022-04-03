@@ -2755,7 +2755,7 @@ section {
   overflow: hidden;
 }
 .subscribe-img-background {
-  width: 150vw;
+  width: 200vw;
   height: auto;
   min-height: 600px;
   position: absolute;
@@ -2763,6 +2763,19 @@ section {
   transform: translateX(20vw);
   animation: subscribeBackground linear 60000ms infinite;
   z-index: -1;
+}
+
+@media screen and (min-width:1000px) {
+  .subscribe-img-background {
+    width: 150vw;
+    height: auto;
+  }
+}
+@media screen and (min-width:1500px) {
+  .subscribe-img-background {
+    width: 140vw;
+    object-position: bottom;
+  }
 }
 
 @keyframes subscribeBackground {
