@@ -262,7 +262,6 @@ h6::selection {
   transition: all 0.5s;
   z-index: 997;
   padding: 15px 0;
-  overflow-x: hidden;
 }
 #header.header-scrolled,
 #header.header-inner-pages {
@@ -991,7 +990,6 @@ section {
   background-color: #000;
   padding-bottom: 0;
   margin-top: -25px;
-  overflow-x: hidden;
 }
 
 .overflow-control {
