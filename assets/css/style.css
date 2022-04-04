@@ -91,6 +91,15 @@ h6::selection {
   opacity: 1;
 }
 
+@media screen and (max-width: 500px) {
+  .back-to-top:hover {
+    background: #facadf;
+  }
+  .back-to-top:hover i {
+    color: #151515;
+  }
+}
+
 /*--------------------------------------------------------------
 # Preloader
 --------------------------------------------------------------*/
