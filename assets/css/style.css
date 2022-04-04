@@ -2992,6 +2992,7 @@ section {
   transform: translateY(0px);
   border-radius: 20px;
   overflow: hidden;
+  position: relative;
 }
 
 .event-content-card:hover {
@@ -3001,23 +3002,46 @@ section {
 
 .event-card-text-container {
   height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
+  background-color: #000;
 }
 
 .event-card-text-container p,
 .event-card-text-container h4 {
   margin-bottom: 0;
 }
-
-.event-content-card img {
-  min-width: 100%;
-  width: 100%;
+.event-card-image-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 250px;
   min-height: 250px;
-  max-height: 250px;
+  width: 100%;
+  backdrop-filter: blur(5px);
+}
+
+.event-card-img-blur-back {
+  position: absolute;
+  z-index: -1;
+  width: 200%;
+  height: 200%;
+}
+.event-card-image-container img {
+  width: 90%;
+  max-width: 90%;
+  height: auto;
+  height: 200px;
+  min-height: 200px;
+  max-height: 200px;
   object-position: center;
   object-fit: inherit;
 }
