@@ -2771,6 +2771,8 @@ section {
 --------------------------------------------------------------*/
 #blog {
   overflow-x: hidden;
+  position: relative;
+  padding-bottom: 100px;
 }
 .card {
   max-height: 415px;
@@ -2827,6 +2829,52 @@ section {
   right: 0;
   width: 100px;
 }
+
+.blog-section-links {
+  position: absolute;
+  right: calc(50% - 100px);
+  transform: translateX(50%);
+  bottom: -60px;
+  border-radius: 4px;
+  padding: 7px 25px 8px 25px;
+  white-space: nowrap;
+  transition: 0.3s;
+  font-size: 16px;
+  border: 2px solid #facadf;
+}
+.blog-section-links:last-of-type {
+  position: absolute;
+  right: calc(50% + 100px);
+  transform: translateX(50%);
+  bottom: -60px;
+}
+
+.get-started-btn:hover {
+  background: #ff61ab;
+  color: #343a40;
+}
+@media screen and (max-width: 992px) {
+.blog-section-links {
+    padding: 7px 20px 8px 20px;
+    right: calc(50% - 100px);
+    transform: translateX(50%);
+  }
+  .blog-section-links:last-of-type {
+    right: calc(50% + 100px);
+    transform: translateX(50%);
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .blog-section-links {
+    padding: 7px 15px 8px 15px;
+    right: calc(50% - 75px);
+  }
+  .blog-section-links:last-of-type {
+    right: calc(50% + 75px);
+  }
+}
+
 
 /*--------------------------------------------------------------
 # SUBSCRIBE
