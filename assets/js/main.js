@@ -763,7 +763,7 @@ if (window.innerWidth < 700) {
   const allLinks = document.querySelectorAll("a");
 
   for (const link of allLinks) {
-    link.addEventListener('click', () => {
+    link.addEventListener('touchend', () => {
       var linkAttr = link.getAttribute('href')
       var targetAttr = link.getAttribute('target')
       if (targetAttr === '_blank') {
