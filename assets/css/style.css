@@ -3303,7 +3303,7 @@ grid-row-gap: 0.5rem;*/
   min-width: 65%;
   display: block;
   margin: 0 auto;
-  box-shadow: 0px 0px 10px rgba(68, 68, 68, 0.5);
+  box-shadow: 0px 0px 10px rgba(68, 68, 68, 0.25);
   transition: all ease 500ms;
 }
 
@@ -3326,7 +3326,7 @@ grid-row-gap: 0.5rem;*/
     min-width: 80%;
     display: block;
     margin: 0 auto;
-    box-shadow: 0px 0px 10px rgba(68, 68, 68, 0.5);
+    box-shadow: 0px 0px 10px rgba(68, 68, 68, 0.25);
     transition: all ease 500ms;
   }
 }
@@ -3350,7 +3350,7 @@ grid-row-gap: 0.5rem;*/
     min-width: 90%;
     display: block;
     margin: 0 auto;
-    box-shadow: 0px 0px 10px rgba(68, 68, 68, 0.5);
+    box-shadow: 0px 0px 10px rgba(68, 68, 68, 0.25);
     transition: all ease 500ms;
   }
 }
@@ -3379,7 +3379,7 @@ grid-row-gap: 0.5rem;*/
 
 .events-page__other-events h2 {
   color: #fff;
-  text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.25);
   height: 100px;
   font-size: 5rem;
   text-align: center;
@@ -3397,14 +3397,14 @@ grid-row-gap: 0.5rem;*/
   border-radius: 20px;
   height: fit-content;
   padding: 0;
-  box-shadow: 0px 0px 10px rgba(68, 68, 68, 0.5);
+  box-shadow: 0px 0px 10px rgba(68, 68, 68, 0.25);
   transition: all ease 500ms;
 }
 
 .events-page-card:hover {
   -webkit-transform: translateY(-10px);
   transform: translateY(-10px);
-  box-shadow: 0px 0px 10px rgba(255, 97, 171, 0.5);
+  box-shadow: 0px 0px 10px rgba(255, 97, 171, 0.25);
 }
 
 .event-float-left {
@@ -3500,7 +3500,7 @@ grid-row-gap: 0.5rem;*/
   border-radius: 20px;
   height: 250px;
   padding: 0;
-  box-shadow: 0px 0px 10px rgba(68, 68, 68, 0.5);
+  box-shadow: 0px 0px 10px rgba(68, 68, 68, 0.25);
   transition: all ease 500ms;
 }
 
@@ -3512,7 +3512,7 @@ grid-row-gap: 0.5rem;*/
 .communities-page-card:hover {
   -webkit-transform: translateY(-10px);
   transform: translateY(-10px);
-  box-shadow: 0px 0px 10px rgba(255, 97, 171, 0.5);
+  box-shadow: 0px 0px 10px rgba(255, 97, 171, 0.25);
 }
 
 /*--------------------------------------------------------------
@@ -3636,7 +3636,7 @@ grid-row-gap: 0.5rem;*/
   display: flex;
   align-items: center;
   justify-content: space-around;
-  box-shadow: 0px 0px 10px rgba(68, 68, 68, 0.5);
+  box-shadow: 0px 0px 10px rgba(68, 68, 68, 0.25);
   transition: all ease 500ms;
   padding: 10px;
   overflow: hidden;
@@ -3645,7 +3645,7 @@ grid-row-gap: 0.5rem;*/
 .grant-funding-content-card:hover {
   -webkit-transform: translateY(-10px);
   transform: translateY(-10px);
-  box-shadow: 0px 0px 10px rgba(255, 97, 171, 0.5);
+  box-shadow: 0px 0px 10px rgba(255, 97, 171, 0.25);
 }
 
 .grant-funding-content-card > div {
@@ -3968,9 +3968,10 @@ grid-row-gap: 0.5rem;*/
   height: fit-content;
   border-radius: 20px;
   position: relative;
-  box-shadow: 0px 0px 10px #000;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   padding: 50px 0px;
   text-align: center;
+  border: 1px solid #fff;
 }
 
 .submission-thanks-header {
@@ -4035,6 +4036,7 @@ grid-row-gap: 0.5rem;*/
   z-index: 999;
   display: none;
   overflow: hidden;
+  
 }
 
 .contact-thanks-modal.active-contact-thanks-modal {
@@ -4070,6 +4072,7 @@ grid-row-gap: 0.5rem;*/
   box-shadow: 0px 0px 10px #000;
   padding: 50px 0px;
   text-align: center;
+  border: 1px solid #fff
 }
 
 .contact-thanks-header {
