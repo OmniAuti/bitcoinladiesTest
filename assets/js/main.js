@@ -475,7 +475,6 @@ let moveX;
           }, 10);
           movement = 0;
         }, 550);
-      
       }
       setTimeout(() => {
         carouselContainer.style.transform = `translateX(-${movement}%)`;
@@ -716,7 +715,8 @@ contactModalCloseBtn.addEventListener("click", () => {
 const heroParallaxSlide = document.querySelectorAll(".parallax-hero-slide");
 const heroParallaxText = document.querySelectorAll(".carousel-parallax-text");
 const heroParallaxImg = document.querySelectorAll(".carousel-parallax-image");
-if (window.innerWidth > 800) { // MOBILE CHECK TO REDUCE LAG
+if (window.innerWidth > 800) {
+  // MOBILE CHECK TO REDUCE LAG
 
   heroParallaxSlide.forEach((slide) => {
     slide.addEventListener("mousemove", (e) => {
@@ -727,31 +727,51 @@ if (window.innerWidth > 800) { // MOBILE CHECK TO REDUCE LAG
         box.style.transform = `translate(${x}px,${y}px)`;
       });
 
-      let imgX = x * -1
-      let imgY = y * -1
+      let imgX = x * -1;
+      let imgY = y * -1;
 
       heroParallaxImg.forEach((img) => {
         img.style.transform = `translate(${imgX}px,${imgY}px)`;
       });
     });
   });
-
 }
-
 
 // SUBMISSION THANKS MODAL CLOSE ------------
 
-const submissionModalBtnClose = document.querySelector('.submission-thanks-close-btn')
-submissionModalBtnClose.addEventListener('click', () => {
-  subscriptionModal.classList.remove('active-submission-thanks-modal')
+const submissionModalBtnClose = document.querySelector(
+  ".submission-thanks-close-btn"
+);
+submissionModalBtnClose.addEventListener("click", () => {
+  subscriptionModal.classList.remove("active-submission-thanks-modal");
   document.body.style.overflow = null;
-
-})
+});
 
 // CONTACT US THANKS MODAL CLOSE ------------
 
-const contactUsThanksModalBtnClose = document.querySelector('.contact-thanks-close-btn')
-contactUsThanksModalBtnClose.addEventListener('click', () => {
-  contactUsThanksModal.classList.remove('active-contact-thanks-modal')
+const contactUsThanksModalBtnClose = document.querySelector(
+  ".contact-thanks-close-btn"
+);
+contactUsThanksModalBtnClose.addEventListener("click", () => {
+  contactUsThanksModal.classList.remove("active-contact-thanks-modal");
   document.body.style.overflow = null;
-})
+});
+
+// IOS MOBILE DOUBLE TOUCH FIX ---------------------------------------------
+
+if (window.innerWidth < 700) {
+  const allLinks = document.querySelectorAll("a");
+
+  for (const link of allLinks) {
+    link.addEventListener('click', () => {
+      var linkAttr = link.getAttribute('href')
+      var targetAttr = link.getAttribute('target')
+      if (targetAttr === '_blank') {
+        window.open = linkAttr
+      } else if (targetAttr === "_self" || targetAttr === null) {
+        window.location = linkAttr
+      }
+    })
+  }
+}
+
