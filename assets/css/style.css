@@ -3026,6 +3026,7 @@ section {
   height: 250px;
   min-height: 250px;
   width: 100%;
+  -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
 }
 
@@ -3462,6 +3463,7 @@ grid-row-gap: 0.5rem;*/
   height: 250px;
   min-height: 250px;
   width: 100%;
+  -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
 }
 
@@ -3483,11 +3485,7 @@ grid-row-gap: 0.5rem;*/
     display: none;
   }
 }
-.event-page-card-text-cont {
-  width: 100%;
-  height: calc(100%);
-  min-height: calc(100%);
-}
+
 .event-page-footer {
   position: relative;
   z-index: 99;
