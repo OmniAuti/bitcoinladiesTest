@@ -7,6 +7,8 @@ var contactUsEmailInput = document.querySelector(".email-contact-us-form");
 var contactUsSubjectInput = document.querySelector(".subject-contact-us-form");
 var contactUsTextEnteredInput = document.querySelector(".entered-text-contact-us-form");
 
+var contactUsThanksModal = document.querySelector('.contact-thanks-modal')
+
 contactForm.addEventListener("submit", function (e) {
   e.preventDefault();
 
@@ -21,33 +23,26 @@ contactForm.addEventListener("submit", function (e) {
   request.open("POST", "./forms/contactForm.php", true);
   request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   request.send(params);
-/*
-  emailModal.innerHTML = "";
-  emailModal.innerHTML = `
-<div class="sending-css">
-<div class="circle-outter">
-  <div class="circle-inner">
-    <div class="rect-loading"></div>
-  </div>
-</div>
-</div>`;
 
+
+  document.querySelector('.coin-modal-place-holder').style.display = 'block'
   setTimeout(() => {
-    emailModal.innerHTML = `
-    <p class="fin-close-email-modal">X</p>
-    <div class="fin-email-send">
-    <p>Thanks for reaching out, ${nameInput.value}.</p>
-    <p>I'll respond as soon as I can.</p>
-    </div>
-    `;
-    const closeModal = document.createElement("script");
-    closeModal.setAttribute("src", "js/finCloseModal.js");
-    closeModal.classList.add("delete-after");
-    document.body.append(closeModal);
-    document.querySelector(".closeModal").remove();
-    document.querySelector(".formSubmitSrc").remove();
-  }, 1000);*/
+    document.querySelector('.coin-modal-place-holder').style.display = 'none'
+
+    contactUsNameInput.value = ''
+    contactUsEmailInput.value = ''
+    contactUsSubjectInput.value = ''
+    contactUsTextEnteredInput.value = ''
+  }, 1000); 
+
+  document.querySelector('.contact-thanks-header').innerText = `Thanks for contacting us, ${contactUsNameInput.value}!`
+  contactUsThanksModal.classList.add('active-contact-thanks-modal');
+  document.body.style.overflow = 'hidden';
+
+
 });
+
+
 var contactFormModal = document.getElementById("contact-us-form-modal");
 
 var contactUsNameInputModal = document.querySelector(".name-contact-us-form-modal");
@@ -57,7 +52,7 @@ var contactUsTextEnteredInputModal = document.querySelector(".entered-text-conta
 
 contactFormModal.addEventListener("submit", function (e) {
   e.preventDefault();
-
+  contactModal.classList.remove("active-contact-modal");
   var request = new XMLHttpRequest();
 
   const params =   `You have received a contact us submmission from ${contactUsNameInputModal.value}.\n
@@ -69,38 +64,30 @@ contactFormModal.addEventListener("submit", function (e) {
   request.open("POST", "./forms/contactForm.php", true);
   request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   request.send(params);
-/*
-  emailModal.innerHTML = "";
-  emailModal.innerHTML = `
-<div class="sending-css">
-<div class="circle-outter">
-  <div class="circle-inner">
-    <div class="rect-loading"></div>
-  </div>
-</div>
-</div>`;
+
+  document.querySelector('.coin-modal-place-holder').style.display = 'block'
 
   setTimeout(() => {
-    emailModal.innerHTML = `
-    <p class="fin-close-email-modal">X</p>
-    <div class="fin-email-send">
-    <p>Thanks for reaching out, ${nameInput.value}.</p>
-    <p>I'll respond as soon as I can.</p>
-    </div>
-    `;
-    const closeModal = document.createElement("script");
-    closeModal.setAttribute("src", "js/finCloseModal.js");
-    closeModal.classList.add("delete-after");
-    document.body.append(closeModal);
-    document.querySelector(".closeModal").remove();
-    document.querySelector(".formSubmitSrc").remove();
-  }, 1000);*/
+    document.querySelector('.coin-modal-place-holder').style.display = 'none'
+
+    contactUsNameInputModal.value = ''
+    contactUsEmailInputModal.value = ''
+    contactUsSubjectInputModal.value = ''
+    contactUsTextEnteredInputModal.value = ''
+  }, 1000);
+
+  document.querySelector('.contact-thanks-header').innerText = `Thanks for contacting us, ${contactUsNameInputModal.value}!`
+  contactUsThanksModal.classList.add('active-contact-thanks-modal');
+  document.body.style.overflow = 'hidden';
+
 });
 
 // THIS IS FOR SUBSCRIBE FORM --------------------------------------------
 
 var subscribeForm = document.getElementById("subscribe-form");
 var emailSubscriptionInput = document.querySelector(".email-subscribe");
+
+var subscriptionModal = document.querySelector('.submission-thanks-modal')
 
 subscribeForm.addEventListener("submit", function (e) {
   e.preventDefault();
@@ -112,32 +99,13 @@ subscribeForm.addEventListener("submit", function (e) {
   request.open("POST", "./forms/subscribeForm.php", true);
   request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   request.send(params);
-/*
-  emailModal.innerHTML = "";
-  emailModal.innerHTML = `
-<div class="sending-css">
-<div class="circle-outter">
-  <div class="circle-inner">
-    <div class="rect-loading"></div>
-  </div>
-</div>
-</div>`;
+
+  subscriptionModal.classList.add('active-submission-thanks-modal');
+  
 
   setTimeout(() => {
-    emailModal.innerHTML = `
-    <p class="fin-close-email-modal">X</p>
-    <div class="fin-email-send">
-    <p>Thanks for reaching out, ${nameInput.value}.</p>
-    <p>I'll respond as soon as I can.</p>
-    </div>
-    `;
-    const closeModal = document.createElement("script");
-    closeModal.setAttribute("src", "js/finCloseModal.js");
-    closeModal.classList.add("delete-after");
-    document.body.append(closeModal);
-    document.querySelector(".closeModal").remove();
-    document.querySelector(".formSubmitSrc").remove();
-  }, 1000);*/
+    emailSubscriptionInput.value = ''
+  }, 250)
 });
 // THIS IS FOR SUBSCRIBE FORM FOOTER ------------------------------------------------
 
@@ -154,30 +122,10 @@ subscribeFormFooter.addEventListener("submit", function (e) {
   request.open("POST", "./forms/subscribeForm.php", true);
   request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   request.send(params);
-/*
-  emailModal.innerHTML = "";
-  emailModal.innerHTML = `
-<div class="sending-css">
-<div class="circle-outter">
-  <div class="circle-inner">
-    <div class="rect-loading"></div>
-  </div>
-</div>
-</div>`;
+
+  subscriptionModal.classList.add('active-submission-thanks-modal');
 
   setTimeout(() => {
-    emailModal.innerHTML = `
-    <p class="fin-close-email-modal">X</p>
-    <div class="fin-email-send">
-    <p>Thanks for reaching out, ${nameInput.value}.</p>
-    <p>I'll respond as soon as I can.</p>
-    </div>
-    `;
-    const closeModal = document.createElement("script");
-    closeModal.setAttribute("src", "js/finCloseModal.js");
-    closeModal.classList.add("delete-after");
-    document.body.append(closeModal);
-    document.querySelector(".closeModal").remove();
-    document.querySelector(".formSubmitSrc").remove();
-  }, 1000);*/
+    emailSubscriptionInputFooter.value = ''
+  }, 250)
 });

@@ -737,3 +737,21 @@ if (window.innerWidth > 800) { // MOBILE CHECK TO REDUCE LAG
   });
 
 }
+
+
+// SUBMISSION THANKS MODAL CLOSE ------------
+
+const submissionModalBtnClose = document.querySelector('.submission-thanks-close-btn')
+submissionModalBtnClose.addEventListener('click', () => {
+  subscriptionModal.classList.remove('active-submission-thanks-modal')
+  document.body.style.overflow = null;
+
+})
+
+// CONTACT US THANKS MODAL CLOSE ------------
+
+const contactUsThanksModalBtnClose = document.querySelector('.contact-thanks-close-btn')
+contactUsThanksModalBtnClose.addEventListener('click', () => {
+  contactUsThanksModal.classList.remove('active-contact-thanks-modal')
+  document.body.style.overflow = null;
+})
