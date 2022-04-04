@@ -788,130 +788,91 @@ section {
   height: fit-content;
   padding: 200px 0px 200px 0px;
   overflow-x: hidden;
-}
-
-.about-me-container {
-  height: 600px;
-  width: 1200px;
-  border-radius: 100px;
-  margin: 0 auto;
-  background-image: url("../img/aboutCardBackground.jpg");
+  background-image: url("../img/about-us-background.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+#about:before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: -moz-linear-gradient(to top, transparent 90%, rgb(0, 0, 0));
+  background: -o-linear-gradient(to top, transparent 90%, rgb(0, 0, 0));
+  background: -webkit-linear-gradient(to top, transparent 90%, rgb(0, 0, 0));
+  background: linear-gradient(to top, transparent 90%, rgb(0, 0, 0));
+}
+#about:after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: -moz-linear-gradient(to bottom, transparent 65%, rgb(0, 0, 0) 99%);
+  background: -o-linear-gradient(to bottom, transparent 65%, rgb(0, 0, 0) 99%);
+  background: -webkit-linear-gradient(to bottom, transparent 65%, rgb(0, 0, 0) 99%);
+  background: linear-gradient(to bottom, transparent 65%, rgb(0, 0, 0) 99%);
+}
+
+.about-us-container {
+  text-align: center;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
   flex-direction: column;
+  z-index: 99;
 }
 
-.about-me-header {
-  font-family: "Source Code Pro", monospace;
+.about-us-container h2 {
+  font-size: 4rem;
+  font-weight: bold;
+}
+.about-us-container span {
   color: #ff61ab;
-  font-size: 5rem;
+}
+.about-us-container a {
+  background-color: #ff61ab;
+  border-radius: 20px;
+  padding: 8px 25px 8px 25px;
+}
+.about-us-container a:hover {
+  background-color: #facadf;
+  color: #000;
 }
 
-.about-me-text {
-  font-family: "Poppins", sans-serif;
-  width: 775px;
-  font-size: 1.85rem;
-  color: #c98350;
-}
-
-@media screen and (max-width: 1350px) {
-  .about-me-container {
-    height: 600px;
-    width: 1000px;
-  }
-
-  .about-me-header {
-    font-size: 5rem;
-  }
-
-  .about-me-text {
-    width: 775px;
-    font-size: 1.85rem;
-  }
-}
-@media screen and (max-width: 1050px) {
-  #about {
-    padding: 150px 0px 150px 0px;
-  }
-
-  .about-me-container {
-    height: 450px;
-    width: 750px;
-  }
-
-  .about-me-header {
-    font-size: 4rem;
-  }
-
-  .about-me-text {
-    width: 525px;
-    font-size: 1.25rem;
-  }
-}
-@media screen and (max-width: 800px) {
-  .about-me-container {
-    height: 400px;
-    width: 600px;
-  }
-
-  .about-me-header {
+@media screen and (max-width:600px) {
+  .about-us-container h2 {
     font-size: 3rem;
   }
-
-  .about-me-text {
-    width: 425px;
-    font-size: 1rem;
+  .about-us-container a {
+    padding: 8px 25px 8px 25px;
   }
 }
-@media screen and (max-width: 600px) {
-  #about {
-    background-color: #000;
-    height: fit-content;
-    padding: 100px 0px 100px 0px;
+@media screen and (max-width:420px) {
+  .about-us-container h2 {
+    font-size: 2rem;
   }
-
-  .about-me-container {
-    height: 400px;
-    width: 100%;
-    border-radius: 50px;
+  .about-us-container p {
+    font-size: .75rem;
   }
-
-  .about-me-header {
-    font-size: 3rem;
-  }
-
-  .about-me-text {
-    width: 425px;
-    font-size: 1rem;
+  .about-us-container a {
+    padding: 8px 25px 8px 25px;
   }
 }
-@media screen and (max-width: 450px) {
-  .about-me-container {
-    height: 300px;
-  }
 
-  .about-me-header {
-    font-size: 2.5rem;
-  }
-
-  .about-me-text {
-    width: 370px;
-    font-size: 0.85rem;
-  }
-}
-@media screen and (max-width: 375px) {
-  .about-me-text {
-    width: 275px;
-    font-size: 0.65rem;
-  }
-}
 
 /*--------------------------------------------------------------
 # Clients
@@ -1062,6 +1023,7 @@ section {
   padding: 25px 25px 100px 0px;
   height: 475px;
   background-color: #facadf;
+  z-index: 99;
 }
 
 .featured-icon {
@@ -2833,6 +2795,7 @@ section {
 .blog-section-links {
   position: absolute;
   right: calc(50% - 100px);
+  -webkit-transform:translateX(50%);
   transform: translateX(50%);
   bottom: -60px;
   border-radius: 4px;
@@ -2845,6 +2808,7 @@ section {
 .blog-section-links:last-of-type {
   position: absolute;
   right: calc(50% + 100px);
+  -webkit-transform:translateX(50%);
   transform: translateX(50%);
   bottom: -60px;
 }
@@ -2857,10 +2821,12 @@ section {
 .blog-section-links {
     padding: 7px 20px 8px 20px;
     right: calc(50% - 100px);
+    -webkit-transform:translateX(50%);
     transform: translateX(50%);
   }
   .blog-section-links:last-of-type {
     right: calc(50% + 100px);
+    -webkit-transform:translateX(50%);
     transform: translateX(50%);
   }
 }
