@@ -1444,18 +1444,27 @@ section {
     position: -moz-sticky;
     position: -o-sticky;
     position: -ms-sticky;
-    height: 125px;
+    height: 100px;
     top: 62px;
   }
   .featured-icon h4 {
     transition: color ease 250ms;
-    padding-top: 100px;
+    padding-top: 75px;
     font-size: 0.7rem;
   }
   .featured-icon h4.active-featured-icon-header {
     padding-top: 0;
     font-size: 1rem;
   }
+
+  .featured-icon img {
+    height: 75px;
+    width: auto;
+    margin: 0;
+    padding: 0;
+    display: none;
+  }
+
   .featured-card-container {
     width: 100%;
     float: none;
