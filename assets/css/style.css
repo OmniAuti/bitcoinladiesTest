@@ -1464,6 +1464,11 @@ section {
     font-size: 0.75rem;
     margin-bottom: 15px;
   }
+
+  .featured-card ul li::before {
+    left: -15px;
+    top: 12.5px;
+  }
 }
 /*--------------------------------------------------------------
 # Services
