@@ -3277,6 +3277,9 @@ grid-row-gap: 0.5rem;*/
   font-size: 5rem;
   margin: 25px auto;
 }
+.events-page__featured img {
+  border-radius: 20px;
+}
 
 .events-page__featured h4 {
   color: #fff;
