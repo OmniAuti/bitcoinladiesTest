@@ -1132,7 +1132,8 @@ section {
   flex-direction: column;
   padding: 50px;
   text-align: left;
-  box-shadow: 0 0 10px rgb(68, 68, 68, 0.25);
+  box-shadow: 0 0 5px rgb(68, 68, 68, 0.25);
+  position: relative;
 }
 
 .featured-card h4 {
@@ -1142,11 +1143,31 @@ section {
 .featured-card ul {
   list-style-type: none;
 }
+.featured-card ul li {
+  position:relative;
+}
 .featured-card ul li::before {
-  content: "\2022";
-  color: #ff61ab;
-  width: 25px;
-  margin-right: 10px;
+  position: absolute;
+  content: "";
+  background-color: #ff61ab;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  left: -20px;
+  top: 15px;
+}
+
+.featured-card ul li a {
+  font-size: 50px;
+} 
+
+.featured-card-learn-more {
+  background-color: #444;
+  padding: 10px 20px;
+  border-radius: 20px;
+  position: absolute;
+  right: 25px;
+  bottom: 25px;
 }
 
 @media screen and (min-width: 1600px) {
@@ -1266,6 +1287,26 @@ section {
   .featured-card h4 {
     font-size: 1.75rem;
   }
+
+  .featured-card ul {
+    margin-bottom: 50px;
+  } 
+  .featured-card ul li a {
+    font-size: 25px;
+  } 
+  
+  .featured-card-learn-more {
+    right: 25px;
+    bottom: 25px;
+    right: 50%;
+    -webkit-transform: translateX(50%);
+    transform: translateX(50%);
+    bottom: 25px;
+    padding: 5px 10px;
+    width: 80%;
+    text-align: center;
+  }
+
 }
 
 @media screen and (max-width: 476px) {
@@ -1317,6 +1358,7 @@ section {
   }
   .featured-card ul {
     font-size: 0.75rem;
+    margin-bottom: 15px;
   }
 }
 /*--------------------------------------------------------------
