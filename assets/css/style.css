@@ -3465,10 +3465,11 @@ grid-row-gap: 0.5rem;*/
   font-size: 3.25rem;
   text-align: right;
   padding: 0px 15px;
+  
 }
 
 .communities-svg {
-  background-image: url('/assets/img/communities-hero.svg');
+  background-image: url('../img/communities-hero.svg');
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
