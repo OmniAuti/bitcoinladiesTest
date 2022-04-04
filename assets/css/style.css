@@ -3462,7 +3462,7 @@ grid-row-gap: 0.5rem;*/
 .communities-page-main h1 {
   color: #fff;
   text-shadow: 0px 0px 10px #fff;
-  font-size: 3rem;
+  font-size: 3.25rem;
   text-align: right;
   padding: 0px 15px;
 }
@@ -3481,7 +3481,7 @@ grid-row-gap: 0.5rem;*/
     font-size: 5rem;
   }
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 750px) {
   .communities-header {
     height: 20vh;
   }
@@ -3489,7 +3489,7 @@ grid-row-gap: 0.5rem;*/
     font-size: 2rem;
   }
 }
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 500px) {
   .communities-page-main h1 {
     font-size: 1.5rem;
   }
