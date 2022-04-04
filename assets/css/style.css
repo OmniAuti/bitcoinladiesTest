@@ -946,7 +946,7 @@ section {
   z-index: 99;
 }
 .everyone-text-container h2{
-  font-family:"Source Code Pro", monospace;
+  font-family: "Poppins", sans-serif;
   font-size: 7rem;
   letter-spacing: 15px;
   color: #fff;
@@ -962,7 +962,6 @@ section {
 
 @media screen and (min-width: 1700px) {
   .everyone-text-container h2{
-    font-family:"Source Code Pro", monospace;
     font-size: 10rem;
     letter-spacing: 15px;
     color: #fff;
@@ -970,7 +969,6 @@ section {
     word-spacing: 0px;
   }
   .everyone-text-container p{
-    font-family:"Source Code Pro", monospace;
     font-size: 2.5rem;
     color: #444;
     line-height: 35px;
@@ -1127,7 +1125,7 @@ section {
 }
 
 .features-header {
-  font-family: "Source Code Pro", monospace;
+  font-family: "Poppins", sans-serif;
   font-size: 5rem;
   width: calc(75% - 300px);
   margin-bottom: 100px;
