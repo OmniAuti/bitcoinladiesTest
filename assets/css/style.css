@@ -3357,6 +3357,7 @@ grid-row-gap: 0.5rem;*/
 @media screen and (max-width: 630px) {
   .events-page__featured h1 {
     font-size: 2.5rem;
+    padding-top: 25px;
   }
 
   .events-page__featured img {
@@ -3366,9 +3367,6 @@ grid-row-gap: 0.5rem;*/
   }
 }
 @media screen and (max-width: 450px) {
-  .events-page__featured h1 {
-    margin: 25px 0 50px 0;
-  }
   .events-page__featured img {
     height: 40%;
     width: 100%;
@@ -3385,7 +3383,7 @@ grid-row-gap: 0.5rem;*/
   text-align: center;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 550px) {
   .events-page__other-events h2 {
     font-size: 2.5rem;
   }
@@ -3465,8 +3463,17 @@ grid-row-gap: 0.5rem;*/
   color: #fff;
   text-shadow: 0px 0px 10px #fff;
   font-size: 3rem;
-  text-align: center;
+  text-align: right;
   padding: 0px 15px;
+}
+
+.communities-svg {
+  background-image: url('/assets/img/communities-hero.svg');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
 }
 
 @media screen and (min-width: 1400px) {
@@ -3480,6 +3487,15 @@ grid-row-gap: 0.5rem;*/
   }
   .communities-page-main h1 {
     font-size: 2rem;
+  }
+}
+@media screen and (max-width: 420px) {
+  .communities-page-main h1 {
+    font-size: 1.5rem;
+  }
+  .communities-svg {
+    width: 150%;
+    height: 150%;
   }
 }
 
