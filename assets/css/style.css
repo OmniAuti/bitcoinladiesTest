@@ -2990,6 +2990,8 @@ section {
   transition: transform ease 250ms;
   -webkit-transform: translateY(0px);
   transform: translateY(0px);
+  border-radius: 20px;
+  overflow: hidden;
 }
 
 .event-content-card:hover {
