@@ -164,3 +164,23 @@ contactUsThanksModalBtnClose.addEventListener('click', () => {
   contactUsThanksModal.classList.remove('active-contact-thanks-modal')
   document.body.style.overflow = null;
 })
+
+
+
+// IOS MOBILE DOUBLE TOUCH FIX ---------------------------------------------
+
+if (window.innerWidth < 700) {
+  const allLinks = document.querySelectorAll("a");
+
+  for (const link of allLinks) {
+    link.addEventListener('touchend', () => {
+      var linkAttr = link.getAttribute('href')
+      var targetAttr = link.getAttribute('target')
+      if (targetAttr === '_blank') {
+        window.open = linkAttr
+      } else if (targetAttr === "_self" || targetAttr === null) {
+        window.location = linkAttr
+      }
+    })
+  }
+}
