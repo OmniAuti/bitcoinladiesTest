@@ -3603,8 +3603,8 @@ justify-content: flex-start;
 
 .education-top-carousel-selector,
 .education-bottom-carousel-selector {
-  height: 15px;
-  width: 15px;
+  height: 20px;
+  width: 20px;
   cursor: pointer;
   border-radius: 50%;
   display: -webkit-box;
@@ -3657,6 +3657,11 @@ justify-content: flex-start;
   .education-content h1 {
     font-size: 1.25rem;
   }
+  .education-top-carousel-selector,
+.education-bottom-carousel-selector {
+  height: 25px;
+  width: 25px;
+}
 }
 
 @media screen and (min-width: 2000px) {
