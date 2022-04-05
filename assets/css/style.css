@@ -3627,7 +3627,7 @@ justify-content: flex-start;
   align-items: center;
   justify-content: space-evenly;
   height: calc(100vh - 50px);
-  flex-direction: column-reverse;
+  flex-direction: column;
 }
   .education-content h1 {
     font-size: 1.5rem;
