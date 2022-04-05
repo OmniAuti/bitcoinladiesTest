@@ -105,8 +105,18 @@
 
         <main class="education-page-main">
 
-            <div class="education-hero container-fluid px-5">
-                <div class="education-hero-top">
+          <section class="education-hero">
+            <div class="education-hero__left">
+            <h1 class="education-hero__changing-text">LEARN<span style="margin-left: 20px" id="education-page-typer" class="typewrite-writer">|</span></h1>
+          </div>
+          <div class="education-hero__right">
+            <h1>BITCOIN</h1>
+            </div>
+          </section>
+
+
+            <section class="education-content container-fluid mt-0 py-0 py-md-5">
+                <div class="education-content-top mb-5">
                     <div class="education-text-container px-3">
                         <h1>New to Bitcoin?</h1>
                         <p>Bitcoin ipsum dolor sit amet. Soft fork Merkle Tree block height digital signature Merkle Tree, cryptocurrency soft fork? Mining, public key UTXO SHA-256 stacking sats SHA-256 whitepaper. Difficulty hashrate full node inputs difficulty block reward blockchain Merkle Tree. Private key, wallet.</p>
@@ -168,7 +178,16 @@
                     
                 </div>
                 
-                <div class="education-hero-bottom">
+
+                <!-- ======= FIRST PARALLAX DIVIDER ======= -->
+                <div class="parallax-body-container">
+                  <div class="container-fluid parallax-bitcoin-container">
+                    <div id="parallax-bitcoin" class="parallax-bitcoin"></div>
+                  </div>
+                </div>
+            <!-- ======= END OF FIRST PARALLAX DIVIDER ======= -->
+
+                <div class="education-content-bottom mt-0 mt-md-5">
                     
                     <div class="education-bottom-carousel">
                         <div class="education-carousel-content-holder">
@@ -223,7 +242,7 @@
                         <p>Bitcoin ipsum dolor sit amet. Soft fork Merkle Tree block height digital signature Merkle Tree, cryptocurrency soft fork? Mining, public key UTXO SHA-256 stacking sats SHA-256 whitepaper. Difficulty hashrate full node inputs difficulty block reward blockchain Merkle Tree. Private key, wallet.</p>
                     </div>
                 </div>
-            </div> 
+            </section>> 
 
             <!--====================================== END MAIN ======================================-->
         </main>
@@ -404,49 +423,6 @@
 
     <!-- Extra Pages JS -->
     <script src="assets/js/extraPages.js"></script>
-    <script>
- 
-     const coinSelectorTop = document.querySelectorAll('.education-top-carousel-selector')
-     const coinSelectorBottom = document.querySelectorAll('.education-bottom-carousel-selector')
-
-     const topCarouselContainer = document.querySelector('.education-carousel-content-container-top')
-     const bottomCarouselContainer = document.querySelector('.education-carousel-content-container-bottom')
-
-     const topCoinArray = Array.from(coinSelectorTop)
-     const bottomCoinArray = Array.from(coinSelectorBottom)
-
-       coinSelectorTop.forEach(coin => {
-           coin.addEventListener('click', () => {
-                coinSelectorTop.forEach((selector) => {
-                   selector.classList.remove('active-carousel-selector')
-               })
-               coin.classList.add('active-carousel-selector')
-               moveTopContainer(topCarouselContainer, coin)
-           })
-       })
-
-       coinSelectorBottom.forEach(coin => {
-           coin.addEventListener('click', () => {
-                coinSelectorBottom.forEach((selector) => {
-                   selector.classList.remove('active-carousel-selector')
-               })
-               coin.classList.add('active-carousel-selector')
-               moveBottomContainer(bottomCarouselContainer, coin)
-           })
-       })
-
-       function moveTopContainer(container, selected) {
-        const indexCoin = topCoinArray.indexOf(selected);
-        const movement = indexCoin * 25;
-        container.style.transform = `translateX(-${movement}%)`
-       }
-
-       function moveBottomContainer(container, selected) {
-        const indexCoin = bottomCoinArray.indexOf(selected);
-        const movement = indexCoin * 25;
-        container.style.transform = `translateX(-${movement}%)`
-       }
-
-    </script>
+    <script src="assets/js/learnPageCustomJS.js"> </script>
   </body>
 </html>
