@@ -133,7 +133,7 @@ function highlightThatPlease() {
         }
       }, 100);
     }, 250);
-  }, 25); //
+  }, 50); //
 }
 
 setTimeout(() => {
