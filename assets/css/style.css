@@ -919,7 +919,7 @@ section {
 }
 
 .active-carousel-selector {
-  border: 2px solid rgb(0, 0, 0);
+  border: 2px solid rgba(0, 0, 0, 0.5);
   -webkit-animation: coin-spin 500ms 1;
   animation: coin-spin 500ms 1;
   -webkit-transform: rotateY(0deg);
