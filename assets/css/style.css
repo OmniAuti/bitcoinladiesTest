@@ -661,6 +661,7 @@ section {
   z-index: 99;
 }
 
+
 .carousel-content-holder {
   width: 500%;
   height: 90%;
@@ -673,7 +674,7 @@ section {
 
 @media screen and (max-width: 500px) {
   .carousel-content-holder {
-    height: calc(90% - 50px);
+    height: calc(90% - 60px);
   }
 }
 
