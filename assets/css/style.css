@@ -2816,6 +2816,10 @@ grid-row-gap: 0.5rem;*/
   border-radius: 20px 20px 0px 0px;
   margin-bottom: 0;
 }
+.events-page__featured:hover img,
+.events-page__featured:hover .event-page__featured--text-content {
+  box-shadow: 0px 0px 10px #facadf;
+}
 .event-page__featured--text-content {
   border-radius: 0px 0px 20px 20px;
   background-color: #fff;
