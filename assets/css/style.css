@@ -918,7 +918,7 @@ section {
 }
 
 .active-carousel-selector {
-  box-shadow: 0px 3px 5px #444444;
+  outline: 2px solid rgb(0, 0, 0);
   -webkit-animation: coin-spin 500ms 1;
   animation: coin-spin 500ms 1;
   -webkit-transform: rotateY(0deg);
@@ -3586,6 +3586,7 @@ justify-content: flex-start;
   object-position: bottom;
   width: 100%;
   height: 100%;
+  
 }
 
 .education-carousel-controls {
@@ -3599,6 +3600,7 @@ justify-content: flex-start;
   justify-content: space-around;
   margin: 0 auto;
   transition: opacity 500ms ease-in;
+
 }
 
 .education-top-carousel-selector,
@@ -3613,6 +3615,11 @@ justify-content: flex-start;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.education-top-carousel-selector.active-carousel-selector,
+.education-bottom-carousel-selector.active-carousel-selector
+ {
+  outline: 2.5px solid #fff;
 }
 
 .education-top-carousel-selector img,
