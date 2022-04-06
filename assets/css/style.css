@@ -918,7 +918,7 @@ section {
 }
 
 .active-carousel-selector {
-  outline: 2px solid rgb(0, 0, 0);
+  border: 2.5px solid rgb(0, 0, 0);
   -webkit-animation: coin-spin 500ms 1;
   animation: coin-spin 500ms 1;
   -webkit-transform: rotateY(0deg);
@@ -3619,7 +3619,7 @@ justify-content: flex-start;
 .education-top-carousel-selector.active-carousel-selector,
 .education-bottom-carousel-selector.active-carousel-selector
  {
-  outline: 2.5px solid #fff;
+  border: 2.5px solid #fff;
 }
 
 .education-top-carousel-selector img,
