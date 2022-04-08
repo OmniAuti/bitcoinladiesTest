@@ -1,29 +1,42 @@
-const coinSelectorTop = document.querySelectorAll(
-  ".education-top-carousel-selector"
-);
+
+// ADD THIS AGAIN FOR MORE TOP SLIDES 
+// const coinSelectorTop = document.querySelectorAll(
+//   ".education-top-carousel-selector"
+// );
+
+// const topCarouselContainer = document.querySelector(
+//   ".education-carousel-content-container-top"
+// );
+
+// const topCoinArray = Array.from(coinSelectorTop);
+
+// coinSelectorTop.forEach((coin) => {
+//   coin.addEventListener("click", () => {
+//     coinSelectorTop.forEach((selector) => {
+//       selector.classList.remove("active-carousel-selector");
+//     });
+//     coin.classList.add("active-carousel-selector");
+//     moveTopContainer(topCarouselContainer, coin);
+//   });
+// });
+
+
+// function moveTopContainer(container, selected) {
+//   const indexCoin = topCoinArray.indexOf(selected);
+//   const movement = indexCoin * 25;
+//   container.style.transform = `translateX(-${movement}%)`;
+// }
+
+
 const coinSelectorBottom = document.querySelectorAll(
   ".education-bottom-carousel-selector"
 );
 
-const topCarouselContainer = document.querySelector(
-  ".education-carousel-content-container-top"
-);
 const bottomCarouselContainer = document.querySelector(
   ".education-carousel-content-container-bottom"
 );
 
-const topCoinArray = Array.from(coinSelectorTop);
 const bottomCoinArray = Array.from(coinSelectorBottom);
-
-coinSelectorTop.forEach((coin) => {
-  coin.addEventListener("click", () => {
-    coinSelectorTop.forEach((selector) => {
-      selector.classList.remove("active-carousel-selector");
-    });
-    coin.classList.add("active-carousel-selector");
-    moveTopContainer(topCarouselContainer, coin);
-  });
-});
 
 coinSelectorBottom.forEach((coin) => {
   coin.addEventListener("click", () => {
@@ -35,11 +48,6 @@ coinSelectorBottom.forEach((coin) => {
   });
 });
 
-function moveTopContainer(container, selected) {
-  const indexCoin = topCoinArray.indexOf(selected);
-  const movement = indexCoin * 25;
-  container.style.transform = `translateX(-${movement}%)`;
-}
 
 function moveBottomContainer(container, selected) {
   const indexCoin = bottomCoinArray.indexOf(selected);
