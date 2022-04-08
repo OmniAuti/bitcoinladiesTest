@@ -16,6 +16,7 @@ body {
 a {
   color: #facadf;
   text-decoration: none;
+  cursor: pointer;
 }
 
 a:hover {
@@ -3548,7 +3549,12 @@ justify-content: flex-start;
   height: 100%;
 }
 
-.education-carousel-content-holder {
+.education-carousel-content-holder-top {
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.education-carousel-content-holder-bottom {
   height: calc(100% - 50px);
   overflow: hidden;
 }
@@ -3564,9 +3570,16 @@ justify-content: flex-start;
 .education-carousel-content-container-bottom {
   width: 400%;
   height: 100%;
-  -webkit-transform: translateX(-75%);
-  transform: translateX(-75%);
+  -webkit-transform: translateX(0%);
+  transform: translateX(0%);
   transition: transform ease 750ms;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  overflow: hidden;
 }
 
 .education-carousel-slide-top {
@@ -3578,24 +3591,35 @@ justify-content: flex-start;
 }
 
 .education-carousel-slide-bottom {
-  width: 25%;
-  height: 100%;
+  width: 20%;
+  margin: 0 2.5%;
+  height:fit-content;
   float: left;
   border-radius: 20px;
   overflow: hidden;
+  border-radius: 20px;
+  text-align: center;
 }
 
-.education-carousel-slide-bottom img,
 .education-carousel-slide-top img {
   object-fit: cover;
-  object-position: bottom;
+  object-position: center;
   width: 100%;
   height: 100%;
   
 }
+.education-carousel-slide-bottom img {
+  object-fit: contain;
+  object-position: center;
+  width: 75%;
+  border-radius: 20px;
+  overflow: hidden;
+  height: auto;
+  margin-bottom:15px;
+}
 
 .education-carousel-controls {
-  width: 100%;
+  width: 50%;
   height: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3634,12 +3658,17 @@ justify-content: flex-start;
 }
 
 @media screen and (max-width: 768px) {
-  .education-content-top,
+  .education-content-top{
+  align-items: center;
+  justify-content: space-evenly;
+  height: calc(75vh);
+  flex-direction: column;
+}
   .education-content-bottom {
   align-items: center;
   justify-content: space-evenly;
-  height: calc(100vh - 50px);
-  flex-direction: column;
+  height: calc(75vh);
+  flex-direction: column-reverse;
 }
   .education-content h1 {
     font-size: 1.5rem;
