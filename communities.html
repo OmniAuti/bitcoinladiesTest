@@ -109,8 +109,8 @@
 
         <div class="communities-header container px-2 px-md-5">
           <div class="communities-svg"></div>
-        <h1>A few more communities you should check out</h1>
         
+        <h1 class="typewriter-written-text"></h1>
         </div>
 
            
@@ -340,5 +340,24 @@
     
     <!-- Extra Pages JS -->
     <script src="assets/js/extraPages.js"></script>
+    <script>
+
+      // TYPEWRITER FUNCTION
+const typewriterText =
+"A few more communities you should check out";
+const typewriterTextArray = Array.from(typewriterText);
+window.onload = () => {
+  let i = 0;
+  const typeIt = setInterval(() => {
+    document.querySelector(".typewriter-written-text").innerHTML +=
+      typewriterTextArray[i];
+    i++;
+    if (i >= typewriterTextArray.length) {
+      clearInterval(typeIt);
+    }
+  }, 25);
+};
+
+    </script>
   </body>
 </html>
