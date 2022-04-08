@@ -3175,7 +3175,7 @@ grid-row-gap: 0.5rem;*/
 
 .funding-hero img {
   width: auto;
-  height: 75%;
+  height: 50%;
   border-radius: 20px;
 }
 
@@ -3216,8 +3216,8 @@ grid-row-gap: 0.5rem;*/
   }
 
   .funding-hero img {
-    width: auto;
-    height: 75%;
+    width: 100%;
+    height: auto;
   }
 }
 @media screen and (max-width: 500px) {
@@ -3228,11 +3228,6 @@ grid-row-gap: 0.5rem;*/
   .funding-hero h1 {
     font-size: 2.5rem;
     width: 100%;
-  }
-
-  .funding-hero img {
-    width: auto;
-    height: 50%;
   }
 }
 
