@@ -107,7 +107,7 @@
       <!--====================================== HERO SECTION ======================================-->
 
         <section class="funding-hero container-fluid px-5">
-            <h1>Looking for a grant or investment?</h1>
+            <h1 class="typewriter-written-text"></h1>
             <img src="assets/img/side1.jpg" alt="">
         </section>
       <!--====================================== END HERO SECTION ======================================-->
@@ -335,5 +335,24 @@
     <!-- Extra Pages JS -->
     <script src="assets/js/extraPages.js"></script>
 
+    <script>
+
+      // TYPEWRITER FUNCTION
+const typewriterText =
+"Looking for a grant or investment?";
+const typewriterTextArray = Array.from(typewriterText);
+window.onload = () => {
+  let i = 0;
+  const typeIt = setInterval(() => {
+    document.querySelector(".typewriter-written-text").innerHTML +=
+      typewriterTextArray[i];
+    i++;
+    if (i >= typewriterTextArray.length) {
+      clearInterval(typeIt);
+    }
+  }, 25);
+};
+
+    </script>
   </body>
 </html>
