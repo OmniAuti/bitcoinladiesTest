@@ -55,6 +55,39 @@ function moveBottomContainer(container, selected) {
   container.style.transform = `translateX(-${movement}%)`;
 }
 
+
+// SWIPE FUNCTIONALITY -----------------------------------------------------
+
+(function mobileSwipe() {
+  bottomCarouselContainer.addEventListener("touchstart", (e) => {
+    document.querySelector("html").style.overflowY = "hidden";
+    startX = e.touches[0].clientX;
+  });
+
+  bottomCarouselContainer.addEventListener("touchmove", (e) => {
+    moveX = e.touches[0].clientX;
+  });
+
+  bottomCarouselContainer.addEventListener("touchend", () => {
+    document.querySelector("html").style.overflowY = "scroll";
+    if (moveX + 100 < startX) {
+      const movement = -25
+      bottomCoinArray[0].classList.remove('active-carousel-selector')
+      bottomCoinArray[1].classList.add('active-carousel-selector')
+      bottomCarouselContainer.style.transform = `translateX(${movement}%)`;
+    }
+    if (moveX - 100 > startX) {
+      const movement = 0;
+      bottomCoinArray[0].classList.add('active-carousel-selector')
+      bottomCoinArray[1].classList.remove('active-carousel-selector')
+      bottomCarouselContainer.style.transform = `translateX(${movement}%)`;
+    }
+  });
+})();
+
+// PARALLAX CONTAINER -------------------------------------
+
+
 const parallaxBitcoin = document.querySelectorAll(".parallax-bitcoin");
 window.addEventListener("scroll", () => {
   let offset = window.pageYOffset;
@@ -147,3 +180,6 @@ function highlightThatPlease() {
 setTimeout(() => {
   setInterval(highlightThatPlease, 2500);
 }, 0);
+
+
+
