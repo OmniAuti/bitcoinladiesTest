@@ -313,12 +313,12 @@ window.addEventListener("scroll", () => {
 });
 
 // REMOVE ADD ACTIVE CLASS OF SELECTOR
-function addCarouselActiveClass(el) {
-  carouselSelectors.forEach((coin) => {
-    coin.classList.remove("active-carousel-selector");
-  });
-  el.classList.add("active-carousel-selector");
-}
+// function addCarouselActiveClass(el) {
+//   carouselSelectors.forEach((coin) => {
+//     coin.classList.remove("active-carousel-selector");
+//   });
+//   el.classList.add("active-carousel-selector");
+// }
 
 // TYPEWRITER FUNCTION
 //const typewriterTextContainer = document.querySelector('.typewriter-writer-written-text')
@@ -334,84 +334,84 @@ window.onload = () => {
     i++;
     if (i >= typewriterTextArray.length) {
       clearInterval(typeIt);
-      carouselIntervalFunc(heroIndex); // FUNCTION FOR CAROUSEL STARTS WHEN TYPE WRITER IS DONE
-      document.querySelector(".carousel-controls").style.opacity = 1;
+      //carouselIntervalFunc(heroIndex); // FUNCTION FOR CAROUSEL STARTS WHEN TYPE WRITER IS DONE
+     // document.querySelector(".carousel-controls").style.opacity = 1;
     }
   }, 15);
 };
 
-// CAROUSEL INTERVAL -----------------------------------------------------------------------------
+// // CAROUSEL INTERVAL -----------------------------------------------------------------------------
 
-let carouselIntervalBack; // DECLARED GLOBAL TO BE CLEARED ON CLICK FOR COIN SELECTOR
-let carouselIntervalForward; // DECLARED GLOBAL TO BE CLEARED ON CLICK FOR COIN SELECTOR
+// let carouselIntervalBack; // DECLARED GLOBAL TO BE CLEARED ON CLICK FOR COIN SELECTOR
+// let carouselIntervalForward; // DECLARED GLOBAL TO BE CLEARED ON CLICK FOR COIN SELECTOR
 
-// INTERVALS NOW RUN BACK AND FORTH THROUGH HERO
-function carouselIntervalFunc(heroIndex) {
-  let transformAmount = 0;
-  carouselIntervalForward = setInterval(() => {
-    // MOVEMENT
-    carouselContainer.style.transform = `translateX(-${(transformAmount += 20)}%)`;
-    selectorArray[heroIndex].classList.remove("active-carousel-selector");
-    heroIndex++; // INTERVAL UP FOR COIN SELECTOR ANIMATION
+// // INTERVALS NOW RUN BACK AND FORTH THROUGH HERO
+// function carouselIntervalFunc(heroIndex) {
+//   let transformAmount = 0;
+//   carouselIntervalForward = setInterval(() => {
+//     // MOVEMENT
+//     carouselContainer.style.transform = `translateX(-${(transformAmount += 20)}%)`;
+//     selectorArray[heroIndex].classList.remove("active-carousel-selector");
+//     heroIndex++; // INTERVAL UP FOR COIN SELECTOR ANIMATION
 
-    if (heroIndex > 3) {
-      // TRICKY LITTLE SWITCH TO SEEM LIKE ENDLESS CAROUSEL
-      heroIndex = 0;
-      setTimeout(() => {
-        carouselContainer.style.transition = "none";
-        carouselContainer.style.transform = `translateX(0%)`;
-        setTimeout(() => {
-          carouselContainer.style.transition = "transform ease 750ms";
-        }, 50);
-        transformAmount = 0;
-      }, 750);
-    }
-    selectorArray[heroIndex].classList.add("active-carousel-selector");
-    /* if (heroIndex > 3) {
+//     if (heroIndex > 3) {
+//       // TRICKY LITTLE SWITCH TO SEEM LIKE ENDLESS CAROUSEL
+//       heroIndex = 0;
+//       setTimeout(() => {
+//         carouselContainer.style.transition = "none";
+//         carouselContainer.style.transform = `translateX(0%)`;
+//         setTimeout(() => {
+//           carouselContainer.style.transition = "transform ease 750ms";
+//         }, 50);
+//         transformAmount = 0;
+//       }, 750);
+//     }
+//     selectorArray[heroIndex].classList.add("active-carousel-selector");
+//     /* if (heroIndex > 3) {
 
-      // BACKWARDS INTERVAL  transition: transform ease 750ms;
-      clearInterval(carouselIntervalForward);
-      carouselIntervalBack = setInterval(() => {
-        carouselContainer.style.transform = `translateX(-${(transformAmount -= 25)}%)`;
-        selectorArray[heroIndex].classList.remove("active-carousel-selector");
-        heroIndex--;
-        selectorArray[heroIndex].classList.add("active-carousel-selector");
-        if (heroIndex <= 0) {
-          clearInterval(carouselIntervalBack);
-          carouselIntervalFunc(heroIndex);
-          return;
-        }
-      }, 4000);
+//       // BACKWARDS INTERVAL  transition: transform ease 750ms;
+//       clearInterval(carouselIntervalForward);
+//       carouselIntervalBack = setInterval(() => {
+//         carouselContainer.style.transform = `translateX(-${(transformAmount -= 25)}%)`;
+//         selectorArray[heroIndex].classList.remove("active-carousel-selector");
+//         heroIndex--;
+//         selectorArray[heroIndex].classList.add("active-carousel-selector");
+//         if (heroIndex <= 0) {
+//           clearInterval(carouselIntervalBack);
+//           carouselIntervalFunc(heroIndex);
+//           return;
+//         }
+//       }, 4000);
    
-    }*/
-  }, 4000);
-}
+//     }*/
+//   }, 4000);
+// }
 
-/* CAROUSEL FUNCTIONALITY */
+// /* CAROUSEL FUNCTIONALITY */
 
-const carouselContainer = document.querySelector(".carousel-content-holder");
-const carouselSelectors = document.querySelectorAll(".carousel-selector");
-// CHANGE SLIDE ------------------------------------------------------------------
-const selectorArray = Array.from(carouselSelectors);
+// const carouselContainer = document.querySelector(".carousel-content-holder");
+// const carouselSelectors = document.querySelectorAll(".carousel-selector");
+// // CHANGE SLIDE ------------------------------------------------------------------
+// const selectorArray = Array.from(carouselSelectors);
 
-carouselSelectors.forEach((selector) => {
-  selector.addEventListener("click", () => {
-    clearInterval(carouselIntervalForward);
-    clearInterval(carouselIntervalBack);
-    addCarouselActiveClass(selector);
-    const indexMove = selectorArray.indexOf(selector) * 20;
-    carouselContainer.style.transform = `translateX(-${indexMove}%)`;
-  });
-});
+// carouselSelectors.forEach((selector) => {
+//   selector.addEventListener("click", () => {
+//     clearInterval(carouselIntervalForward);
+//     clearInterval(carouselIntervalBack);
+//     addCarouselActiveClass(selector);
+//     const indexMove = selectorArray.indexOf(selector) * 20;
+//     carouselContainer.style.transform = `translateX(-${indexMove}%)`;
+//   });
+// });
 
 // MOBILE SWIPE ------------------------------------------------------------------
 
-let movement = 0;
-let startX;
-//let startY;
-let moveX;
-//let moveY;
-(function heroMobileSwipe() {
+// let movement = 0;
+// let startX;
+// //let startY;
+// let moveX;
+// //let moveY;
+// (function heroMobileSwipe() {
   // Y SCROLL CHECK FOR INTENDED UP DOWN SCROLLING -----------------
   /* carouselContainer.addEventListener("touchstart", (e) => {
     document.querySelector("html").style.overflowY = "hidden";
@@ -446,60 +446,60 @@ let moveX;
   });*/
   // X SCROLL CHECK FOR INTENDED SIDE SCROLLING ---------=============
 
-  carouselContainer.addEventListener("touchstart", (e) => {
-    startX = e.touches[0].clientX;
-    clearInterval(carouselIntervalForward);
-    clearInterval(carouselIntervalBack);
-  });
+//   carouselContainer.addEventListener("touchstart", (e) => {
+//     startX = e.touches[0].clientX;
+//     clearInterval(carouselIntervalForward);
+//     clearInterval(carouselIntervalBack);
+//   });
 
-  carouselContainer.addEventListener("touchmove", (e) => {
-    moveX = e.touches[0].clientX;
-  });
+//   carouselContainer.addEventListener("touchmove", (e) => {
+//     moveX = e.touches[0].clientX;
+//   });
 
-  carouselContainer.addEventListener("touchend", () => {
-    if (moveX - 100 < startX) {
-      movement += 20;
-      if (movement >= 100) {
-        movement = 100;
-      }
-      document.body.style.overflowY = "hidden";
-      heroIndex++;
-      if (heroIndex > 3) {
-        // TRICKY LITTLE SWITCH TO SEEM LIKE ENDLESS CAROUSEL
-        heroIndex = 0;
-        setTimeout(() => {
-          carouselContainer.style.transition = "none";
-          carouselContainer.style.transform = `translateX(0%)`;
-          setTimeout(() => {
-            carouselContainer.style.transition = "transform ease 750ms";
-          }, 10);
-          movement = 0;
-        }, 550);
-      }
-      setTimeout(() => {
-        carouselContainer.style.transform = `translateX(-${movement}%)`;
-        document.body.style.overflowY = "scroll";
-        addCarouselActiveClass(selectorArray[heroIndex]);
-      }, 10);
-    }
-    if (moveX + 100 > startX) {
-      movement -= 20;
-      if (movement <= 0) {
-        movement = 0;
-      }
-      heroIndex--;
-      if (heroIndex < 0) {
-        heroIndex = 0;
-      }
-      document.body.style.overflowY = "hidden";
-      setTimeout(() => {
-        carouselContainer.style.transform = `translateX(-${movement}%)`;
-        document.body.style.overflowY = "scroll";
-        addCarouselActiveClass(selectorArray[heroIndex]);
-      }, 10);
-    }
-  });
-})();
+//   carouselContainer.addEventListener("touchend", () => {
+//     if (moveX - 100 < startX) {
+//       movement += 20;
+//       if (movement >= 100) {
+//         movement = 100;
+//       }
+//       document.body.style.overflowY = "hidden";
+//       heroIndex++;
+//       if (heroIndex > 3) {
+//         // TRICKY LITTLE SWITCH TO SEEM LIKE ENDLESS CAROUSEL
+//         heroIndex = 0;
+//         setTimeout(() => {
+//           carouselContainer.style.transition = "none";
+//           carouselContainer.style.transform = `translateX(0%)`;
+//           setTimeout(() => {
+//             carouselContainer.style.transition = "transform ease 750ms";
+//           }, 10);
+//           movement = 0;
+//         }, 550);
+//       }
+//       setTimeout(() => {
+//         carouselContainer.style.transform = `translateX(-${movement}%)`;
+//         document.body.style.overflowY = "scroll";
+//         addCarouselActiveClass(selectorArray[heroIndex]);
+//       }, 10);
+//     }
+//     if (moveX + 100 > startX) {
+//       movement -= 20;
+//       if (movement <= 0) {
+//         movement = 0;
+//       }
+//       heroIndex--;
+//       if (heroIndex < 0) {
+//         heroIndex = 0;
+//       }
+//       document.body.style.overflowY = "hidden";
+//       setTimeout(() => {
+//         carouselContainer.style.transform = `translateX(-${movement}%)`;
+//         document.body.style.overflowY = "scroll";
+//         addCarouselActiveClass(selectorArray[heroIndex]);
+//       }, 10);
+//     }
+//   });
+// })();
 
 // EVENT CAROUSEL  ------------------------------------------------------------
 
