@@ -3308,7 +3308,7 @@ grid-row-gap: 0.5rem;*/
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  min-height: 50vh;
+  min-height: 65vh;
   padding-top: 70px;
   width: 100%;
   display: -webkit-box;
@@ -3317,7 +3317,7 @@ grid-row-gap: 0.5rem;*/
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow-x:hidden;
+  overflow:hidden;
 }
 
 .education-hero h1 {
@@ -3542,7 +3542,8 @@ justify-content: flex-start;
 
 .education-content-top,
 .education-content-bottom {
-  height: calc(50vh - 50px);
+  height: calc(60vh);
+  min-height: 600px;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3551,18 +3552,19 @@ justify-content: flex-start;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  color: #fff
+  color: #fff;
 }
 
 
 .education-text-container {
-  width: 50%;
+  width: 40%;
 }
 
 .education-top-carousel,
 .education-bottom-carousel {
-  width: 50%;
+  width: 60%;
   height: 100%;
+  min-height: 333px;
 }
 
 .education-carousel-content-holder-top {
@@ -3673,7 +3675,7 @@ justify-content: flex-start;
   height: 200%;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 850px) {
   .education-content-top{
   align-items: center;
   justify-content: space-evenly;
