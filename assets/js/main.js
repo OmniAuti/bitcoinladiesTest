@@ -775,3 +775,11 @@ if (window.innerWidth < 700) {
   }
 }
 
+// MENTOR BTN ANIMATION ---------------------------------------------
+
+
+const mentorBtn = document.getElementById('mentor-btn')
+
+mentorBtn.addEventListener('click', (e) => {
+  e.preventDefault()
+})
