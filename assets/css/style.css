@@ -680,7 +680,7 @@ section {
 }
 
 .carousel-content {
-  width: 20%;
+  width: fit-content;
   float: left;
   position: relative;
 }

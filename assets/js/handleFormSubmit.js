@@ -84,48 +84,48 @@ contactFormModal.addEventListener("submit", function (e) {
 
 // THIS IS FOR SUBSCRIBE FORM --------------------------------------------
 
-var subscribeForm = document.getElementById("subscribe-form");
-var emailSubscriptionInput = document.querySelector(".email-subscribe");
+// var subscribeForm = document.getElementById("subscribe-form");
+// var emailSubscriptionInput = document.querySelector(".email-subscribe");
 
-var subscriptionModal = document.querySelector('.submission-thanks-modal')
+// var subscriptionModal = document.querySelector('.submission-thanks-modal')
 
-subscribeForm.addEventListener("submit", function (e) {
-  e.preventDefault();
+// subscribeForm.addEventListener("submit", function (e) {
+//   e.preventDefault();
 
-  var request = new XMLHttpRequest();
+//   var request = new XMLHttpRequest();
 
-  const params = `This subscription is for the email: ${emailSubscriptionInput.value}.`
+//   const params = `This subscription is for the email: ${emailSubscriptionInput.value}.`
     
-  request.open("POST", "./forms/subscribeForm.php", true);
-  request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  request.send(params);
+//   request.open("POST", "./forms/subscribeForm.php", true);
+//   request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+//   request.send(params);
 
-  subscriptionModal.classList.add('active-submission-thanks-modal');
+//   subscriptionModal.classList.add('active-submission-thanks-modal');
   
 
-  setTimeout(() => {
-    emailSubscriptionInput.value = ''
-  }, 250)
-});
-// THIS IS FOR SUBSCRIBE FORM FOOTER ------------------------------------------------
+//   setTimeout(() => {
+//     emailSubscriptionInput.value = ''
+//   }, 250)
+// });
+// // THIS IS FOR SUBSCRIBE FORM FOOTER ------------------------------------------------
 
-var subscribeFormFooter = document.getElementById("subscribe-form-footer");
-var emailSubscriptionInputFooter = document.querySelector(".email-subscribe-footer");
+// var subscribeFormFooter = document.getElementById("subscribe-form-footer");
+// var emailSubscriptionInputFooter = document.querySelector(".email-subscribe-footer");
 
-subscribeFormFooter.addEventListener("submit", function (e) {
-  e.preventDefault();
+// subscribeFormFooter.addEventListener("submit", function (e) {
+//   e.preventDefault();
 
-  var request = new XMLHttpRequest();
+//   var request = new XMLHttpRequest();
 
-  const params = `This new subscription is for the email: ${emailSubscriptionInputFooter.value}.`
+//   const params = `This new subscription is for the email: ${emailSubscriptionInputFooter.value}.`
     
-  request.open("POST", "./forms/subscribeForm.php", true);
-  request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  request.send(params);
+//   request.open("POST", "./forms/subscribeForm.php", true);
+//   request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+//   request.send(params);
 
-  subscriptionModal.classList.add('active-submission-thanks-modal');
+//   subscriptionModal.classList.add('active-submission-thanks-modal');
 
-  setTimeout(() => {
-    emailSubscriptionInputFooter.value = ''
-  }, 250)
-});
+//   setTimeout(() => {
+//     emailSubscriptionInputFooter.value = ''
+//   }, 250)
+// });
