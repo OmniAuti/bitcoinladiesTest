@@ -136,7 +136,7 @@ async function handleSubmitModal(event) {
       contactModal.classList.remove("active-contact-modal");
 
       contactUsThanksModal.classList.add('active-contact-thanks-modal');
-      document.querySelector('.contact-thanks-header').innerText = `Thanks for contacting us, ${contactUsNameInputModal.value}!`
+      document.querySelector('.contact-thanks-header').innerText = `Thanks for contacting us!`
       formContactUsModal.reset()
     } 
   });

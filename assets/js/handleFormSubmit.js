@@ -97,9 +97,13 @@ async function handleSubmitContactUs(event) {
     }
   }).then(response => {
     if (response.ok) {
+      document.querySelector('.contact-thanks-header').innerText = `Thanks for contacting us!`
       contactUsThanksModal.classList.add('active-contact-thanks-modal');
-      document.querySelector('.contact-thanks-header').innerText = `Thanks for contacting us, ${contactUsNameInputModal.value}!`
-      formContactUs.reset()
+      
+      setTimeout(() => {
+        formContactUs.reset()
+      }, 500)
+      
     } 
   });
 } 
@@ -121,10 +125,9 @@ async function handleSubmitModal(event) {
     }
   }).then(response => {
     if (response.ok) {
+      document.querySelector('.contact-thanks-header').innerText = `Thanks for contacting us!`
       contactModal.classList.remove("active-contact-modal");
-
       contactUsThanksModal.classList.add('active-contact-thanks-modal');
-      document.querySelector('.contact-thanks-header').innerText = `Thanks for contacting us, ${contactUsNameInputModal.value}!`
       formContactUsModal.reset()
     } 
   });
