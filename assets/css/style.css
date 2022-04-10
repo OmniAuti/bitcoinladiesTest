@@ -1878,6 +1878,7 @@ grid-row-gap: 0.5rem;*/
   border-radius: 4px;
   transition: 0.5s;
   margin-top: 10px;
+  background-color: transparent;
   border: 2px solid #fff;
   color: #fff;
 }
@@ -1905,7 +1906,7 @@ align-items: center;
 justify-content: center;
 background-color: #000;
 left: 0;
-top: 100%;
+top: 150%;
 transition: all ease-in 250ms;
 color: #fff;
 }
