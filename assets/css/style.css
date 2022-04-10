@@ -2037,6 +2037,7 @@ color: #fff;
   overflow-x: hidden;
 }
 
+
 .events-section-title-only p {
   color: #fff;
   margin-top: 10px;
@@ -2847,6 +2848,16 @@ color: #fff;
   font-size: 5rem;
   margin: 25px auto;
 }
+
+.events-page__featured h3 {
+  font-size: 2rem;
+  color: #fff;
+  text-align: center;
+  margin: 25px;
+}
+.events-page__featured  span {
+  color: #ff61ab;
+}
 .events-page__featured img {
   border-radius: 20px 20px 0px 0px;
   margin-bottom: 0;
@@ -2977,7 +2988,6 @@ color: #fff;
     height: 40%;
     width: 100%;
     min-width: 100%;
-    margin-bottom: 50px;
   }
 }
 
@@ -3005,6 +3015,12 @@ color: #fff;
   transition: all ease 500ms;
   position: relative;
 }
+/* THIS IS SPECIFICALLY FOR GRANTS FOR TIME SAVING */
+.funding-page-main > .events-page-card {
+  background-color: #000;
+  color: #facadf;
+  text-align:center;
+}
 
 .events-page-card:hover {
   -webkit-transform: translateY(-10px);
@@ -3021,7 +3037,8 @@ color: #fff;
 
 .event-float-right::after,
 .event-float-right::after,
-.events-page__other-events::after {
+.events-page__other-events::after, 
+.funding-page-main::after {
   content: "";
   clear: both;
   display: table;
@@ -3588,7 +3605,7 @@ justify-content: flex-start;
   
 }
 .education-content h1 {
-  color: #fff;
+  color: #ff61ab;
   font-size: 2.25rem;
 }
 .education-content p {
