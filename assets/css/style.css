@@ -1878,7 +1878,6 @@ grid-row-gap: 0.5rem;*/
   border-radius: 4px;
   transition: 0.5s;
   margin-top: 10px;
-  background-color: transparent;
   border: 2px solid #fff;
   color: #fff;
 }
@@ -1892,6 +1891,7 @@ grid-row-gap: 0.5rem;*/
 #mentor-btn {
   position: relative;
   overflow: hidden;
+  background-color: transparent;
 }
 #mentor-btn::after {
 position: absolute;
