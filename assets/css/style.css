@@ -2564,7 +2564,7 @@ grid-row-gap: 0.5rem;*/
 # SPONSOR CAROUSEL
 --------------------------------------------------------------*/
 
-.sponsor-carousel {
+.sponsor-carousel, .sponsor-carousel-top {
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -4318,4 +4318,12 @@ grid-row-gap: 0.5rem;*/
   #donate-btn-placeholder::after {
     font-size: 10px;
   }
+}
+
+.cash-app {
+margin: 25px auto;
+height: auto;
+width: 50%;
+display: block;
+text-align: center;
 }
