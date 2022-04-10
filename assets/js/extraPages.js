@@ -91,33 +91,57 @@ var contactUsEmailInputModal = document.querySelector(".email-contact-us-form-mo
 var contactUsSubjectInputModal = document.querySelector(".subject-contact-us-form-modal");
 var contactUsTextEnteredInputModal = document.querySelector(".entered-text-contact-us-form-modal");
 
-contactFormModal.addEventListener("submit", function (e) {
-  // e.preventDefault();
-  contactModal.classList.remove("active-contact-modal");
-  // var request = new XMLHttpRequest();
+// contactFormModal.addEventListener("submit", function (e) {
+//   // e.preventDefault();
+//   contactModal.classList.remove("active-contact-modal");
+//   // var request = new XMLHttpRequest();
 
-  // const params =   `You have received a contact us submmission from ${contactUsNameInputModal.value}.\n
-  //                   Their email is ${contactUsEmailInputModal.value}\n
-  //                   Subject: ${contactUsSubjectInputModal.value}\n
-  //                   They are writing to say: \n
-  //                   ${contactUsTextEnteredInputModal.value}`
+//   // const params =   `You have received a contact us submmission from ${contactUsNameInputModal.value}.\n
+//   //                   Their email is ${contactUsEmailInputModal.value}\n
+//   //                   Subject: ${contactUsSubjectInputModal.value}\n
+//   //                   They are writing to say: \n
+//   //                   ${contactUsTextEnteredInputModal.value}`
 
-  // request.open("POST", "./forms/contactForm.php", true);
-  // request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  // request.send(params);
+//   // request.open("POST", "./forms/contactForm.php", true);
+//   // request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+//   // request.send(params);
 
-  setTimeout(() => {
-    document.querySelector('.coin-modal-place-holder').style.display = 'none'
+//   setTimeout(() => {
+//     document.querySelector('.coin-modal-place-holder').style.display = 'none'
 
-    contactUsNameInputModal.value = ''
-    contactUsEmailInputModal.value = ''
-    contactUsSubjectInputModal.value = ''
-    contactUsTextEnteredInputModal.value = ''
-  }, 250);
+//     contactUsNameInputModal.value = ''
+//     contactUsEmailInputModal.value = ''
+//     contactUsSubjectInputModal.value = ''
+//     contactUsTextEnteredInputModal.value = ''
+//   }, 250);
 
-  document.querySelector('.contact-thanks-header').innerText = `Thanks for contacting us, ${contactUsNameInputModal.value}!`
-  contactUsThanksModal.classList.add('active-contact-thanks-modal');
-});
+//   document.querySelector('.contact-thanks-header').innerText = `Thanks for contacting us, ${contactUsNameInputModal.value}!`
+//   contactUsThanksModal.classList.add('active-contact-thanks-modal');
+// });
+
+
+var formContactUsModal = document.getElementById("contact-us-form-modal");
+    
+async function handleSubmitModal(event) {
+  event.preventDefault();
+  var data = new FormData(event.target);
+  fetch(event.target.action, {
+    method: formContactUsModal.method,
+    body: data,
+    headers: {
+        'Accept': 'application/json'
+    }
+  }).then(response => {
+    if (response.ok) {
+      contactModal.classList.remove("active-contact-modal");
+
+      contactUsThanksModal.classList.add('active-contact-thanks-modal');
+      document.querySelector('.contact-thanks-header').innerText = `Thanks for contacting us, ${contactUsNameInputModal.value}!`
+      formContactUsModal.reset()
+    } 
+  });
+}
+formContactUsModal.addEventListener("submit", handleSubmitModal)
 
 
 
@@ -126,25 +150,51 @@ contactFormModal.addEventListener("submit", function (e) {
 var subscribeFormFooter = document.getElementById("subscribe-form-footer");
 var emailSubscriptionInputFooter = document.querySelector(".email-subscribe-footer");
 
-subscribeFormFooter.addEventListener("submit", function (e) {
- // e.preventDefault();
+// subscribeFormFooter.addEventListener("submit", function (e) {
+//  // e.preventDefault();
 
-  // var request = new XMLHttpRequest();
+//   // var request = new XMLHttpRequest();
 
-  // const params = `This new subscription is for the email: ${emailSubscriptionInputFooter.value}.`
+//   // const params = `This new subscription is for the email: ${emailSubscriptionInputFooter.value}.`
     
-  // request.open("POST", "./forms/subscribeForm.php", true);
-  // request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  // request.send(params);
+//   // request.open("POST", "./forms/subscribeForm.php", true);
+//   // request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+//   // request.send(params);
 
-  subscriptionModal.classList.add('active-submission-thanks-modal');
-  document.body.style.overflow = 'hidden';
+//   subscriptionModal.classList.add('active-submission-thanks-modal');
+//   document.body.style.overflow = 'hidden';
 
-  setTimeout(() => {
-    emailSubscriptionInputFooter.value = ''
-  }, 250)
-});
+//   setTimeout(() => {
+//     emailSubscriptionInputFooter.value = ''
+//   }, 250)
+// });
 
+
+
+// SUBSCRIBE -------- FOOTER
+
+
+var formFooterSubscribe = document.getElementById("subscribe-form-footer");
+    
+async function handleSubmitFooter(event) {
+  event.preventDefault();
+  var data = new FormData(event.target);
+  fetch(event.target.action, {
+    method: formFooterSubscribe.method,
+    body: data,
+    headers: {
+        'Accept': 'application/json'
+    }
+  }).then(response => {
+    if (response.ok) {
+
+      subscriptionModal.classList.add('active-submission-thanks-modal');
+
+      formFooterSubscribe.reset()
+    } 
+  });
+}
+formFooterSubscribe.addEventListener("submit", handleSubmitFooter)
 
 // SUBSCRIPTION MODAL  ------------------------------------------------
 

@@ -323,8 +323,6 @@ h6::selection {
   color: #ff61ab;
 }
 
-
-
 .navbar .dropdown ul {
   display: block;
   position: absolute;
@@ -358,7 +356,6 @@ h6::selection {
   background-color: #facadf;
 }
 
-
 /* button for place holder --------------*/
 
 #communities-nav-btn {
@@ -386,24 +383,22 @@ h6::selection {
   display: flex;
   align-items: center;
   justify-content: center;
-position: absolute;
-content:'Coming Soon!';
-background-color: #000;
-color: #fff;
-width: 100%;
-height: 100%;
-left: 0;
-top: 150%;
-transition: all ease-in-out 250ms;
+  position: absolute;
+  content: "Coming Soon!";
+  background-color: #000;
+  color: #fff;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 150%;
+  transition: all ease-in-out 250ms;
 }
 
 #communities-nav-btn:hover::after {
   top: 0%;
 }
 
-
 /* button for place holder --------------*/
-
 
 .navbar .dropdown:hover > ul {
   opacity: 1;
@@ -4130,7 +4125,7 @@ grid-row-gap: 0.5rem;*/
   width: 100vw;
   height: calc(100vh - 70px);
   min-height: fit-content;
-  background-image: url('../img/about-us-hero.jpg');
+  background-image: url("../img/about-us-hero.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -4171,7 +4166,6 @@ grid-row-gap: 0.5rem;*/
 @media screen and (max-width: 750px) {
   .about-page-hero h1 {
     font-size: 60px;
-
   }
   .about-page-hero {
     padding-left: 25px;
@@ -4179,12 +4173,12 @@ grid-row-gap: 0.5rem;*/
 }
 @media screen and (max-width: 600px) {
   .about-page-hero h1 {
-    font-size:50px;
+    font-size: 50px;
   }
 }
 @media screen and (max-width: 400px) {
   .about-page-hero h1 {
-    font-size:40px;
+    font-size: 40px;
   }
   .about-page-hero {
     padding-left: 15px;
@@ -4204,8 +4198,8 @@ grid-row-gap: 0.5rem;*/
   flex-direction: column;
 }
 .about-page-main article p {
- color: #fff;
- text-align: center;
+  color: #fff;
+  text-align: center;
 }
 .about-page-main article button {
   background-color: #ff61ab;
@@ -4218,14 +4212,14 @@ grid-row-gap: 0.5rem;*/
 }
 
 .about-page-main article button:hover {
-border: 3px solid #ff61ab; 
+  border: 3px solid #ff61ab;
 }
 
 .about-page-main article button::after {
   background-color: #fff;
   color: #000;
   position: absolute;
-  content: 'Coming Soon!';
+  content: "Coming Soon!";
   width: 100%;
   height: 100%;
   top: 150%;
@@ -4242,12 +4236,10 @@ border: 3px solid #ff61ab;
   top: 0%;
 }
 
-
 .about-us-container a:hover {
   background-color: #facadf;
   color: #000;
 }
-
 
 .about-page h3 {
   font-weight: 700;
@@ -4294,3 +4286,36 @@ border: 3px solid #ff61ab;
 }
 
 
+#donate-btn-placeholder {
+  position: relative;
+  background-color: transparent;
+  overflow: hidden;
+}
+
+#donate-btn-placeholder::after {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  content: "Coming Soon!";
+  background-color: #ff61ab;
+  color: #fff;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 150%;
+  transition: all ease-in-out 250ms;
+}
+
+#donate-btn-placeholder:hover::after {
+  top: 0%;
+}
+
+@media screen and (max-width: 800px) {
+  #donate-btn-placeholder::after {
+    font-size: 10px;
+  }
+}
