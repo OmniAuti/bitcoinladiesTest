@@ -57,7 +57,7 @@ function moveBottomContainer(container, selected) {
 
 
 // SWIPE FUNCTIONALITY -----------------------------------------------------
-
+var mobileIdx = 0;
 (function mobileSwipe() {
   bottomCarouselContainer.addEventListener("touchstart", (e) => {
     document.querySelector("html").style.overflowY = "hidden";
@@ -71,15 +71,28 @@ function moveBottomContainer(container, selected) {
   bottomCarouselContainer.addEventListener("touchend", () => {
     document.querySelector("html").style.overflowY = "scroll";
     if (moveX + 100 < startX) {
-      const movement = -25
-      bottomCoinArray[0].classList.remove('active-carousel-selector')
-      bottomCoinArray[1].classList.add('active-carousel-selector')
+      mobileIdx++
+      if (mobileIdx >= 2) {
+        mobileIdx = 2
+      }
+      const movement = mobileIdx * -25
+      bottomCoinArray.forEach(coin => {
+        coin.classList.remove('active-carousel-selector')
+      })
+      bottomCoinArray[mobileIdx].classList.add('active-carousel-selector')
       bottomCarouselContainer.style.transform = `translateX(${movement}%)`;
     }
     if (moveX - 100 > startX) {
-      const movement = 0;
-      bottomCoinArray[0].classList.add('active-carousel-selector')
-      bottomCoinArray[1].classList.remove('active-carousel-selector')
+      mobileIdx--
+      if (mobileIdx <= 0) {
+        mobileIdx = 0
+      }
+      
+      const movement = mobileIdx * -25;
+      bottomCoinArray.forEach(coin => {
+        coin.classList.remove('active-carousel-selector')
+      })
+      bottomCoinArray[mobileIdx].classList.add('active-carousel-selector')
       bottomCarouselContainer.style.transform = `translateX(${movement}%)`;
     }
   });

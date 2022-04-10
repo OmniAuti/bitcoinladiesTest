@@ -1897,6 +1897,9 @@ position: absolute;
 width: 100%;
 height: 100%;
 content: 'Coming Soon!';
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
 display: flex;
 align-items: center;
 justify-content: center;
@@ -3176,7 +3179,16 @@ color: #fff;
 .funding-page-main {
   min-height: 100vh;
 }
-
+.funding-hero-cont {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
 .funding-hero {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3184,7 +3196,7 @@ color: #fff;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  height: 100vh;
+  height: 75%;
 }
 
 .funding-hero h1 {
@@ -3196,9 +3208,17 @@ color: #fff;
   padding-right: 25px;
 }
 
+.funding-hero-cont p {
+  color: #fff;
+  font-size: 1rem;
+  text-align: center;
+  width: 50%;;
+  margin: 0 auto;
+}
+
 .funding-hero img {
-  width: auto;
-  height: 50%;
+  width: 50%;
+  height: auto;
   border-radius: 20px;
 }
 
@@ -3217,18 +3237,23 @@ color: #fff;
   .funding-hero h1 {
     font-size: 4rem;
     width: 100%;
-    margin-top: 25px;
+    margin-top: 50px;
   }
 
   .funding-hero img {
     width: auto;
     height: 60%;
+    margin: 25px auto;
   }
   .funding-hero {
     flex-direction: column;
-    flex-flow: column-reverse;
+    flex-flow: column;
     justify-content: center;
-    margin-top: 50px;
+
+  }
+  .funding-hero-cont p {
+    width: 95%;;
+    margin-top: 25px;
   }
 }
 
@@ -3241,16 +3266,22 @@ color: #fff;
   .funding-hero img {
     width: 90%;
     height: auto;
+    
   }
 }
 @media screen and (max-width: 500px) {
   .funding-hero {
     margin-top: 0px;
+
   }
 
   .funding-hero h1 {
     font-size: 2.5rem;
     width: 100%;
+  }
+  .funding-hero img {
+    width: 100%;
+    
   }
 }
 
@@ -3289,6 +3320,7 @@ color: #fff;
   transition: all ease 500ms;
   padding: 10px;
   overflow: hidden;
+  position: relative;
 }
 
 .grant-funding-content-card:hover {
