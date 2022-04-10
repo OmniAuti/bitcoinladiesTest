@@ -10,19 +10,19 @@ var contactUsTextEnteredInput = document.querySelector(".entered-text-contact-us
 var contactUsThanksModal = document.querySelector('.contact-thanks-modal')
 
 contactForm.addEventListener("submit", function (e) {
-  e.preventDefault();
+  //e.preventDefault();
 
-  var request = new XMLHttpRequest();
+  // var request = new XMLHttpRequest();
 
-  const params =   `You have received a contact us submmission from ${contactUsNameInput.value}.\n
-                    Their email is ${contactUsEmailInput.value}\n
-                    Subject: ${contactUsSubjectInput.value}\n
-                    They are writing to say: \n
-                    ${contactUsTextEnteredInput.value}`
+  // const params =   `You have received a contact us submmission from ${contactUsNameInput.value}.\n
+  //                   Their email is ${contactUsEmailInput.value}\n
+  //                   Subject: ${contactUsSubjectInput.value}\n
+  //                   They are writing to say: \n
+  //                   ${contactUsTextEnteredInput.value}`
 
-  request.open("POST", "./forms/contactForm.php", true);
-  request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  request.send(params);
+  // request.open("POST", "./forms/contactForm.php", true);
+  // request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  // request.send(params);
 
 
   document.querySelector('.coin-modal-place-holder').style.display = 'block'
@@ -33,7 +33,7 @@ contactForm.addEventListener("submit", function (e) {
     contactUsEmailInput.value = ''
     contactUsSubjectInput.value = ''
     contactUsTextEnteredInput.value = ''
-  }, 1000); 
+  }, 250); 
 
   document.querySelector('.contact-thanks-header').innerText = `Thanks for contacting us, ${contactUsNameInput.value}!`
   contactUsThanksModal.classList.add('active-contact-thanks-modal');
@@ -51,19 +51,19 @@ var contactUsSubjectInputModal = document.querySelector(".subject-contact-us-for
 var contactUsTextEnteredInputModal = document.querySelector(".entered-text-contact-us-form-modal");
 
 contactFormModal.addEventListener("submit", function (e) {
-  e.preventDefault();
+ // e.preventDefault();
   contactModal.classList.remove("active-contact-modal");
-  var request = new XMLHttpRequest();
+  // var request = new XMLHttpRequest();
 
-  const params =   `You have received a contact us submmission from ${contactUsNameInputModal.value}.\n
-                    Their email is ${contactUsEmailInputModal.value}\n
-                    Subject: ${contactUsSubjectInputModal.value}\n
-                    They are writing to say: \n
-                    ${contactUsTextEnteredInputModal.value}`
+  // const params =   `You have received a contact us submmission from ${contactUsNameInputModal.value}.\n
+  //                   Their email is ${contactUsEmailInputModal.value}\n
+  //                   Subject: ${contactUsSubjectInputModal.value}\n
+  //                   They are writing to say: \n
+  //                   ${contactUsTextEnteredInputModal.value}`
 
-  request.open("POST", "./forms/contactForm.php", true);
-  request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  request.send(params);
+  // request.open("POST", "./forms/contactForm.php", true);
+  // request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  // request.send(params);
 
   document.querySelector('.coin-modal-place-holder').style.display = 'block'
 
@@ -74,7 +74,7 @@ contactFormModal.addEventListener("submit", function (e) {
     contactUsEmailInputModal.value = ''
     contactUsSubjectInputModal.value = ''
     contactUsTextEnteredInputModal.value = ''
-  }, 1000);
+  }, 250);
 
   document.querySelector('.contact-thanks-header').innerText = `Thanks for contacting us, ${contactUsNameInputModal.value}!`
   contactUsThanksModal.classList.add('active-contact-thanks-modal');
@@ -84,48 +84,48 @@ contactFormModal.addEventListener("submit", function (e) {
 
 // THIS IS FOR SUBSCRIBE FORM --------------------------------------------
 
-// var subscribeForm = document.getElementById("subscribe-form");
-// var emailSubscriptionInput = document.querySelector(".email-subscribe");
+var subscribeForm = document.getElementById("subscribe-form");
+var emailSubscriptionInput = document.querySelector(".email-subscribe");
 
-// var subscriptionModal = document.querySelector('.submission-thanks-modal')
+var subscriptionModal = document.querySelector('.submission-thanks-modal')
 
-// subscribeForm.addEventListener("submit", function (e) {
-//   e.preventDefault();
+subscribeForm.addEventListener("submit", function (e) {
+ // e.preventDefault();
 
-//   var request = new XMLHttpRequest();
+  // var request = new XMLHttpRequest();
 
-//   const params = `This subscription is for the email: ${emailSubscriptionInput.value}.`
+  // const params = `This subscription is for the email: ${emailSubscriptionInput.value}.`
     
-//   request.open("POST", "./forms/subscribeForm.php", true);
-//   request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-//   request.send(params);
+  // request.open("POST", "./forms/subscribeForm.php", true);
+  // request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  // request.send(params);
 
-//   subscriptionModal.classList.add('active-submission-thanks-modal');
+  subscriptionModal.classList.add('active-submission-thanks-modal');
   
 
-//   setTimeout(() => {
-//     emailSubscriptionInput.value = ''
-//   }, 250)
-// });
-// // THIS IS FOR SUBSCRIBE FORM FOOTER ------------------------------------------------
+  setTimeout(() => {
+    emailSubscriptionInput.value = ''
+  }, 250)
+});
+// THIS IS FOR SUBSCRIBE FORM FOOTER ------------------------------------------------
 
-// var subscribeFormFooter = document.getElementById("subscribe-form-footer");
-// var emailSubscriptionInputFooter = document.querySelector(".email-subscribe-footer");
+var subscribeFormFooter = document.getElementById("subscribe-form-footer");
+var emailSubscriptionInputFooter = document.querySelector(".email-subscribe-footer");
 
-// subscribeFormFooter.addEventListener("submit", function (e) {
-//   e.preventDefault();
+subscribeFormFooter.addEventListener("submit", function (e) {
+ // e.preventDefault();
 
-//   var request = new XMLHttpRequest();
+  // var request = new XMLHttpRequest();
 
-//   const params = `This new subscription is for the email: ${emailSubscriptionInputFooter.value}.`
+  // const params = `This new subscription is for the email: ${emailSubscriptionInputFooter.value}.`
     
-//   request.open("POST", "./forms/subscribeForm.php", true);
-//   request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-//   request.send(params);
+  // request.open("POST", "./forms/subscribeForm.php", true);
+  // request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  // request.send(params);
 
-//   subscriptionModal.classList.add('active-submission-thanks-modal');
+  subscriptionModal.classList.add('active-submission-thanks-modal');
 
-//   setTimeout(() => {
-//     emailSubscriptionInputFooter.value = ''
-//   }, 250)
-// });
+  setTimeout(() => {
+    emailSubscriptionInputFooter.value = ''
+  }, 250)
+});
