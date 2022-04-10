@@ -57,7 +57,7 @@
         <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
         <div class="d-flex align-items-center justify-content-around">
           <!-- THIS IS TO BRING THE NAV LINK AND DONATE BUTTON CLOSER TOGETHER IN FLEX-->
-          <nav id="navbar" class="navbar me-4">
+          <nav id="navbar" class="navbar me-0 pe-2">
             <ul>
               <!-- NON DROP DOWN -->
               <li><a href="about.html" target="_self">About Us</a></li>
@@ -97,7 +97,7 @@
                       >Instagram</a
                     >
                   </li>
-                  <li><a href="communities.html" target="_self">Communities</a></li>
+                  <li><button id="communities-nav-btn">Communities</button></li>
                   <li><a id="contact-nav-link" href="#">Contact</a></li>
                 </ul>
               </li>
@@ -714,7 +714,7 @@
               data-aos="fade-right"
             >
               <form
-                action="forms/contactForm.php"
+                action="https://formspree.io/f/xyyonzoz"
                 method="POST"
                 role="form"
                 class="php-email-form w-40 ms-3 d-inline-block"
@@ -724,7 +724,7 @@
                   <div class="col-md-6 form-group">
                     <input
                       type="text"
-                      name="name"
+                      name="contact-form-name"
                       class="form-control name-contact-us-form"
                       id="name"
                       placeholder="Name"
@@ -735,7 +735,7 @@
                     <input
                       type="email"
                       class="form-control email-contact-us-form"
-                      name="email"
+                      name="contact-form-email"
                       id="email"
                       placeholder="Email"
                       required
@@ -746,7 +746,7 @@
                   <input
                     type="text"
                     class="form-control subject-contact-us-form"
-                    name="subject"
+                    name="contact-form-subject"
                     id="subject"
                     placeholder="Subject"
                     required
@@ -755,7 +755,7 @@
                 <div class="form-group mt-3">
                   <textarea
                     class="form-control entered-text-contact-us-form"
-                    name="message"
+                    name="contact-form-message"
                     rows="5"
                     placeholder="Let Us Know"
                     required
@@ -955,14 +955,14 @@
      <!-- END SUBMISSION THANKS MODAL -->
 
     <!--CONTACT MODAL -->
-    <div class="contact-modal ">
+    <div class="contact-modal">
       <div
       class="contact-modal-form-container">
       <button class="modal-close-btn">&#8553</button>
       <h2 class="contact-modal-header mb-3">Contact Us</h2>
 
       <form
-      action="forms/contactForm.php"
+      action="https://formspree.io/f/xyyonzoz"
       method="POST"
       role="form"
       class="php-email-form w-40 d-inline-block"
@@ -972,7 +972,7 @@
         <div class="col-md-6 form-group">
           <input
             type="text"
-            name="name"
+            name="contact-form-name"
             class="form-control name-contact-us-form-modal"
             id="name"
             placeholder="Name"
@@ -983,7 +983,7 @@
           <input
             type="email"
             class="form-control email-contact-us-form-modal"
-            name="email"
+            name="contact-form-email"
             id="email"
             placeholder="Email"
             required
@@ -994,7 +994,7 @@
         <input
           type="text"
           class="form-control subject-contact-us-form-modal"
-          name="subject"
+          name="contact-form-subject"
           id="subject"
           placeholder="Subject"
           required
@@ -1003,7 +1003,7 @@
       <div class="form-group mt-3">
         <textarea
           class="form-control entered-text-contact-us-form-modal"
-          name="message"
+          name="contact-form-message"
           rows="5"
           placeholder="Let Us Know"
           required
