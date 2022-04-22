@@ -1200,7 +1200,7 @@ section {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  width: 100vw;
+  max-width: 100vw;
   height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1277,7 +1277,7 @@ section {
   height: fit-content;
   min-height: 100vh;
   max-height: fit-content;
-  width: 100vw;
+  max-width: 100vw;
   background-color: #000;
   background-image: url("../img/everyone-background.jpg");
   background-position: center;
@@ -1424,7 +1424,7 @@ section {
 --------------------------------------------------------------*/
 .features {
   height: fit-content;
-  width: 100vw;
+  max-width: 100vw;
   background-color: #000;
   padding-top: 100px;
   padding-bottom: 0px;
@@ -1432,7 +1432,7 @@ section {
 }
 
 .overflow-control {
-  width: 100vw;
+  max-width: 100vw;
   overflow-x: hidden;
 }
 
@@ -1487,6 +1487,7 @@ section {
   height: 1600px;
 }
 
+
 .featured-scroll-icon-container {
   float: left;
   width: 35%;
@@ -1500,6 +1501,12 @@ section {
   height: 475px;
   background-color: #facadf;
   z-index: 99;
+}
+
+@media screen and (min-width:1600px) {
+  .featured-scroll-icon-container {
+    height: 600px;
+  }
 }
 
 .featured-icon {
@@ -2078,7 +2085,7 @@ grid-row-gap: 0.5rem;*/
 }
 
 .event-carousel-content {
-  width: 200%;
+  width: 234%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -2088,7 +2095,7 @@ grid-row-gap: 0.5rem;*/
 }
 
 .event-content-card {
-  width: calc(16%);
+  width: calc(156%);
   margin: 0 10px;
   height: 350px;
   min-height: 350px;
@@ -2190,28 +2197,45 @@ grid-row-gap: 0.5rem;*/
   transform: scale(1.1);
 }
 
-@media screen and (max-width: 1050px) {
+@media screen and (max-width: 1150px) {
   .event-carousel-content {
-    width: 300%;
+    width: 350%;
   }
 
   .event-content-card {
-    width: calc(17%);
+    width: calc(20%);
   }
 
   .event-carousel-controls {
     width: 250px;
   }
+  .event-card-text-container h4  {
+    font-size: .99rem;
+  }
+  .event-card-text-container p {
+    font-size: .9rem;
+  }
 }
 
 @media screen and (max-width: 560px) {
   .event-carousel-content {
-    width: 600%;
+    width: 700%;
     justify-content: space-evenly;
   }
 
   .event-content-card {
-    width: calc(16%);
+    width: calc(25%);
+  }
+ 
+}
+@media screen and (min-width: 1800px) {
+  .event-carousel-content {
+    width: 175%;
+    justify-content: space-evenly;
+  }
+
+  .event-content-card {
+    width: calc(12%);
   }
 }
 
@@ -2563,8 +2587,19 @@ grid-row-gap: 0.5rem;*/
 /*--------------------------------------------------------------
 # SPONSOR CAROUSEL
 --------------------------------------------------------------*/
+@media screen and (max-width: 500px) {
 
-.sponsor-carousel, .sponsor-carousel-top {
+  .sponsers-title h2::after {
+    width: 25px;
+  }
+}
+@media screen and (max-width: 350px) {
+
+  .sponsers-title h2::after {
+    width: 0px;
+  }
+}
+/* .sponsor-carousel, .sponsor-carousel-top {
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -2593,7 +2628,7 @@ grid-row-gap: 0.5rem;*/
   .sponsor-slide {
     width: 25%;
   }
-}
+} */
 
 /*--------------------------------------------------------------
 # DONATE PAGE
@@ -2865,7 +2900,7 @@ grid-row-gap: 0.5rem;*/
 }
 
 .parallax-body-container {
-  width: 100vw;
+  max-width: 100vw;
   overflow-x: hidden;
 }
 
