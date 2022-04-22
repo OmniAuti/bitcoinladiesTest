@@ -23,10 +23,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
-    <!-- Vendor CSS Files 
-        <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet"/>   
+    <!-- Vendor CSS Files  
+        <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet"/>   -->
           <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
-      -->
+     
 
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
@@ -468,7 +468,26 @@
 
           <div class="card-deck row">
 
-            <!-- BLOG 1-->
+                        <!-- BLOG 1-->
+
+                        <div class="card blog-card col-10 col-lg-3 col-md-7 mx-auto py-2 my-4">
+                          <img loading="lazy"
+                            class="blog-card-img-top"
+                            src="https://miro.medium.com/max/1400/1*VTE6COZUQPg3J0fv9c0SZg.png"
+                            alt="Card image cap"
+                          />
+                          <article class="blog-card-body mt-3">
+                            <h5 class="card-title">Satoshe Sunday Reflections</h5>
+                            <p class="card-text">Our first event, Satoshe Sunday, presented by Cash App, kicked off last Sunday and we couldn’t be more excited! Being a women-lead organization doesn’t mean we’re “women only”.</p>
+                          </article>
+            
+                          <div class="">
+                            <a target="_blank" href="https://blog.bitcoinladies.org/satoshe-sunday-reflections-5c0b56ff441e" class="btn blog-btn w-100 mt-3">Read More</a>
+                          </div>
+                        </div>
+            
+
+            <!-- BLOG 2-->
 
             <div class="card blog-card col-10 col-lg-3 col-md-7 mx-auto py-2 my-4">
               <img loading="lazy"
@@ -487,7 +506,7 @@
               </div>
             </div>
 
-            <!-- BLOG 2-->
+            <!-- BLOG 3-->
 
             <div class="card col-10 blog-card col-lg-3 col-md-7 mx-auto py-2 my-4">
               <img loading="lazy"
@@ -506,24 +525,6 @@
               </div>
             </div>
 
-            <!-- BLOG 3-->
-
-            <div class="card blog-card col-10 col-lg-3 col-md-7 mx-auto py-2 my-4">
-              <img loading="lazy"
-                class="blog-card-img-top"
-                src="https://miro.medium.com/max/1400/1*TOD7hK8JXsdkLYlU_273FA.png"
-                alt="Card image cap"
-              />
-              <article class="blog-card-body mt-3">
-                <h5 class="card-title">21 Days of Bitcoin (Sarah’s Version)</h5>
-                <p class="card-text">
-                  Welcome to the world of Bitcoin! Through the lessons below, you’ll gain a deeper understanding of what exactly this mysterious, revolutionary new technology is. And by the end of this course, you’ll finally figure out what millions of people around the world are already realizing: Bitcoin is hope.                </p>
-              </article>
-
-              <div class="">
-                <a target="_blank" href="https://blog.bitcoinladies.org/21-days-of-bitcoin-sarahs-version-6d42f420888a" class="btn blog-btn w-100 mt-3">Read More</a>
-              </div>
-            </div>
 
 
           </div>
@@ -548,6 +549,47 @@
             <div class="event-carousel-content" style="transition: transform ease-in-out 250ms;">
 
               <div
+              class="event-content-card"
+              data-aos="zoom-in"
+            >
+            <a href="https://www.eventbrite.com/e/mit-bitcoin-expo-2022-womens-networking-event-tickets-324252517007"
+            target="_blank">
+
+           <!--THIS IMAGE IS FOR BACKGROUND WILL BE BLURRED BY -->
+           <img class="event-card-img-blur-back" loading="lazy" src="assets/img/events-img/WomenNetworkingEvent.jpeg" alt="Ladies in Bitcoin & Women in Blockchain Logo">
+           <div class="event-card-image-container"> <!--THIS BLURS IMAGE -->
+            <img loading="lazy" src="assets/img/events-img/WomenNetworkingEvent.jpeg" alt="Ladies in Bitcoin & Women in Blockchain Logo">
+           </div>
+
+            <div class="event-card-text-container p-3">
+              <h4>MIT Bitcoin Expo 2022: Women's Networking Event</h4>
+              <p>Date: May 6 @ 7-9PM EST</p>
+              </div>
+            </a>
+            </div>
+<!--ONE-->
+              <div
+              class="event-content-card"
+              data-aos="zoom-in"
+            >
+            <a href="https://bitcoinunleashed.org/"
+            target="_blank">
+
+           <!--THIS IMAGE IS FOR BACKGROUND WILL BE BLURRED BY -->
+           <img class="event-card-img-blur-back" loading="lazy" src="assets/img/events-img/EventBitcoinUnleashed.png" alt="Bitcoin Unleashed Event Image">
+           <div class="event-card-image-container"> <!--THIS BLURS IMAGE -->
+            <img loading="lazy" src="assets/img/events-img/EventBitcoinUnleashed.png" alt="Bitcoin Unleashed Event Image">
+           </div>
+
+            <div class="event-card-text-container p-3">
+              <h4>Bitcoin Unleashed</h4>
+              <p>Date: April 5-6</p>
+              </div>
+            </a>
+            </div>
+<!--NEE-->
+
+              <div
                 class="event-content-card"
                 data-aos="zoom-in"
                 
@@ -565,7 +607,7 @@
               </div>
               </a>
               </div>
-
+<!--ONE-->
               <div
                 class="event-content-card"
                 data-aos="zoom-in">
@@ -583,32 +625,10 @@
                 </div>
               </a>
               </div>
-
-              <div
-                class="event-content-card"
-                data-aos="zoom-in"
-              >
-              <a href="https://bitcoinunleashed.org/"
-              target="_blank">
-
-             <!--THIS IMAGE IS FOR BACKGROUND WILL BE BLURRED BY -->
-             <img class="event-card-img-blur-back" loading="lazy" src="assets/img/events-img/EventBitcoinUnleashed.png" alt="Bitcoin Unleashed Event Image">
-             <div class="event-card-image-container"> <!--THIS BLURS IMAGE -->
-              <img loading="lazy" src="assets/img/events-img/EventBitcoinUnleashed.png" alt="Bitcoin Unleashed Event Image">
-             </div>
-
-              <div class="event-card-text-container p-3">
-                <h4>Bitcoin Unleashed</h4>
-                <p>Date: April 5-6</p>
-                </div>
-              </a>
-              </div>
-
+<!--ONE-->
               <div class="event-content-card">
                 <a href="https://mitbitcoinexpo.org/"
               target="_blank">
-
-              
              <!--THIS IMAGE IS FOR BACKGROUND WILL BE BLURRED BY -->
              <img class="event-card-img-blur-back" loading="lazy" src="assets/img/events-img/EventMitCoin.png" alt="MIT Bitcoin Expo 2022 Event Image">
              <div class="event-card-image-container"> <!--THIS BLURS IMAGE -->
@@ -620,7 +640,7 @@
                   </div>
                 </a>
               </div>
-
+<!--ONE-->
               <div class="event-content-card">
                 <a href="https://www.eventbrite.com/e/the-boat-accident-a-happy-hour-hosted-by-okcoin-and-taxbit-tickets-303482362917"
               target="_blank">
@@ -636,7 +656,7 @@
                   </div>
                 </a>
               </div>
-
+<!--ONE-->
               <div class="event-content-card">
                 <a href="https://www.meetup.com/women-in-blockchain/events/284888716/"
               target="_blank">
@@ -789,12 +809,16 @@
 
       <!-- ======= Sponsor Section ======= -->
       <section id="sponors" class="clients">
+
         <div class="container" data-aos="zoom-in">
-          <div class="section-title">
+
+          <div class="section-title sponsers-title">
             <p>Partners and Sponsors</p>
             <h2>Want to Sponsor? Contact Us!</h2>
           </div>
-    
+        </div>
+        <div class="container-fluid">
+    <!--
           <div class="container sponsor-carousel-top">
 
             <div class="sponsor-slide mx-2 cash-app">
@@ -807,57 +831,123 @@
             </div>
 
             </div>
+                  <div class="container sponsor-carousel">
+                    <div class="sponsor-slide mx-2">
+                      <a href="https://www.bakkt.com/" target="_blank">
+                      <img loading="lazy"
+                      src="assets/img/sponsors-img/Bakkt.png"
+                      class="img-fluid"
+                      alt="Bakkt Company Logo"/>
+                    </a>
+                    </div>
 
+                    <div class="sponsor-slide mx-2">
+                      <a href="https://www.okcoin.com/"  target="_blank">
+                      <img loading="lazy"
+                      src="assets/img/sponsors-img/FoundationStacked.png"
+                      class="img-fluid"
+                      alt="Stacked Foundation Logo"/>
+                      </a>
+                    </div>
+                    
+                    <div class="sponsor-slide mx-2">
+                      <a href="https://desfemmesmagazine.com/"  target="_blank">
+                      <img loading="lazy"
+                      src="assets/img/sponsors-img/DesFemmes.png"
+                      class="img-fluid"
+                      alt="Des Femmes Company Logo"/>
+                      </a>
+                    </div>
 
-          <div class="container sponsor-carousel">
-            <div class="sponsor-slide mx-2">
-              <a href="https://www.bakkt.com/" target="_blank">
-              <img loading="lazy"
-              src="assets/img/sponsors-img/Bakkt.png"
-              class="img-fluid"
-              alt="Bakkt Company Logo"/>
-            </a>
-            </div>
+              </div>
+              <div class="container sponsor-carousel-bottom">
+                    <div class="sponsor-slide mx-2">
+                      <a href="https://stacks.org/"  target="_blank">
+                      <img loading="lazy"
+                      src="assets/img/sponsors-img/okcoin.png"
+                      class="img-fluid"
+                      alt="okcoin Company Logo"/>
+                      </a>
+                    </div>
 
-            <div class="sponsor-slide mx-2">
-              <a href="https://www.okcoin.com/"  target="_blank">
-              <img loading="lazy"
-              src="assets/img/sponsors-img/FoundationStacked.png"
-              class="img-fluid"
-              alt="Stacked Foundation Logo"/>
-              </a>
-            </div>
-            
-            <div class="sponsor-slide mx-2">
-              <a href="https://desfemmesmagazine.com/"  target="_blank">
-              <img loading="lazy"
-              src="assets/img/sponsors-img/DesFemmes.png"
-              class="img-fluid"
-              alt="Des Femmes Company Logo"/>
-              </a>
-            </div>
-
-      </div>
-      <div class="container sponsor-carousel-bottom">
-            <div class="sponsor-slide mx-2">
-              <a href="https://stacks.org/"  target="_blank">
-              <img loading="lazy"
-              src="assets/img/sponsors-img/okcoin.png"
-              class="img-fluid"
-              alt="okcoin Company Logo"/>
-              </a>
-            </div>
-
-            <div class="sponsor-slide mx-2">
-              <a href="https://stacks.org/"  target="_blank">
-              <img loading="lazy"
-              src="assets/img/sponsors-img/SustainableBitcoinStandard.jpg"
-              class="img-fluid"
-              alt="okcoin Company Logo"/>
-              </a>
-            </div>
-      </div>
+                    <div class="sponsor-slide mx-2">
+                      <a href="https://stacks.org/"  target="_blank">
+                      <img loading="lazy"
+                      src="assets/img/sponsors-img/SustainableBitcoinStandard.jpg"
+                      class="img-fluid"
+                      alt="okcoin Company Logo"/>
+                      </a>
+                    </div>
+              </div>
    
+          </div> -->
+
+          <div class="clients-slider swiper">
+            <div class="swiper-wrapper align-items-center">
+              
+              <div class="swiper-slide">
+                <a href="https://cash.app/" target="_blank">
+                  <img loading="lazy"
+                  src="assets/img/sponsors-img/cashapp.png"
+                  class="img-fluid"
+                  alt="Cash App Company Logo"/>
+                </a>
+              </div>
+
+              <div class="swiper-slide">
+                <a href="https://www.bakkt.com/" target="_blank">
+                  <img loading="lazy"
+                  src="assets/img/sponsors-img/Bakkt.png"
+                  class="img-fluid"
+                  alt="Bakkt Company Logo"/>
+                </a>
+              </div>
+
+              <div class="swiper-slide">
+                <a href="https://www.okcoin.com/"  target="_blank">
+                  <img loading="lazy"
+                  src="assets/img/sponsors-img/FoundationStacked.png"
+                  class="img-fluid"
+                  alt="Stacked Foundation Logo"/>
+                  </a>
+              </div>
+
+              <div class="swiper-slide">
+                <a href="https://desfemmesmagazine.com/"  target="_blank">
+                  <img loading="lazy"
+                  src="assets/img/sponsors-img/DesFemmes.png"
+                  class="img-fluid"
+                  alt="Des Femmes Company Logo"/>
+                  </a>
+              </div>
+              <div class="swiper-slide">
+                <a href="https://stacks.org/"  target="_blank">
+                  <img loading="lazy"
+                  src="assets/img/sponsors-img/okcoin.png"
+                  class="img-fluid"
+                  alt="okcoin Company Logo"/>
+                  </a>
+              </div>
+              <div class="swiper-slide">
+                <a href="https://stacks.org/"  target="_blank">
+                  <img loading="lazy"
+                  src="assets/img/sponsors-img/SustainableBitcoinStandard.jpg"
+                  class="img-fluid"
+                  alt="okcoin Company Logo"/>
+                  </a>
+              </div>
+
+              <div class="swiper-slide">
+                <a href="https://voltage.cloud/"  target="_blank">
+                  <img loading="lazy"
+                  src="assets/img/sponsors-img/voltage.jpg"
+                  class="img-fluid"
+                  alt="Voltage Company Logo"/>
+                  </a>
+              </div>
+
+            </div>
+            <div class="swiper-pagination"></div>
           </div>
       </section>
       <!-- ======= END Sponsor Section ======= -->
@@ -1038,16 +1128,15 @@
      <!-- END OF CONTACT MODAL -->
 
 
-    <!-- Vendor JS Files 
+    <!-- Vendor JS Files   
     <script src="assets/vendor/purecounter/purecounter.js"></script>
     <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
     <script src="assets/vendor/php-email-form/validate.js"></script>
-    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-        <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-
-  -->
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>--> 
+      
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script> <!--FOR SPONSORS FEED-->
     <script src="assets/vendor/aos/aos.js"></script> <!--FOR SCROLL ANIMATIONS-->
-    <script type="text/javascript" src="slick/slick/slick.min.js"></script>
+    <script type="text/javascript" src="slick/slick/slick.min.js"></script><!--FOR  CSS FEED-->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
    <!--  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js"></script>
