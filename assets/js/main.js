@@ -177,25 +177,25 @@
     });
   }
 
-  /**
-   * Clients Slider
+  
+   /* Clients Slider*/
  
   new Swiper(".clients-slider", {
     speed: 400,
     loop: true,
     autoplay: {
-      delay: 5000,
+      delay: 2500,
       disableOnInteraction: false,
     },
     slidesPerView: "auto",
     pagination: {
       el: ".swiper-pagination",
-      type: "bullets",
+      type: "none",
       clickable: true,
     },
     breakpoints: {
       320: {
-        slidesPerView: 2,
+        slidesPerView: 3,
         spaceBetween: 40,
       },
       480: {
@@ -207,11 +207,11 @@
         spaceBetween: 80,
       },
       992: {
-        slidesPerView: 6,
+        slidesPerView: 4,
         spaceBetween: 120,
       },
     },
-  }); */
+  }); 
 
   /**
    * Porfolio isotope and filter
@@ -269,8 +269,8 @@
       type: "bullets",
       clickable: true,
     },
-  });
- */
+  });*/
+ 
   /**
    * Testimonials slider
    
